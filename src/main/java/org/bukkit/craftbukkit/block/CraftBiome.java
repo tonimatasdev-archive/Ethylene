@@ -7,7 +7,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.biome.BiomeBase;
 import org.bukkit.Registry;
 import org.bukkit.block.Biome;
-import org.bukkit.craftbukkit.CraftRegistry;
+import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.util.CraftNamespacedKey;
 
 public class CraftBiome {

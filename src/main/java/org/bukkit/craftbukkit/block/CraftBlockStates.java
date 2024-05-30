@@ -8,8 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 import javax.annotation.Nullable;
+
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPosition;
 import net.minecraft.core.IRegistryCustom;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.GeneratorAccess;
@@ -423,7 +427,7 @@ public final class CraftBlockStates {
         return getBlockState(world.registryAccess(), blockPosition, blockData, blockEntityTag);
     }
 
-    public static BlockState getBlockState(IRegistryCustom registry, BlockPosition blockPosition, IBlockData blockData, @Nullable NBTTagCompound blockEntityTag) {
+    public static BlockState getBlockState(RegistryAccess registry, BlockPos blockPosition, net.minecraft.world.level.block.state.BlockState blockData, @Nullable CompoundTag blockEntityTag) {
         Preconditions.checkNotNull(blockPosition, "blockPosition is null");
         Preconditions.checkNotNull(blockData, "blockData is null");
         TileEntity tileEntity = (blockEntityTag == null) ? null : TileEntity.loadStatic(blockPosition, blockData, blockEntityTag, registry);

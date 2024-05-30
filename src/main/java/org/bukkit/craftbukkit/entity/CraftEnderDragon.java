@@ -9,10 +9,9 @@ import net.minecraft.world.entity.boss.enderdragon.phases.DragonControllerPhase;
 import org.bukkit.boss.BossBar;
 import org.bukkit.boss.DragonBattle;
 import org.bukkit.craftbukkit.CraftServer;
-import org.bukkit.craftbukkit.boss.CraftDragonBattle;
+import org.bukkit.craftbukkit.v1_20_R5.boss.CraftDragonBattle;
 import org.bukkit.entity.ComplexEntityPart;
 import org.bukkit.entity.EnderDragon;
-import org.bukkit.entity.EnderDragon.Phase;
 
 public class CraftEnderDragon extends CraftMob implements EnderDragon, CraftEnemy {
 

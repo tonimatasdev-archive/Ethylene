@@ -16,6 +16,7 @@ import net.minecraft.core.SectionPosition;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.DynamicOpsNBT;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.WorldServer;
 import net.minecraft.util.thread.ThreadedMailbox;
 import net.minecraft.world.level.ChunkCoordIntPair;
@@ -54,7 +55,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.plugin.Plugin;
 
 public class CraftChunk implements Chunk {
-    private final WorldServer worldServer;
+    private final ServerLevel worldServer;
     private final int x;
     private final int z;
     private static final DataPaletteBlock<IBlockData> emptyBlockIDs = new DataPaletteBlock<>(net.minecraft.world.level.block.Block.BLOCK_STATE_REGISTRY, Blocks.AIR.defaultBlockState(), DataPaletteBlock.d.SECTION_STATES);
@@ -67,7 +68,7 @@ public class CraftChunk implements Chunk {
         z = chunk.getPos().z;
     }
 
-    public CraftChunk(WorldServer worldServer, int x, int z) {
+    public CraftChunk(ServerLevel worldServer, int x, int z) {
         this.worldServer = worldServer;
         this.x = x;
         this.z = z;

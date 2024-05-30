@@ -5,7 +5,7 @@ import net.minecraft.world.entity.decoration.EntityPainting;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import org.bukkit.Art;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.CraftArt;
+import org.bukkit.craftbukkit.v1_20_R5.CraftArt;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.Painting;
 

@@ -11,7 +11,7 @@ import net.minecraft.util.InclusiveRange;
 import org.bukkit.Bukkit;
 import org.bukkit.FeatureFlag;
 import org.bukkit.NamespacedKey;
-import org.bukkit.craftbukkit.CraftFeatureFlag;
+import org.bukkit.craftbukkit.v1_20_R5.CraftFeatureFlag;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.util.CraftChatMessage;
 import org.bukkit.packs.DataPack;

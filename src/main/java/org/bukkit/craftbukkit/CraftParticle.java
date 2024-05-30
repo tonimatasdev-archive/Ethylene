@@ -35,6 +35,7 @@ import org.bukkit.craftbukkit.legacy.FieldRename;
 import org.bukkit.craftbukkit.util.CraftLocation;
 import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 import org.bukkit.craftbukkit.util.CraftNamespacedKey;
+import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.MaterialData;
 import org.joml.Vector3f;

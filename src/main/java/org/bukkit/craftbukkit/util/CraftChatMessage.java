@@ -14,6 +14,7 @@ import net.minecraft.network.chat.ChatClickable;
 import net.minecraft.network.chat.ChatClickable.EnumClickAction;
 import net.minecraft.network.chat.ChatHexColor;
 import net.minecraft.network.chat.ChatModifier;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.IChatBaseComponent;
 import net.minecraft.network.chat.IChatMutableComponent;
 import net.minecraft.network.chat.contents.LiteralContents;
@@ -189,7 +190,7 @@ public final class CraftChatMessage {
         return fromString(message, false);
     }
 
-    public static IChatBaseComponent[] fromString(String message, boolean keepNewlines) {
+    public static Component[] fromString(String message, boolean keepNewlines) {
         return fromString(message, keepNewlines, false);
     }
 
@@ -305,7 +306,7 @@ public final class CraftChatMessage {
         return CraftChatMessage.fromComponent(component);
     }
 
-    public static String fromComponent(IChatBaseComponent component) {
+    public static String fromComponent(Component component) {
         if (component == null) return "";
         StringBuilder out = new StringBuilder();
 

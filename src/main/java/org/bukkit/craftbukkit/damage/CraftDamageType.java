@@ -6,7 +6,7 @@ import net.minecraft.core.IRegistry;
 import net.minecraft.core.registries.Registries;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.CraftRegistry;
+import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.util.Handleable;
 import org.bukkit.damage.DamageEffect;
 import org.bukkit.damage.DamageScaling;
