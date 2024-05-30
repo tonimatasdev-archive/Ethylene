@@ -22,7 +22,7 @@ idea.module.isDownloadJavadoc = true
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 minecraft {
-    //accessTransformers.file rootProject.file("src/main/resources/accesstransformer.cfg")
+    accessTransformers.file("src/main/resources/accesstransformer.cfg")
 }
 
 runs {
