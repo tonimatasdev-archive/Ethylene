@@ -50,6 +50,16 @@ dependencies {
     implementation("org.apache.maven:maven-resolver-provider:3.9.6")
     implementation("org.apache.maven.resolver:maven-resolver-connector-basic:1.9.18")
     implementation("org.apache.maven.resolver:maven-resolver-transport-http:1.9.18")
+    
+    // CraftBukkit
+    implementation("jline:jline:2.12.1")
+    implementation("org.apache.logging.log4j:log4j-iostreams:2.22.1")
+    implementation("commons-lang:commons-lang:2.6")
+    implementation("com.googlecode.json-simple:json-simple:1.1.1") {
+        exclude("junit")
+    }
+    implementation("org.xerial:sqlite-jdbc:3.45.3.0")
+    implementation("com.mysql:mysql-connector-j:8.3.0")
 }
 
 tasks.withType<ProcessResources> {
