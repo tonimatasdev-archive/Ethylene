@@ -13,6 +13,7 @@ import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.nbt.NBTTagString;
 import net.minecraft.nbt.SnbtPrinterTagVisitor;
+import net.minecraft.nbt.Tag;
 import org.jetbrains.annotations.NotNull;
 
 public class CraftNBTTagConfigSerializer {
@@ -22,7 +23,7 @@ public class CraftNBTTagConfigSerializer {
     private static final Pattern DOUBLE = Pattern.compile("[-+]?(?:[0-9]+[.]?|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?d", Pattern.CASE_INSENSITIVE);
     private static final MojangsonParser MOJANGSON_PARSER = new MojangsonParser(new StringReader(""));
 
-    public static String serialize(@NotNull final NBTBase base) {
+    public static String serialize(@NotNull final Tag base) {
         final SnbtPrinterTagVisitor snbtVisitor = new SnbtPrinterTagVisitor();
         return snbtVisitor.visit(base);
     }

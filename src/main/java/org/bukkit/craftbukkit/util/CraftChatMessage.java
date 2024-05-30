@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import net.minecraft.ChatFormatting;
 import net.minecraft.EnumChatFormat;
 import net.minecraft.network.chat.ChatClickable;
 import net.minecraft.network.chat.ChatClickable.EnumClickAction;
@@ -25,21 +27,21 @@ import org.bukkit.ChatColor;
 public final class CraftChatMessage {
 
     private static final Pattern LINK_PATTERN = Pattern.compile("((?:(?:https?):\\/\\/)?(?:[-\\w_\\.]{2,}\\.[a-z]{2,4}.*?(?=[\\.\\?!,;:]?(?:[" + String.valueOf(org.bukkit.ChatColor.COLOR_CHAR) + " \\n]|$))))");
-    private static final Map<Character, EnumChatFormat> formatMap;
+    private static final Map<Character, ChatFormatting> formatMap;
 
     static {
-        Builder<Character, EnumChatFormat> builder = ImmutableMap.builder();
-        for (EnumChatFormat format : EnumChatFormat.values()) {
+        Builder<Character, ChatFormatting> builder = ImmutableMap.builder();
+        for (ChatFormatting format : ChatFormatting.values()) {
             builder.put(Character.toLowerCase(format.toString().charAt(1)), format);
         }
         formatMap = builder.build();
     }
 
-    public static EnumChatFormat getColor(ChatColor color) {
+    public static ChatFormatting getColor(ChatColor color) {
         return formatMap.get(color.getChar());
     }
 
-    public static ChatColor getColor(EnumChatFormat format) {
+    public static ChatColor getColor(ChatFormatting format) {
         return ChatColor.getByChar(format.code);
     }
 
@@ -170,7 +172,7 @@ public final class CraftChatMessage {
         return Optional.ofNullable(fromStringOrNull(message, keepNewlines));
     }
 
-    public static IChatBaseComponent fromStringOrNull(String message) {
+    public static Component fromStringOrNull(String message) {
         return fromStringOrNull(message, false);
     }
 
@@ -186,7 +188,7 @@ public final class CraftChatMessage {
         return fromString(message, keepNewlines)[0];
     }
 
-    public static IChatBaseComponent[] fromString(String message) {
+    public static Component[] fromString(String message) {
         return fromString(message, false);
     }
 
