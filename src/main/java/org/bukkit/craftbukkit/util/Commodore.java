@@ -21,11 +21,11 @@ import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import joptsimple.OptionSpec;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.legacy.FieldRename;
-import org.bukkit.craftbukkit.legacy.MaterialRerouting;
-import org.bukkit.craftbukkit.legacy.reroute.RerouteArgument;
-import org.bukkit.craftbukkit.legacy.reroute.RerouteBuilder;
-import org.bukkit.craftbukkit.legacy.reroute.RerouteMethodData;
+import org.bukkit.craftbukkit.v1_20_R5.legacy.FieldRename;
+import org.bukkit.craftbukkit.v1_20_R5.legacy.MaterialRerouting;
+import org.bukkit.craftbukkit.v1_20_R5.legacy.reroute.RerouteArgument;
+import org.bukkit.craftbukkit.v1_20_R5.legacy.reroute.RerouteBuilder;
+import org.bukkit.craftbukkit.v1_20_R5.legacy.reroute.RerouteMethodData;
 import org.bukkit.plugin.AuthorNagException;
 import org.jetbrains.annotations.VisibleForTesting;
 import org.objectweb.asm.AnnotationVisitor;
@@ -531,7 +531,7 @@ public class Commodore {
 
     For example, if we have following two interfaces org.bukkit.BlockData and org.bukkit.Orientable extents BlockData
     and BlockData has the method org.bukkit.Material getType which we want to reroute to the static method
-    org.bukkit.Material org.bukkit.craftbukkit.legacy.EnumEvil#getType(org.bukkit.BlockData)
+    org.bukkit.Material org.bukkit.craftbukkit.v1_20_R5.legacy.EnumEvil#getType(org.bukkit.BlockData)
 
     If we now call BlockData#getType we get as the owner org/bukkit/BlockData and as desc ()Lorg/bukkit/Material;
     Which we can nicely reroute by checking if the owner is BlockData and the name getType
