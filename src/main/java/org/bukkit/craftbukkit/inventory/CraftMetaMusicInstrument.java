@@ -9,7 +9,7 @@ import net.minecraft.world.item.Instrument;
 import org.bukkit.Material;
 import org.bukkit.MusicInstrument;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
-import org.bukkit.craftbukkit.CraftMusicInstrument;
+import org.bukkit.craftbukkit.v1_20_R5.CraftMusicInstrument;
 import org.bukkit.inventory.meta.MusicInstrumentMeta;
 
 @DelegateDeserialization(SerializableMeta.class)

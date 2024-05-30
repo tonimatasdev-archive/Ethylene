@@ -9,7 +9,7 @@ import net.minecraft.world.entity.animal.EntityCat;
 import net.minecraft.world.item.EnumColor;
 import org.bukkit.DyeColor;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.CraftRegistry;
+import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.util.CraftNamespacedKey;
 import org.bukkit.entity.Cat;

@@ -23,7 +23,7 @@ import org.bukkit.Tag;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.craftbukkit.block.CraftBlockType;
 import org.bukkit.craftbukkit.inventory.SerializableMeta;
-import org.bukkit.craftbukkit.tag.CraftBlockTag;
+import org.bukkit.craftbukkit.v1_20_R5.tag.CraftBlockTag;
 import org.bukkit.inventory.meta.components.ToolComponent;
 
 @SerializableAs("Tool")

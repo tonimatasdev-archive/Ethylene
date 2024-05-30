@@ -2,10 +2,9 @@ package org.bukkit.craftbukkit.entity;
 
 import net.minecraft.core.Vector3f;
 import net.minecraft.world.entity.decoration.EntityArmorStand;
-import org.bukkit.craftbukkit.CraftEquipmentSlot;
+import org.bukkit.craftbukkit.v1_20_R5.CraftEquipmentSlot;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.ArmorStand;
-import org.bukkit.entity.ArmorStand.LockType;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.EulerAngle;

@@ -18,6 +18,7 @@ import net.minecraft.world.entity.EnumMobSpawn;
 import net.minecraft.world.entity.GroupDataEntity;
 import net.minecraft.world.entity.projectile.EntityPotion;
 import net.minecraft.world.level.GeneratorAccessSeed;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.biome.BiomeBase;
 import net.minecraft.world.level.block.BlockChorusFlower;
 import net.minecraft.world.level.block.Blocks;
@@ -41,6 +42,7 @@ import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.util.BlockStateListPopulator;
 import org.bukkit.craftbukkit.util.CraftLocation;
 import org.bukkit.craftbukkit.util.RandomSourceWrapper;
+import org.bukkit.craftbukkit.v1_20_R5.CraftHeightMap;
 import org.bukkit.entity.AbstractArrow;
 import org.bukkit.entity.AbstractHorse;
 import org.bukkit.entity.Arrow;
@@ -63,7 +65,7 @@ import org.bukkit.potion.PotionType;
 
 public abstract class CraftRegionAccessor implements RegionAccessor {
 
-    public abstract GeneratorAccessSeed getHandle();
+    public abstract WorldGenLevel getHandle();
 
     public boolean isNormalWorld() {
         return getHandle() instanceof net.minecraft.server.level.WorldServer;
