@@ -1,6 +1,7 @@
 package org.bukkit.craftbukkit.util;
 
 import net.minecraft.core.BlockPosition;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.MovingObjectPosition;
 import net.minecraft.world.phys.MovingObjectPosition.EnumMovingObjectType;
 import net.minecraft.world.phys.MovingObjectPositionBlock;
@@ -18,7 +19,7 @@ public final class CraftRayTraceResult {
 
     private CraftRayTraceResult() {}
 
-    public static RayTraceResult fromNMS(World world, MovingObjectPosition nmsHitResult) {
+    public static RayTraceResult fromNMS(World world, HitResult nmsHitResult) {
         if (nmsHitResult == null || nmsHitResult.getType() == EnumMovingObjectType.MISS) return null;
 
         Vec3D nmsHitPos = nmsHitResult.getLocation();

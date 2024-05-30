@@ -375,11 +375,11 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
     }
 
     @Override
-    public EntityLiving getHandle() {
-        return (EntityLiving) entity;
+    public net.minecraft.world.entity.LivingEntity getHandle() {
+        return (net.minecraft.world.entity.LivingEntity) entity;
     }
 
-    public void setHandle(final EntityLiving entity) {
+    public void setHandle(final net.minecraft.world.entity.LivingEntity entity) {
         super.setHandle(entity);
     }
 

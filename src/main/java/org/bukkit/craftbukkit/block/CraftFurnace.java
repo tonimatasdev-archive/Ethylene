@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import net.minecraft.resources.MinecraftKey;
 import net.minecraft.world.level.block.BlockFurnace;
+import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
+import net.minecraft.world.level.block.entity.FurnaceBlockEntity;
 import net.minecraft.world.level.block.entity.TileEntityFurnace;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -15,7 +17,7 @@ import org.bukkit.inventory.CookingRecipe;
 import org.bukkit.inventory.FurnaceInventory;
 import org.bukkit.inventory.Recipe;
 
-public abstract class CraftFurnace<T extends TileEntityFurnace> extends CraftContainer<T> implements Furnace {
+public abstract class CraftFurnace<T extends AbstractFurnaceBlockEntity> extends CraftContainer<T> implements Furnace {
 
     public CraftFurnace(World world, T tileEntity) {
         super(world, tileEntity);

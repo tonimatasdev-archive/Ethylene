@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.block;
 
+import net.minecraft.world.level.block.entity.CampfireBlockEntity;
 import net.minecraft.world.level.block.entity.TileEntityCampfire;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -7,9 +8,9 @@ import org.bukkit.block.Campfire;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.inventory.ItemStack;
 
-public class CraftCampfire extends CraftBlockEntityState<TileEntityCampfire> implements Campfire {
+public class CraftCampfire extends CraftBlockEntityState<CampfireBlockEntity> implements Campfire {
 
-    public CraftCampfire(World world, TileEntityCampfire tileEntity) {
+    public CraftCampfire(World world, CampfireBlockEntity tileEntity) {
         super(world, tileEntity);
     }
 

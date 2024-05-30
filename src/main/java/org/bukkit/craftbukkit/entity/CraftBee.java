@@ -10,13 +10,13 @@ import org.bukkit.entity.Bee;
 
 public class CraftBee extends CraftAnimals implements Bee {
 
-    public CraftBee(CraftServer server, EntityBee entity) {
+    public CraftBee(CraftServer server, net.minecraft.world.entity.animal.Bee entity) {
         super(server, entity);
     }
 
     @Override
-    public EntityBee getHandle() {
-        return (EntityBee) entity;
+    public net.minecraft.world.entity.animal.Bee getHandle() {
+        return (net.minecraft.world.entity.animal.Bee) entity;
     }
 
     @Override

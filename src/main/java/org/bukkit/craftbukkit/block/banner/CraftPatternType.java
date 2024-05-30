@@ -2,20 +2,19 @@ package org.bukkit.craftbukkit.block.banner;
 
 import com.google.common.base.Preconditions;
 import net.minecraft.core.Holder;
-import net.minecraft.core.IRegistry;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.level.block.entity.EnumBannerPatternType;
+import net.minecraft.world.level.block.entity.BannerPattern;
 import org.bukkit.Registry;
 import org.bukkit.block.banner.PatternType;
-import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.util.CraftNamespacedKey;
+import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 
 public class CraftPatternType {
 
-    public static PatternType minecraftToBukkit(EnumBannerPatternType minecraft) {
+    public static PatternType minecraftToBukkit(BannerPattern minecraft) {
         Preconditions.checkArgument(minecraft != null);
 
-        IRegistry<EnumBannerPatternType> registry = CraftRegistry.getMinecraftRegistry(Registries.BANNER_PATTERN);
+        net.minecraft.core.Registry<BannerPattern> registry = CraftRegistry.getMinecraftRegistry(Registries.BANNER_PATTERN);
         PatternType bukkit = Registry.BANNER_PATTERN.get(CraftNamespacedKey.fromMinecraft(registry.getResourceKey(minecraft).orElseThrow().location()));
 
         Preconditions.checkArgument(bukkit != null);
@@ -23,23 +22,23 @@ public class CraftPatternType {
         return bukkit;
     }
 
-    public static PatternType minecraftHolderToBukkit(Holder<EnumBannerPatternType> minecraft) {
+    public static PatternType minecraftHolderToBukkit(Holder<BannerPattern> minecraft) {
         return minecraftToBukkit(minecraft.value());
     }
 
-    public static EnumBannerPatternType bukkitToMinecraft(PatternType bukkit) {
+    public static BannerPattern bukkitToMinecraft(PatternType bukkit) {
         Preconditions.checkArgument(bukkit != null);
 
         return CraftRegistry.getMinecraftRegistry(Registries.BANNER_PATTERN)
                 .getOptional(CraftNamespacedKey.toMinecraft(bukkit.getKey())).orElseThrow();
     }
 
-    public static Holder<EnumBannerPatternType> bukkitToMinecraftHolder(PatternType bukkit) {
+    public static Holder<BannerPattern> bukkitToMinecraftHolder(PatternType bukkit) {
         Preconditions.checkArgument(bukkit != null);
 
-        IRegistry<EnumBannerPatternType> registry = CraftRegistry.getMinecraftRegistry(Registries.BANNER_PATTERN);
+        net.minecraft.core.Registry<BannerPattern> registry = CraftRegistry.getMinecraftRegistry(Registries.BANNER_PATTERN);
 
-        if (registry.wrapAsHolder(bukkitToMinecraft(bukkit)) instanceof Holder.c<EnumBannerPatternType> holder) {
+        if (registry.wrapAsHolder(bukkitToMinecraft(bukkit)) instanceof Holder.Direct<BannerPattern> holder) {
             return holder;
         }
 

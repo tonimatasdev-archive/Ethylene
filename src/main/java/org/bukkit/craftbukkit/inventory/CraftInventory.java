@@ -4,6 +4,8 @@ import com.google.common.base.Preconditions;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ListIterator;
+
+import net.minecraft.world.Container;
 import net.minecraft.world.IInventory;
 import net.minecraft.world.entity.player.PlayerInventory;
 import net.minecraft.world.inventory.InventoryCrafting;
@@ -35,7 +37,7 @@ import org.bukkit.inventory.ItemStack;
 public class CraftInventory implements Inventory {
     protected final IInventory inventory;
 
-    public CraftInventory(IInventory inventory) {
+    public CraftInventory(Container inventory) {
         this.inventory = inventory;
     }
 
