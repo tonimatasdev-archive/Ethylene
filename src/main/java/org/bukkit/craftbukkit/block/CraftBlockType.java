@@ -2,10 +2,13 @@ package org.bukkit.craftbukkit.block;
 
 import com.google.common.base.Preconditions;
 import java.util.function.Consumer;
+
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPosition;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.EnumHand;
 import net.minecraft.world.entity.player.EntityHuman;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockAccessAir;
@@ -13,6 +16,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BlockFalling;
 import net.minecraft.world.level.block.BlockFire;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.state.BlockBase;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.MovingObjectPositionBlock;
@@ -68,14 +72,14 @@ public class CraftBlockType<B extends BlockData> implements BlockType.Typed<B>, 
     private static boolean isInteractable(Block block) {
         Class<?> clazz = block.getClass();
 
-        boolean hasMethod = hasMethod(clazz, "useWithoutItem", IBlockData.class, net.minecraft.world.level.World.class, BlockPosition.class, EntityHuman.class, MovingObjectPositionBlock.class)
-                || hasMethod(clazz, "useItemOn", net.minecraft.world.item.ItemStack.class, IBlockData.class, net.minecraft.world.level.World.class, BlockPosition.class, EntityHuman.class, EnumHand.class, MovingObjectPositionBlock.class);
+        boolean hasMethod = hasMethod(clazz, "useWithoutItem", BlockState.class, net.minecraft.world.level.Level.class, BlockPos.class, Player.class, MovingObjectPositionBlock.class)
+                || hasMethod(clazz, "useItemOn", net.minecraft.world.item.ItemStack.class, BlockState.class, net.minecraft.world.level.Level.class, BlockPosition.class, EntityHuman.class, EnumHand.class, MovingObjectPositionBlock.class);
 
-        if (!hasMethod && clazz.getSuperclass() != BlockBase.class) {
+        if (!hasMethod && clazz.getSuperclass() != Block.class) {
             clazz = clazz.getSuperclass();
 
-            hasMethod = hasMethod(clazz, "useWithoutItem", IBlockData.class, net.minecraft.world.level.World.class, BlockPosition.class, EntityHuman.class, MovingObjectPositionBlock.class)
-                    || hasMethod(clazz, "useItemOn", net.minecraft.world.item.ItemStack.class, IBlockData.class, net.minecraft.world.level.World.class, BlockPosition.class, EntityHuman.class, EnumHand.class, MovingObjectPositionBlock.class);
+            hasMethod = hasMethod(clazz, "useWithoutItem", BlockState.class, net.minecraft.world.level.Level.class, BlockPos.class, Player.class, MovingObjectPositionBlock.class)
+                    || hasMethod(clazz, "useItemOn", net.minecraft.world.item.ItemStack.class, BlockState.class, net.minecraft.world.level.Level.class, BlockPosition.class, EntityHuman.class, EnumHand.class, MovingObjectPositionBlock.class);
         }
 
         return hasMethod;
@@ -177,7 +181,7 @@ public class CraftBlockType<B extends BlockData> implements BlockType.Typed<B>, 
 
     @Override
     public boolean isBurnable() {
-        return ((BlockFire) Blocks.FIRE).igniteOdds.getOrDefault(block, 0) > 0;
+        return ((FireBlock) Blocks.FIRE).igniteOdds.getOrDefault(block, 0) > 0;
     }
 
     @Override

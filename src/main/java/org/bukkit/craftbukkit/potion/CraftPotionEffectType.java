@@ -2,47 +2,47 @@ package org.bukkit.craftbukkit.potion;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.effect.MobEffectList;
+import net.minecraft.world.effect.MobEffect;
 import org.bukkit.Color;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.util.Handleable;
+import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionEffectTypeCategory;
 import org.jetbrains.annotations.NotNull;
 
-public class CraftPotionEffectType extends PotionEffectType implements Handleable<MobEffectList> {
+public class CraftPotionEffectType extends PotionEffectType implements Handleable<MobEffect> {
 
-    public static PotionEffectType minecraftHolderToBukkit(Holder<MobEffectList> minecraft) {
+    public static PotionEffectType minecraftHolderToBukkit(Holder<MobEffect> minecraft) {
         return minecraftToBukkit(minecraft.value());
     }
 
-    public static PotionEffectType minecraftToBukkit(MobEffectList minecraft) {
+    public static PotionEffectType minecraftToBukkit(MobEffect minecraft) {
         return CraftRegistry.minecraftToBukkit(minecraft, Registries.MOB_EFFECT, Registry.EFFECT);
     }
 
-    public static MobEffectList bukkitToMinecraft(PotionEffectType bukkit) {
+    public static MobEffect bukkitToMinecraft(PotionEffectType bukkit) {
         return CraftRegistry.bukkitToMinecraft(bukkit);
     }
 
-    public static Holder<MobEffectList> bukkitToMinecraftHolder(PotionEffectType bukkit) {
+    public static Holder<MobEffect> bukkitToMinecraftHolder(PotionEffectType bukkit) {
         return CraftRegistry.bukkitToMinecraftHolder(bukkit, Registries.MOB_EFFECT);
     }
 
     private final NamespacedKey key;
-    private final MobEffectList handle;
+    private final MobEffect handle;
     private final int id;
 
-    public CraftPotionEffectType(NamespacedKey key, MobEffectList handle) {
+    public CraftPotionEffectType(NamespacedKey key, MobEffect handle) {
         this.key = key;
         this.handle = handle;
         this.id = CraftRegistry.getMinecraftRegistry(Registries.MOB_EFFECT).getId(handle) + 1;
     }
 
     @Override
-    public MobEffectList getHandle() {
+    public MobEffect getHandle() {
         return handle;
     }
 

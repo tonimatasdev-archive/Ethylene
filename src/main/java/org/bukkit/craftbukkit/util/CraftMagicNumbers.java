@@ -27,7 +27,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.DynamicOpsNBT;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagString;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.MinecraftKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.AdvancementDataWorld;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.datafix.DataConverterRegistry;
@@ -82,15 +84,15 @@ public final class CraftMagicNumbers implements UnsafeValues {
 
     private CraftMagicNumbers() {}
 
-    public static IBlockData getBlock(MaterialData material) {
+    public static BlockState getBlock(MaterialData material) {
         return getBlock(material.getItemType(), material.getData());
     }
 
-    public static IBlockData getBlock(Material material, byte data) {
+    public static BlockState getBlock(Material material, byte data) {
         return CraftLegacy.fromLegacyData(CraftLegacy.toLegacy(material), data);
     }
 
-    public static MaterialData getMaterial(IBlockData data) {
+    public static MaterialData getMaterial(BlockState data) {
         return CraftLegacy.toLegacy(getMaterial(data.getBlock())).getNewData(toLegacyData(data));
     }
 
@@ -126,7 +128,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
                 continue;
             }
 
-            MinecraftKey key = key(material);
+            ResourceLocation key = key(material);
             BuiltInRegistries.ITEM.getOptional(key).ifPresent((item) -> {
                 MATERIAL_ITEM.put(material, item);
             });
@@ -160,12 +162,12 @@ public final class CraftMagicNumbers implements UnsafeValues {
         return MATERIAL_BLOCK.get(material);
     }
 
-    public static MinecraftKey key(Material mat) {
+    public static ResourceLocation key(Material mat) {
         return CraftNamespacedKey.toMinecraft(mat.getKey());
     }
     // ========================================================================
 
-    public static byte toLegacyData(IBlockData data) {
+    public static byte toLegacyData(BlockState data) {
         return CraftLegacy.toLegacyData(data);
     }
 
@@ -204,8 +206,8 @@ public final class CraftMagicNumbers implements UnsafeValues {
             return Material.getMaterial(material);
         }
 
-        Dynamic<NBTBase> name = new Dynamic<>(DynamicOpsNBT.INSTANCE, NBTTagString.valueOf("minecraft:" + material.toLowerCase(Locale.ROOT)));
-        Dynamic<NBTBase> converted = DataConverterRegistry.getDataFixer().update(DataConverterTypes.ITEM_NAME, name, version, this.getDataVersion());
+        Dynamic<Tag> name = new Dynamic<>(DynamicOpsNBT.INSTANCE, NBTTagString.valueOf("minecraft:" + material.toLowerCase(Locale.ROOT)));
+        Dynamic<Tag> converted = DataConverterRegistry.getDataFixer().update(DataConverterTypes.ITEM_NAME, name, version, this.getDataVersion());
 
         if (name.equals(converted)) {
             converted = DataConverterRegistry.getDataFixer().update(DataConverterTypes.BLOCK_NAME, name, version, this.getDataVersion());

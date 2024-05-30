@@ -20,6 +20,7 @@ import net.minecraft.world.entity.projectile.EntityThrownExpBottle;
 import net.minecraft.world.entity.projectile.EntityTippedArrow;
 import net.minecraft.world.entity.projectile.IProjectile;
 import net.minecraft.world.level.block.BlockDispenser;
+import net.minecraft.world.level.block.entity.DispenserBlockEntity;
 import net.minecraft.world.level.block.entity.TileEntityDispenser;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -44,9 +45,9 @@ import org.bukkit.projectiles.BlockProjectileSource;
 import org.bukkit.util.Vector;
 
 public class CraftBlockProjectileSource implements BlockProjectileSource {
-    private final TileEntityDispenser dispenserBlock;
+    private final DispenserBlockEntity dispenserBlock;
 
-    public CraftBlockProjectileSource(TileEntityDispenser dispenserBlock) {
+    public CraftBlockProjectileSource(DispenserBlockEntity dispenserBlock) {
         this.dispenserBlock = dispenserBlock;
     }
 
