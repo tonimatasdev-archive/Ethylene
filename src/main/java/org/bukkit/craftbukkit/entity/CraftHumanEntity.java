@@ -28,7 +28,7 @@ import net.minecraft.world.item.trading.IMerchant;
 import net.minecraft.world.level.block.BlockBed;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.TileEntity;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;

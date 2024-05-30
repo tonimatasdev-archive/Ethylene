@@ -1,11 +1,10 @@
 package org.bukkit.craftbukkit.entity.memory;
 
-import net.minecraft.core.IRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.util.CraftNamespacedKey;
+import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.entity.memory.MemoryKey;
 
 public final class CraftMemoryKey {
@@ -17,7 +16,7 @@ public final class CraftMemoryKey {
             return null;
         }
 
-        IRegistry<MemoryModuleType<?>> registry = CraftRegistry.getMinecraftRegistry(Registries.MEMORY_MODULE_TYPE);
+        net.minecraft.core.Registry<MemoryModuleType<?>> registry = CraftRegistry.getMinecraftRegistry(Registries.MEMORY_MODULE_TYPE);
         MemoryKey<U> bukkit = Registry.MEMORY_MODULE_TYPE.get(CraftNamespacedKey.fromMinecraft(registry.getResourceKey(minecraft).orElseThrow().location()));
 
         return bukkit;

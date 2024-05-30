@@ -107,7 +107,7 @@ import net.minecraft.world.level.EnumGamemode;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.SignText;
 import net.minecraft.world.level.block.entity.TileEntitySign;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.border.IWorldBorderListener;
 import net.minecraft.world.level.saveddata.maps.MapIcon;
 import net.minecraft.world.level.saveddata.maps.MapId;

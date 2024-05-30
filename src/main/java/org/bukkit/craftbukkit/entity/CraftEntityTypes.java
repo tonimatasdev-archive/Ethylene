@@ -39,7 +39,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.GeneratorAccessSeed;
 import net.minecraft.world.level.World;
 import net.minecraft.world.level.block.BlockDiodeAbstract;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AxisAlignedBB;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

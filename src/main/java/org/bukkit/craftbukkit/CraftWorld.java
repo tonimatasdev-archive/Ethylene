@@ -610,10 +610,10 @@ public class CraftWorld extends CraftRegionAccessor implements World {
         if (grownTree) { // Copy block data to delegate
             for (BlockState blockstate : world.capturedBlockStates.values()) {
                 BlockPosition position = ((CraftBlockState) blockstate).getPosition();
-                net.minecraft.world.level.block.state.IBlockData oldBlock = world.getBlockState(position);
+                net.minecraft.world.level.block.state.BlockState oldBlock = world.getBlockState(position);
                 int flag = ((CraftBlockState) blockstate).getFlag();
                 delegate.setBlockData(blockstate.getX(), blockstate.getY(), blockstate.getZ(), blockstate.getBlockData());
-                net.minecraft.world.level.block.state.IBlockData newBlock = world.getBlockState(position);
+                net.minecraft.world.level.block.state.BlockState newBlock = world.getBlockState(position);
                 world.notifyAndUpdatePhysics(position, null, oldBlock, newBlock, newBlock, flag, 512);
             }
             world.capturedBlockStates.clear();

@@ -63,7 +63,7 @@ import net.minecraft.world.level.block.entity.TileEntityStructure;
 import net.minecraft.world.level.block.entity.TrialSpawnerBlockEntity;
 import net.minecraft.world.level.block.entity.vault.VaultBlockEntity;
 import net.minecraft.world.level.block.piston.TileEntityPiston;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
@@ -419,7 +419,7 @@ public final class CraftBlockStates {
     }
 
     @Deprecated
-    public static BlockState getBlockState(IBlockData blockData, @Nullable NBTTagCompound blockEntityTag) {
+    public static org.bukkit.block.BlockState getBlockState(net.minecraft.world.level.block.state.BlockState blockData, @Nullable CompoundTag blockEntityTag) {
         return getBlockState(MinecraftServer.getDefaultRegistryAccess(), BlockPosition.ZERO, blockData, blockEntityTag);
     }
 

@@ -10,7 +10,7 @@ import net.minecraft.world.entity.npc.EntityVillager;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.level.block.BlockBed;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import org.bukkit.Location;
 import org.bukkit.Registry;
 import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;

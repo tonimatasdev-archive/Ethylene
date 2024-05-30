@@ -65,7 +65,7 @@ import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.GeneratorAccess;
 import net.minecraft.world.level.World;
 import net.minecraft.world.level.block.entity.TileEntitySign;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockPropertyInstrument;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTableInfo;

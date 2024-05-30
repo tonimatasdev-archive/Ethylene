@@ -13,7 +13,7 @@ import net.minecraft.server.level.WorldServer;
 import net.minecraft.world.level.GeneratorAccess;
 import net.minecraft.world.level.block.ITileEntity;
 import net.minecraft.world.level.block.entity.TileEntity;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.dimension.DimensionManager;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.storage.WorldData;

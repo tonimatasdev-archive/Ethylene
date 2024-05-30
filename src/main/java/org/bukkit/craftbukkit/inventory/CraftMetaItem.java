@@ -70,7 +70,7 @@ import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.item.component.Unbreakable;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;

@@ -1,7 +1,7 @@
 package org.bukkit.craftbukkit.block;
 
 import net.minecraft.world.level.block.entity.TileEntityEnderChest;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.EnderChest;

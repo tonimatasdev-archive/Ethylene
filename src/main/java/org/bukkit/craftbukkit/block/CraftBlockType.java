@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.BlockFalling;
 import net.minecraft.world.level.block.BlockFire;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBase;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.MovingObjectPositionBlock;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
