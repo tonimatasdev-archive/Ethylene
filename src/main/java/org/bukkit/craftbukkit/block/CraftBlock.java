@@ -6,7 +6,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPosition;
+import net.minecraft.core.Direction;
 import net.minecraft.core.EnumDirection;
 import net.minecraft.server.level.WorldServer;
 import net.minecraft.world.EnumHand;
@@ -20,7 +23,7 @@ import net.minecraft.world.level.RayTrace;
 import net.minecraft.world.level.block.BlockRedstoneWire;
 import net.minecraft.world.level.block.BlockSapling;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.IBlockData;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AxisAlignedBB;
 import net.minecraft.world.phys.MovingObjectPosition;
 import net.minecraft.world.phys.MovingObjectPositionBlock;
@@ -75,11 +78,11 @@ public class CraftBlock implements Block {
         return new CraftBlock(world, position);
     }
 
-    public net.minecraft.world.level.block.state.IBlockData getNMS() {
+    public net.minecraft.world.level.block.state.BlockState getNMS() {
         return world.getBlockState(position);
     }
 
-    public BlockPosition getPosition() {
+    public BlockPos getPosition() {
         return position;
     }
 
@@ -280,7 +283,7 @@ public class CraftBlock implements Block {
         return "CraftBlock{pos=" + position + ",type=" + getType() + ",data=" + getNMS() + ",fluid=" + world.getFluidState(position) + '}';
     }
 
-    public static BlockFace notchToBlockFace(EnumDirection notch) {
+    public static BlockFace notchToBlockFace(Direction notch) {
         if (notch == null) {
             return BlockFace.SELF;
         }
@@ -302,23 +305,23 @@ public class CraftBlock implements Block {
         }
     }
 
-    public static EnumDirection blockFaceToNotch(BlockFace face) {
+    public static Direction blockFaceToNotch(BlockFace face) {
         if (face == null) {
             return null;
         }
         switch (face) {
             case DOWN:
-                return EnumDirection.DOWN;
+                return Direction.DOWN;
             case UP:
-                return EnumDirection.UP;
+                return Direction.UP;
             case NORTH:
-                return EnumDirection.NORTH;
+                return Direction.NORTH;
             case SOUTH:
-                return EnumDirection.SOUTH;
+                return Direction.SOUTH;
             case WEST:
-                return EnumDirection.WEST;
+                return Direction.WEST;
             case EAST:
-                return EnumDirection.EAST;
+                return Direction.EAST;
             default:
                 return null;
         }
@@ -447,7 +450,7 @@ public class CraftBlock implements Block {
     @Override
     public boolean breakNaturally(ItemStack item) {
         // Order matters here, need to drop before setting to air so skulls can get their data
-        net.minecraft.world.level.block.state.IBlockData iblockdata = this.getNMS();
+        net.minecraft.world.level.block.state.BlockState iblockdata = this.getNMS();
         net.minecraft.world.level.block.Block block = iblockdata.getBlock();
         net.minecraft.world.item.ItemStack nmsItem = CraftItemStack.asNMSCopy(item);
         boolean result = false;
@@ -606,7 +609,7 @@ public class CraftBlock implements Block {
     @Override
     public boolean canPlace(BlockData data) {
         Preconditions.checkArgument(data != null, "BlockData cannot be null");
-        net.minecraft.world.level.block.state.IBlockData iblockdata = ((CraftBlockData) data).getState();
+        net.minecraft.world.level.block.state.BlockState iblockdata = ((CraftBlockData) data).getState();
         net.minecraft.world.level.World world = this.world.getMinecraftWorld();
 
         return iblockdata.canSurvive(world, this.position);
