@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.TileEntityBeacon;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Beacon;
-import org.bukkit.craftbukkit.potion.CraftPotionEffectType;
+import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionEffectType;
 import org.bukkit.craftbukkit.util.CraftChatMessage;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.potion.PotionEffect;

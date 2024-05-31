@@ -1,8 +1,7 @@
-package org.bukkit.craftbukkit.potion;
+package org.bukkit.craftbukkit.v1_20_R5.potion;
 
 import com.google.common.base.Preconditions;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffectInfo;
 import org.bukkit.potion.PotionEffectTypeCategory;
 
 public final class CraftPotionEffectTypeCategory {

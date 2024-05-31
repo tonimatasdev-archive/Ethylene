@@ -30,7 +30,7 @@ import org.bukkit.craftbukkit.v1_20_R5.entity.memory.CraftMemoryKey;
 import org.bukkit.craftbukkit.v1_20_R5.entity.memory.CraftMemoryMapper;
 import org.bukkit.craftbukkit.inventory.CraftEntityEquipment;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
-import org.bukkit.craftbukkit.potion.CraftPotionEffectType;
+import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionEffectType;
 import org.bukkit.craftbukkit.v1_20_R5.CraftSound;
 import org.bukkit.entity.AbstractArrow;
 import org.bukkit.entity.Arrow;

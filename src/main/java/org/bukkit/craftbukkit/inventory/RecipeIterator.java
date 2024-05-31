@@ -1,14 +1,14 @@
 package org.bukkit.craftbukkit.inventory;
 
-import java.util.Iterator;
-import java.util.Map;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.Recipes;
 import org.bukkit.inventory.Recipe;
 
+import java.util.Iterator;
+import java.util.Map;
+
 public class RecipeIterator implements Iterator<Recipe> {
-    private final Iterator<Map.Entry<Recipes<?>, RecipeHolder<?>>> recipes;
+    private final Iterator<Map.Entry<net.minecraft.world.item.crafting.Recipe<?>, RecipeHolder<?>>> recipes;
 
     public RecipeIterator() {
         this.recipes = MinecraftServer.getServer().getRecipeManager().byType.entries().iterator();
