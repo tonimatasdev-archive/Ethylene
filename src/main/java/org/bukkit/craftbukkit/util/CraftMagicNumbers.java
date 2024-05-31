@@ -58,7 +58,7 @@ import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.attribute.CraftAttribute;
 import org.bukkit.craftbukkit.v1_20_R5.attribute.CraftAttributeInstance;
-import org.bukkit.craftbukkit.block.data.CraftBlockData;
+import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
 import org.bukkit.craftbukkit.damage.CraftDamageEffect;
 import org.bukkit.craftbukkit.damage.CraftDamageSourceBuilder;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;

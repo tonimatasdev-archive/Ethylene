@@ -4,7 +4,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.block.CraftBlockType;
+import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlockType;
 
 import java.util.Set;
 import java.util.stream.Collectors;

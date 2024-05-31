@@ -23,7 +23,7 @@ import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.CraftWorld;
 import org.bukkit.craftbukkit.v1_20_R5.attribute.CraftAttribute;
 import org.bukkit.craftbukkit.v1_20_R5.attribute.CraftAttributeInstance;
-import org.bukkit.craftbukkit.block.CraftBlockType;
+import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlockType;
 import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 import org.bukkit.craftbukkit.util.Handleable;
 import org.bukkit.inventory.CreativeCategory;

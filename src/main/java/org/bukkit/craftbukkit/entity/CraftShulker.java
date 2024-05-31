@@ -5,7 +5,7 @@ import net.minecraft.world.entity.monster.EntityShulker;
 import org.bukkit.DyeColor;
 import org.bukkit.block.BlockFace;
 import org.bukkit.craftbukkit.CraftServer;
-import org.bukkit.craftbukkit.block.CraftBlock;
+import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlock;
 import org.bukkit.entity.Shulker;
 
 public class CraftShulker extends CraftGolem implements Shulker, CraftEnemy {

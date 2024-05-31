@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.v1_20_R5.structure;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import org.bukkit.block.BlockState;
-import org.bukkit.craftbukkit.block.CraftBlockStates;
+import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlockStates;
 import org.bukkit.structure.Palette;
 
 import java.util.ArrayList;
