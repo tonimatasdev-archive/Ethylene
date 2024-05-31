@@ -10,8 +10,8 @@ import java.util.UUID;
 import net.minecraft.SystemUtils;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.nbt.DynamicOpsNBT;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.MinecraftKey;
 import net.minecraft.world.item.component.ResolvableProfile;
 import org.bukkit.Bukkit;
@@ -101,24 +101,24 @@ class CraftMetaSkull extends CraftMetaItem implements SkullMeta {
     }
 
     @Override
-    void deserializeInternal(NBTTagCompound tag, Object context) {
+    void deserializeInternal(CompoundTag tag, Object context) {
         super.deserializeInternal(tag, context);
 
         if (tag.contains(SKULL_PROFILE.NBT, CraftMagicNumbers.NBT.TAG_COMPOUND)) {
-            NBTTagCompound skullTag = tag.getCompound(SKULL_PROFILE.NBT);
+            CompoundTag skullTag = tag.getCompound(SKULL_PROFILE.NBT);
             // convert type of stored Id from String to UUID for backwards compatibility
             if (skullTag.contains("Id", CraftMagicNumbers.NBT.TAG_STRING)) {
                 UUID uuid = UUID.fromString(skullTag.getString("Id"));
                 skullTag.putUUID("Id", uuid);
             }
 
-            this.setProfile(ResolvableProfile.CODEC.parse(DynamicOpsNBT.INSTANCE, skullTag).result().get().gameProfile());
+            this.setProfile(ResolvableProfile.CODEC.parse(NbtOps.INSTANCE, skullTag).result().get().gameProfile());
         }
 
         if (tag.contains(BLOCK_ENTITY_TAG.NBT, CraftMagicNumbers.NBT.TAG_COMPOUND)) {
-            NBTTagCompound nbtTagCompound = tag.getCompound(BLOCK_ENTITY_TAG.NBT).copy();
-            if (nbtTagCompound.contains(NOTE_BLOCK_SOUND.NBT, 8)) {
-                this.noteBlockSound = MinecraftKey.tryParse(nbtTagCompound.getString(NOTE_BLOCK_SOUND.NBT));
+            CompoundTag CompoundTag = tag.getCompound(BLOCK_ENTITY_TAG.NBT).copy();
+            if (CompoundTag.contains(NOTE_BLOCK_SOUND.NBT, 8)) {
+                this.noteBlockSound = MinecraftKey.tryParse(CompoundTag.getString(NOTE_BLOCK_SOUND.NBT));
             }
         }
     }

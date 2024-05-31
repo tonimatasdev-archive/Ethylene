@@ -24,9 +24,9 @@ import net.minecraft.commands.CommandDispatcher;
 import net.minecraft.commands.arguments.item.ArgumentParserItemStack;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.nbt.DynamicOpsNBT;
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagString;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.MinecraftKey;
 import net.minecraft.resources.ResourceLocation;
@@ -206,7 +206,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
             return Material.getMaterial(material);
         }
 
-        Dynamic<Tag> name = new Dynamic<>(DynamicOpsNBT.INSTANCE, NBTTagString.valueOf("minecraft:" + material.toLowerCase(Locale.ROOT)));
+        Dynamic<Tag> name = new Dynamic<>(NbtOps.INSTANCE, CompoundTag.valueOf("minecraft:" + material.toLowerCase(Locale.ROOT)));
         Dynamic<Tag> converted = DataConverterRegistry.getDataFixer().update(DataConverterTypes.ITEM_NAME, name, version, this.getDataVersion());
 
         if (name.equals(converted)) {
@@ -424,7 +424,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
     /**
      * This helper class represents the different NBT Tags.
      * <p>
-     * These should match NBTBase#getTypeId
+     * These should match Tag#getTypeId
      */
     public static class NBT {
 

@@ -35,13 +35,13 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 public class CraftInventory implements Inventory {
-    protected final IInventory inventory;
+    protected final Container inventory;
 
     public CraftInventory(Container inventory) {
         this.inventory = inventory;
     }
 
-    public IInventory getInventory() {
+    public Container getInventory() {
         return inventory;
     }
 

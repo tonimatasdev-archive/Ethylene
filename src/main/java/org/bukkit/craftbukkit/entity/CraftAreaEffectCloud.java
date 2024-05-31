@@ -11,7 +11,7 @@ import net.minecraft.world.entity.EntityLiving;
 import net.minecraft.world.item.alchemy.PotionContents;
 import org.bukkit.Color;
 import org.bukkit.Particle;
-import org.bukkit.craftbukkit.CraftParticle;
+import org.bukkit.craftbukkit.v1_20_R5.CraftParticle;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.potion.CraftPotionEffectType;
 import org.bukkit.craftbukkit.potion.CraftPotionType;

@@ -46,9 +46,9 @@ public class CraftMetaCrossbow extends CraftMetaItem implements CrossbowMeta {
                 chargedProjectiles = new ArrayList<>();
 
                 for (int i = 0; i < list.size(); i++) {
-                    net.minecraft.world.item.ItemStack nbttagcompound1 = list.get(i);
+                    net.minecraft.world.item.ItemStack CompoundTag1 = list.get(i);
 
-                    chargedProjectiles.add(CraftItemStack.asCraftMirror(nbttagcompound1));
+                    chargedProjectiles.add(CraftItemStack.asCraftMirror(CompoundTag1));
                 }
             }
         });
