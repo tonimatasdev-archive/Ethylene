@@ -102,7 +102,7 @@ import org.bukkit.craftbukkit.v1_20_R5.entity.CraftSpellcaster;
 import org.bukkit.craftbukkit.inventory.CraftInventoryCrafting;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.inventory.CraftItemType;
-import org.bukkit.craftbukkit.potion.CraftPotionUtil;
+import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionUtil;
 import org.bukkit.craftbukkit.util.CraftNamespacedKey;
 import org.bukkit.craftbukkit.util.CraftVector;
 import org.bukkit.entity.AbstractHorse;

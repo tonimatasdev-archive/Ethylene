@@ -1,4 +1,4 @@
-package org.bukkit.craftbukkit.potion;
+package org.bukkit.craftbukkit.v1_20_R5.potion;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;

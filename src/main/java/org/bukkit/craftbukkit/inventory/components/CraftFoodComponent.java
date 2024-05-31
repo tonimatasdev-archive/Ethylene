@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import net.minecraft.world.food.FoodInfo;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.craftbukkit.inventory.SerializableMeta;
-import org.bukkit.craftbukkit.potion.CraftPotionUtil;
+import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionUtil;
 import org.bukkit.inventory.meta.components.FoodComponent;
 import org.bukkit.potion.PotionEffect;
 
