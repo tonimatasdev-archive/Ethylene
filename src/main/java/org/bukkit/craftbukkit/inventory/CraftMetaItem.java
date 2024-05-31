@@ -47,12 +47,12 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.component.TypedDataComponent;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.nbt.DynamicOpsNBT;
-import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NbtOps;
+import net.minecraft.nbt.Tag;
 import net.minecraft.nbt.NBTCompressedStreamTools;
 import net.minecraft.nbt.NBTReadLimiter;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.SnbtPrinterTagVisitor;
 import net.minecraft.network.chat.IChatBaseComponent;
 import net.minecraft.server.MinecraftServer;
@@ -110,7 +110,7 @@ import org.bukkit.persistence.PersistentDataContainer;
  * Children must include the following:
  *
  * <li> Constructor(CraftMetaItem meta)
- * <li> Constructor(NBTTagCompound tag)
+ * <li> Constructor(CompoundTag tag)
  * <li> Constructor(Map&lt;String, Object&gt; map)
  * <br><br>
  * <li> void applyToItem(CraftMetaItem.Applicator tag)
@@ -261,7 +261,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
     private static final Set<DataComponentType> HANDLED_TAGS = Sets.newHashSet();
     private static final CraftPersistentDataTypeRegistry DATA_TYPE_REGISTRY = new CraftPersistentDataTypeRegistry();
 
-    private NBTTagCompound customTag;
+    private CompoundTag customTag;
     protected DataComponentPatch.a unhandledTags = DataComponentPatch.builder();
     private CraftPersistentDataContainer persistentDataContainer = new CraftPersistentDataContainer(DATA_TYPE_REGISTRY);
 
@@ -394,7 +394,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         getOrEmpty(tag, CUSTOM_DATA).ifPresent((customData) -> {
             customTag = customData.copyTag();
             if (customTag.contains(BUKKIT_CUSTOM_TAG.NBT)) {
-                NBTTagCompound compound = customTag.getCompound(BUKKIT_CUSTOM_TAG.NBT);
+                CompoundTag compound = customTag.getCompound(BUKKIT_CUSTOM_TAG.NBT);
                 Set<String> keys = compound.getAllKeys();
                 for (String key : keys) {
                     persistentDataContainer.put(key, compound.get(key).copy());
@@ -499,7 +499,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         if (blockData != null) {
             Map<String, String> mapBlockData = new HashMap<>();
 
-            NBTTagCompound nbtBlockData = (NBTTagCompound) CraftNBTTagConfigSerializer.deserialize(blockData);
+            CompoundTag nbtBlockData = (CompoundTag) CraftNBTTagConfigSerializer.deserialize(blockData);
             for (String key : nbtBlockData.getAllKeys()) {
                 mapBlockData.put(key, nbtBlockData.getString(key));
             }
@@ -582,7 +582,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         if (internal != null) {
             ByteArrayInputStream buf = new ByteArrayInputStream(Base64.getDecoder().decode(internal));
             try {
-                NBTTagCompound internalTag = NBTCompressedStreamTools.readCompressed(buf, NBTReadLimiter.unlimitedHeap());
+                CompoundTag internalTag = NBTCompressedStreamTools.readCompressed(buf, NBTReadLimiter.unlimitedHeap());
                 deserializeInternal(internalTag, map);
             } catch (IOException ex) {
                 Logger.getLogger(CraftMetaItem.class.getName()).log(Level.SEVERE, null, ex);
@@ -593,8 +593,8 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         if (unhandled != null) {
             ByteArrayInputStream buf = new ByteArrayInputStream(Base64.getDecoder().decode(internal));
             try {
-                NBTTagCompound unhandledTag = NBTCompressedStreamTools.readCompressed(buf, NBTReadLimiter.unlimitedHeap());
-                unhandledTags.copy(DataComponentPatch.CODEC.parse(MinecraftServer.getDefaultRegistryAccess().createSerializationContext(DynamicOpsNBT.INSTANCE), unhandledTag).result().get());
+                CompoundTag unhandledTag = NBTCompressedStreamTools.readCompressed(buf, NBTReadLimiter.unlimitedHeap());
+                unhandledTags.copy(DataComponentPatch.CODEC.parse(MinecraftServer.getDefaultRegistryAccess().createSerializationContext(NbtOps.INSTANCE), unhandledTag).result().get());
             } catch (IOException ex) {
                 Logger.getLogger(CraftMetaItem.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -602,7 +602,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
 
         Object nbtMap = SerializableMeta.getObject(Object.class, map, BUKKIT_CUSTOM_TAG.BUKKIT, true); // We read both legacy maps and potential modern snbt strings here
         if (nbtMap != null) {
-            this.persistentDataContainer.putAll((NBTTagCompound) CraftNBTTagConfigSerializer.deserialize(nbtMap));
+            this.persistentDataContainer.putAll((CompoundTag) CraftNBTTagConfigSerializer.deserialize(nbtMap));
         }
 
         String custom = SerializableMeta.getString(map, "custom", true);
@@ -616,25 +616,25 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         }
     }
 
-    void deserializeInternal(NBTTagCompound tag, Object context) {
+    void deserializeInternal(CompoundTag tag, Object context) {
         // SPIGOT-4576: Need to migrate from internal to proper data
         if (tag.contains(ATTRIBUTES.NBT, CraftMagicNumbers.NBT.TAG_LIST)) {
             this.attributeModifiers = buildModifiersLegacy(tag, ATTRIBUTES);
         }
     }
 
-    private static Multimap<Attribute, AttributeModifier> buildModifiersLegacy(NBTTagCompound tag, ItemMetaKey key) {
+    private static Multimap<Attribute, AttributeModifier> buildModifiersLegacy(CompoundTag tag, ItemMetaKey key) {
         Multimap<Attribute, AttributeModifier> modifiers = LinkedHashMultimap.create();
         if (!tag.contains(key.NBT, CraftMagicNumbers.NBT.TAG_LIST)) {
             return modifiers;
         }
-        NBTTagList mods = tag.getList(key.NBT, CraftMagicNumbers.NBT.TAG_COMPOUND);
+        ListTag mods = tag.getList(key.NBT, CraftMagicNumbers.NBT.TAG_COMPOUND);
         int size = mods.size();
 
         for (int i = 0; i < size; i++) {
-            NBTTagCompound entry = mods.getCompound(i);
+            CompoundTag entry = mods.getCompound(i);
             if (entry.isEmpty()) {
-                // entry is not an actual NBTTagCompound. getCompound returns empty NBTTagCompound in that case
+                // entry is not an actual CompoundTag. getCompound returns empty CompoundTag in that case
                 continue;
             }
             net.minecraft.world.entity.ai.attributes.AttributeModifier nmsModifier = net.minecraft.world.entity.ai.attributes.AttributeModifier.load(entry);
@@ -814,17 +814,17 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
             });
         }
 
-        NBTTagCompound customTag = (this.customTag != null) ? this.customTag.copy() : null;
+        CompoundTag customTag = (this.customTag != null) ? this.customTag.copy() : null;
         if (!persistentDataContainer.isEmpty()) {
-            NBTTagCompound bukkitCustomCompound = new NBTTagCompound();
-            Map<String, NBTBase> rawPublicMap = persistentDataContainer.getRaw();
+            CompoundTag bukkitCustomCompound = new CompoundTag();
+            Map<String, Tag> rawPublicMap = persistentDataContainer.getRaw();
 
-            for (Map.Entry<String, NBTBase> nbtBaseEntry : rawPublicMap.entrySet()) {
-                bukkitCustomCompound.put(nbtBaseEntry.getKey(), nbtBaseEntry.getValue());
+            for (Map.Entry<String, Tag> TagEntry : rawPublicMap.entrySet()) {
+                bukkitCustomCompound.put(TagEntry.getKey(), TagEntry.getValue());
             }
 
             if (customTag == null) {
-                customTag = new NBTTagCompound();
+                customTag = new CompoundTag();
             }
             customTag.put(BUKKIT_CUSTOM_TAG.BUKKIT, bukkitCustomCompound);
         }
@@ -1331,7 +1331,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         CraftMetaItem.Applicator tag = new CraftMetaItem.Applicator();
         applyToItem(tag);
         DataComponentPatch patch = tag.build();
-        NBTBase nbt = DataComponentPatch.CODEC.encodeStart(MinecraftServer.getDefaultRegistryAccess().createSerializationContext(DynamicOpsNBT.INSTANCE), patch).getOrThrow();
+        Tag nbt = DataComponentPatch.CODEC.encodeStart(MinecraftServer.getDefaultRegistryAccess().createSerializationContext(NbtOps.INSTANCE), patch).getOrThrow();
         return nbt.toString();
     }
 
@@ -1342,7 +1342,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         DataComponentPatch patch = tag.build();
 
         IRegistryCustom registryAccess = CraftRegistry.getMinecraftRegistry();
-        DynamicOps<NBTBase> ops = registryAccess.createSerializationContext(DynamicOpsNBT.INSTANCE);
+        DynamicOps<Tag> ops = registryAccess.createSerializationContext(NbtOps.INSTANCE);
         IRegistry<DataComponentType<?>> componentTypeRegistry = registryAccess.registryOrThrow(Registries.DATA_COMPONENT_TYPE);
 
         StringJoiner componentString = new StringJoiner(",", "[", "]");
@@ -1352,7 +1352,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
             String componentKey = componentTypeRegistry.getResourceKey(componentType).orElseThrow().location().toString();
 
             if (componentValue.isPresent()) {
-                NBTBase componentValueAsNBT = (NBTBase) ((DataComponentType) componentType).codecOrThrow().encodeStart(ops, componentValue.get()).getOrThrow();
+                Tag componentValueAsNBT = (Tag) ((DataComponentType) componentType).codecOrThrow().encodeStart(ops, componentValue.get()).getOrThrow();
                 String componentValueAsNBTString = new SnbtPrinterTagVisitor("", 0, new ArrayList<>()).visit(componentValueAsNBT);
                 componentString.add(componentKey + "=" + componentValueAsNBTString);
             } else {
@@ -1644,11 +1644,11 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
             builder.put(MAX_DAMAGE.BUKKIT, maxDamage);
         }
 
-        final Map<String, NBTBase> internalTags = new HashMap<String, NBTBase>();
+        final Map<String, Tag> internalTags = new HashMap<String, Tag>();
         serializeInternal(internalTags);
         if (!internalTags.isEmpty()) {
-            NBTTagCompound internal = new NBTTagCompound();
-            for (Map.Entry<String, NBTBase> e : internalTags.entrySet()) {
+            CompoundTag internal = new CompoundTag();
+            for (Map.Entry<String, Tag> e : internalTags.entrySet()) {
                 internal.put(e.getKey(), e.getValue());
             }
             try {
@@ -1661,10 +1661,10 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         }
 
         if (!unhandledTags.isEmpty()) {
-            NBTBase unhandled = DataComponentPatch.CODEC.encodeStart(MinecraftServer.getDefaultRegistryAccess().createSerializationContext(DynamicOpsNBT.INSTANCE), unhandledTags.build()).getOrThrow(IllegalStateException::new);
+            Tag unhandled = DataComponentPatch.CODEC.encodeStart(MinecraftServer.getDefaultRegistryAccess().createSerializationContext(NbtOps.INSTANCE), unhandledTags.build()).getOrThrow(IllegalStateException::new);
             try {
                 ByteArrayOutputStream buf = new ByteArrayOutputStream();
-                NBTCompressedStreamTools.writeCompressed((NBTTagCompound) unhandled, buf);
+                NBTCompressedStreamTools.writeCompressed((CompoundTag) unhandled, buf);
                 builder.put("unhandled", Base64.getEncoder().encodeToString(buf.toByteArray()));
             } catch (IOException ex) {
                 Logger.getLogger(CraftMetaItem.class.getName()).log(Level.SEVERE, null, ex);
@@ -1688,7 +1688,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         return builder;
     }
 
-    void serializeInternal(final Map<String, NBTBase> unhandledTags) {
+    void serializeInternal(final Map<String, Tag> unhandledTags) {
     }
 
     Material updateMaterial(Material material) {

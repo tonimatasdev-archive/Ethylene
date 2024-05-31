@@ -5,7 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.level.ChunkCoordIntPair;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Rotation;
@@ -18,7 +18,7 @@ import org.bukkit.RegionAccessor;
 import org.bukkit.World;
 import org.bukkit.block.structure.Mirror;
 import org.bukkit.block.structure.StructureRotation;
-import org.bukkit.craftbukkit.CraftRegionAccessor;
+import org.bukkit.craftbukkit.v1_20_R5.CraftRegionAccessor;
 import org.bukkit.craftbukkit.CraftWorld;
 import org.bukkit.craftbukkit.util.*;
 import org.bukkit.entity.Entity;
@@ -87,7 +87,7 @@ public class CraftStructure implements Structure {
 
         TransformerGeneratorAccess access = new TransformerGeneratorAccess();
         access.setHandle(handle);
-        access.setStructureTransformer(new CraftStructureTransformer(handle, new ChunkCoordIntPair(blockPosition), blockTransformers, entityTransformers));
+        access.setStructureTransformer(new CraftStructureTransformer(handle, new ChunkPos(blockPosition), blockTransformers, entityTransformers));
 
         structure.placeInWorld(access, blockPosition, blockPosition, definedstructureinfo, randomSource, 2);
         access.getStructureTransformer().discard();

@@ -14,11 +14,14 @@ import net.minecraft.sounds.SoundEffect;
 import net.minecraft.world.EnumHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityInsentient;
 import net.minecraft.world.entity.EntityLiving;
 import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.GenericAttributes;
 import net.minecraft.world.entity.boss.wither.EntityWither;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.decoration.EntityArmorStand;
 import net.minecraft.world.entity.player.EntityHuman;
 import net.minecraft.world.entity.projectile.EntityArrow;
@@ -97,10 +100,10 @@ import org.bukkit.util.Vector;
 public class CraftLivingEntity extends CraftEntity implements LivingEntity {
     private CraftEntityEquipment equipment;
 
-    public CraftLivingEntity(final CraftServer server, final EntityLiving entity) {
+    public CraftLivingEntity(final CraftServer server, final net.minecraft.world.entity.LivingEntity entity) {
         super(server, entity);
 
-        if (entity instanceof EntityInsentient || entity instanceof EntityArmorStand) {
+        if (entity instanceof Mob || entity instanceof ArmorStand) {
             equipment = new CraftEntityEquipment(this);
         }
     }
@@ -291,7 +294,7 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
     @Override
     public void setArrowsInBody(int count) {
         Preconditions.checkArgument(count >= 0, "New arrow amount must be >= 0");
-        getHandle().getEntityData().set(EntityLiving.DATA_ARROW_COUNT_ID, count);
+        getHandle().getEntityData().set(net.minecraft.world.entity.LivingEntity.DATA_ARROW_COUNT_ID, count);
     }
 
     @Override
@@ -400,7 +403,7 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
 
     @Override
     public boolean addPotionEffect(PotionEffect effect, boolean force) {
-        getHandle().addEffect(new MobEffect(CraftPotionEffectType.bukkitToMinecraftHolder(effect.getType()), effect.getDuration(), effect.getAmplifier(), effect.isAmbient(), effect.hasParticles()), EntityPotionEffectEvent.Cause.PLUGIN);
+        getHandle().addEffect(new MobEffectInstance(CraftPotionEffectType.bukkitToMinecraftHolder(effect.getType()), effect.getDuration(), effect.getAmplifier(), effect.isAmbient(), effect.hasParticles()), EntityPotionEffectEvent.Cause.PLUGIN);
         return true;
     }
 
@@ -420,7 +423,7 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
 
     @Override
     public PotionEffect getPotionEffect(PotionEffectType type) {
-        MobEffect handle = getHandle().getEffect(CraftPotionEffectType.bukkitToMinecraftHolder(type));
+        MobEffectInstance handle = getHandle().getEffect(CraftPotionEffectType.bukkitToMinecraftHolder(type));
         return (handle == null) ? null : new PotionEffect(CraftPotionEffectType.minecraftHolderToBukkit(handle.getEffect()), handle.getDuration(), handle.getAmplifier(), handle.isAmbient(), handle.isVisible());
     }
 
@@ -432,7 +435,7 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
     @Override
     public Collection<PotionEffect> getActivePotionEffects() {
         List<PotionEffect> effects = new ArrayList<PotionEffect>();
-        for (MobEffect handle : getHandle().activeEffects.values()) {
+        for (MobEffectInstance handle : getHandle().activeEffects.values()) {
             effects.add(new PotionEffect(CraftPotionEffectType.minecraftHolderToBukkit(handle.getEffect()), handle.getDuration(), handle.getAmplifier(), handle.isAmbient(), handle.isVisible()));
         }
         return effects;

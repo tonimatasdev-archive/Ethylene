@@ -54,7 +54,7 @@ public class CraftEntitySnapshot implements EntitySnapshot {
             internal = CraftEntityType.bukkitToMinecraft(type).create(nms);
         }
 
-        Preconditions.checkArgument(internal != null, "Error creating new entity."); // This should only fail if the stored NBTTagCompound is malformed.
+        Preconditions.checkArgument(internal != null, "Error creating new entity."); // This should only fail if the stored CompoundTag is malformed.
         internal.load(data);
 
         return internal;

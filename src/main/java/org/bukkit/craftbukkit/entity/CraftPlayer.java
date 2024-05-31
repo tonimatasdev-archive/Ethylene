@@ -39,7 +39,7 @@ import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.core.BlockPosition;
 import net.minecraft.core.Holder;
 import net.minecraft.core.SectionPosition;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.EnumProtocol;
 import net.minecraft.network.chat.IChatBaseComponent;
 import net.minecraft.network.chat.PlayerChatMessage;
@@ -133,7 +133,6 @@ import org.bukkit.WorldBorder;
 import org.bukkit.ban.IpBanList;
 import org.bukkit.ban.ProfileBanList;
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
 import org.bukkit.block.TileState;
 import org.bukkit.block.data.BlockData;
@@ -144,8 +143,8 @@ import org.bukkit.conversations.ConversationAbandonedEvent;
 import org.bukkit.conversations.ManuallyAbandonedConversationCanceller;
 import org.bukkit.craftbukkit.v1_20_R5.CraftEffect;
 import org.bukkit.craftbukkit.v1_20_R5.CraftEquipmentSlot;
-import org.bukkit.craftbukkit.CraftOfflinePlayer;
-import org.bukkit.craftbukkit.CraftParticle;
+import org.bukkit.craftbukkit.v1_20_R5.CraftOfflinePlayer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftParticle;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.CraftSound;
 import org.bukkit.craftbukkit.v1_20_R5.CraftStatistic;
@@ -1719,10 +1718,10 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
         this.firstPlayed = firstPlayed;
     }
 
-    public void readExtraData(NBTTagCompound nbttagcompound) {
+    public void readExtraData(CompoundTag CompoundTag) {
         hasPlayedBefore = true;
-        if (nbttagcompound.contains("bukkit")) {
-            NBTTagCompound data = nbttagcompound.getCompound("bukkit");
+        if (CompoundTag.contains("bukkit")) {
+            CompoundTag data = CompoundTag.getCompound("bukkit");
 
             if (data.contains("firstPlayed")) {
                 firstPlayed = data.getLong("firstPlayed");
@@ -1740,12 +1739,12 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
         }
     }
 
-    public void setExtraData(NBTTagCompound nbttagcompound) {
-        if (!nbttagcompound.contains("bukkit")) {
-            nbttagcompound.put("bukkit", new NBTTagCompound());
+    public void setExtraData(CompoundTag CompoundTag) {
+        if (!CompoundTag.contains("bukkit")) {
+            CompoundTag.put("bukkit", new CompoundTag());
         }
 
-        NBTTagCompound data = nbttagcompound.getCompound("bukkit");
+        CompoundTag data = CompoundTag.getCompound("bukkit");
         EntityPlayer handle = getHandle();
         data.putInt("newExp", handle.newExp);
         data.putInt("newTotalExp", handle.newTotalExp);

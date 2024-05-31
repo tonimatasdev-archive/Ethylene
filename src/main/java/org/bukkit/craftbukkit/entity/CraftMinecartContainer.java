@@ -2,7 +2,7 @@ package org.bukkit.craftbukkit.entity;
 
 import net.minecraft.world.entity.vehicle.EntityMinecartAbstract;
 import net.minecraft.world.entity.vehicle.EntityMinecartContainer;
-import org.bukkit.craftbukkit.CraftLootTable;
+import org.bukkit.craftbukkit.v1_20_R5.CraftLootTable;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.loot.LootTable;
 import org.bukkit.loot.Lootable;

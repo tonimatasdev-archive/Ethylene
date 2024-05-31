@@ -57,8 +57,8 @@ public class CraftBlockEntityState<T extends BlockEntity> extends CraftBlockStat
             return null;
         }
 
-        CompoundTag nbtTagCompound = tileEntity.saveWithFullMetadata(getRegistryAccess());
-        T snapshot = (T) BlockEntity.loadStatic(getPosition(), getHandle(), nbtTagCompound, getRegistryAccess());
+        CompoundTag CompoundTag = tileEntity.saveWithFullMetadata(getRegistryAccess());
+        T snapshot = (T) BlockEntity.loadStatic(getPosition(), getHandle(), CompoundTag, getRegistryAccess());
 
         return snapshot;
     }
@@ -74,15 +74,15 @@ public class CraftBlockEntityState<T extends BlockEntity> extends CraftBlockStat
     }
 
     // Loads the specified data into the snapshot TileEntity.
-    public void loadData(CompoundTag nbtTagCompound) {
-        snapshot.loadWithComponents(nbtTagCompound, getRegistryAccess());
+    public void loadData(CompoundTag CompoundTag) {
+        snapshot.loadWithComponents(CompoundTag, getRegistryAccess());
         load(snapshot);
     }
 
     // copies the TileEntity-specific data, retains the position
     private void copyData(T from, T to) {
-        CompoundTag nbtTagCompound = from.saveWithFullMetadata(getRegistryAccess());
-        to.loadWithComponents(nbtTagCompound, getRegistryAccess());
+        CompoundTag CompoundTag = from.saveWithFullMetadata(getRegistryAccess());
+        to.loadWithComponents(CompoundTag, getRegistryAccess());
     }
 
     // gets the wrapped TileEntity

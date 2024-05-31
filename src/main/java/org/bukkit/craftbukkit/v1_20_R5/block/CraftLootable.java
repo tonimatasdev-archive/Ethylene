@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import org.bukkit.Location;
 import org.bukkit.Nameable;
 import org.bukkit.World;
-import org.bukkit.craftbukkit.CraftLootTable;
+import org.bukkit.craftbukkit.v1_20_R5.CraftLootTable;
 import org.bukkit.loot.LootTable;
 import org.bukkit.loot.Lootable;
 

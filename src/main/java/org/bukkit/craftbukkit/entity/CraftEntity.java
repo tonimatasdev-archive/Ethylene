@@ -8,8 +8,8 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import net.minecraft.nbt.NBTBase;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.IChatBaseComponent;
 import net.minecraft.server.level.EntityPlayer;
 import net.minecraft.server.level.PlayerChunkMap;
@@ -782,7 +782,7 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
 
     @Override
     public String getAsString() {
-        NBTTagCompound tag = new NBTTagCompound();
+        CompoundTag tag = new CompoundTag();
         if (!getHandle().saveAsPassenger(tag, false)) {
             return null;
         }
@@ -815,32 +815,32 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
     }
 
     private Entity copy(net.minecraft.world.level.World level) {
-        NBTTagCompound compoundTag = new NBTTagCompound();
+        CompoundTag compoundTag = new CompoundTag();
         getHandle().saveAsPassenger(compoundTag, false);
 
         return EntityTypes.loadEntityRecursive(compoundTag, level, java.util.function.Function.identity());
     }
 
-    public void storeBukkitValues(NBTTagCompound c) {
+    public void storeBukkitValues(CompoundTag c) {
         if (!this.persistentDataContainer.isEmpty()) {
             c.put("BukkitValues", this.persistentDataContainer.toTagCompound());
         }
     }
 
-    public void readBukkitValues(NBTTagCompound c) {
-        NBTBase base = c.get("BukkitValues");
-        if (base instanceof NBTTagCompound) {
-            this.persistentDataContainer.putAll((NBTTagCompound) base);
+    public void readBukkitValues(CompoundTag c) {
+        Tag base = c.get("BukkitValues");
+        if (base instanceof CompoundTag) {
+            this.persistentDataContainer.putAll((CompoundTag) base);
         }
     }
 
-    protected NBTTagCompound save() {
-        NBTTagCompound nbttagcompound = new NBTTagCompound();
+    protected CompoundTag save() {
+        CompoundTag CompoundTag = new CompoundTag();
 
-        nbttagcompound.putString("id", getHandle().getEncodeId());
-        getHandle().saveWithoutId(nbttagcompound);
+        CompoundTag.putString("id", getHandle().getEncodeId());
+        getHandle().saveWithoutId(CompoundTag);
 
-        return nbttagcompound;
+        return CompoundTag;
     }
 
     // re-sends the spawn entity packet to updated values which cannot be updated otherwise

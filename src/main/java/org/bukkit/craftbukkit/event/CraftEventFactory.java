@@ -60,7 +60,7 @@ import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.ItemActionContext;
-import net.minecraft.world.level.ChunkCoordIntPair;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.GeneratorAccess;
 import net.minecraft.world.level.World;
@@ -80,12 +80,11 @@ import org.bukkit.Material;
 import org.bukkit.Statistic.Type;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
 import org.bukkit.block.sign.Side;
-import org.bukkit.craftbukkit.CraftChunk;
+import org.bukkit.craftbukkit.v1_20_R5.CraftChunk;
 import org.bukkit.craftbukkit.v1_20_R5.CraftEquipmentSlot;
-import org.bukkit.craftbukkit.CraftLootTable;
+import org.bukkit.craftbukkit.v1_20_R5.CraftLootTable;
 import org.bukkit.craftbukkit.v1_20_R5.CraftRaid;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.CraftStatistic;
@@ -1763,13 +1762,13 @@ public class CraftEventFactory {
         return event;
     }
 
-    public static void callEntitiesLoadEvent(World world, ChunkCoordIntPair coords, List<Entity> entities) {
+    public static void callEntitiesLoadEvent(World world, ChunkPos coords, List<Entity> entities) {
         List<org.bukkit.entity.Entity> bukkitEntities = Collections.unmodifiableList(entities.stream().map(Entity::getBukkitEntity).collect(Collectors.toList()));
         EntitiesLoadEvent event = new EntitiesLoadEvent(new CraftChunk((WorldServer) world, coords.x, coords.z), bukkitEntities);
         Bukkit.getPluginManager().callEvent(event);
     }
 
-    public static void callEntitiesUnloadEvent(World world, ChunkCoordIntPair coords, List<Entity> entities) {
+    public static void callEntitiesUnloadEvent(World world, ChunkPos coords, List<Entity> entities) {
         List<org.bukkit.entity.Entity> bukkitEntities = Collections.unmodifiableList(entities.stream().map(Entity::getBukkitEntity).collect(Collectors.toList()));
         EntitiesUnloadEvent event = new EntitiesUnloadEvent(new CraftChunk((WorldServer) world, coords.x, coords.z), bukkitEntities);
         Bukkit.getPluginManager().callEvent(event);
