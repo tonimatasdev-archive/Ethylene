@@ -156,7 +156,7 @@ import org.bukkit.craftbukkit.v1_20_R5.CraftServerTickManager;
 import org.bukkit.craftbukkit.v1_20_R5.CraftWorldBorder;
 import org.bukkit.craftbukkit.v1_20_R5.ban.CraftIpBanList;
 import org.bukkit.craftbukkit.v1_20_R5.ban.CraftProfileBanList;
-import org.bukkit.craftbukkit.block.data.CraftBlockData;
+import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
 import org.bukkit.craftbukkit.v1_20_R5.boss.CraftBossBar;
 import org.bukkit.craftbukkit.v1_20_R5.boss.CraftKeyedBossbar;
 import org.bukkit.craftbukkit.command.BukkitCommandWrapper;

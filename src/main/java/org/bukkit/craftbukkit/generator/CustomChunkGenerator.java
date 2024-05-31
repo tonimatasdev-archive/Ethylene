@@ -37,7 +37,7 @@ import net.minecraft.world.level.levelgen.blending.Blender;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import org.bukkit.block.Biome;
 import org.bukkit.craftbukkit.v1_20_R5.CraftHeightMap;
-import org.bukkit.craftbukkit.block.CraftBiome;
+import org.bukkit.craftbukkit.v1_20_R5.block.CraftBiome;
 import org.bukkit.craftbukkit.util.RandomSourceWrapper;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.generator.ChunkGenerator.BiomeGrid;

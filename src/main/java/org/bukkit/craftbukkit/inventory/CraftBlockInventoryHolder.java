@@ -4,7 +4,7 @@ import net.minecraft.core.BlockPosition;
 import net.minecraft.world.IInventory;
 import net.minecraft.world.level.GeneratorAccess;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.block.CraftBlock;
+import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlock;
 import org.bukkit.inventory.BlockInventoryHolder;
 import org.bukkit.inventory.Inventory;
 

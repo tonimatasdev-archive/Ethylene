@@ -28,7 +28,7 @@ import org.bukkit.Particle;
 import org.bukkit.Registry;
 import org.bukkit.Vibration;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.block.data.CraftBlockData;
+import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
 import org.bukkit.craftbukkit.entity.CraftEntity;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.v1_20_R5.legacy.FieldRename;

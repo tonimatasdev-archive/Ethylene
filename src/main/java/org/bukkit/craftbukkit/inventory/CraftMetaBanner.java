@@ -17,7 +17,7 @@ import org.bukkit.Material;
 import org.bukkit.block.banner.Pattern;
 import org.bukkit.block.banner.PatternType;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
-import org.bukkit.craftbukkit.block.banner.CraftPatternType;
+import org.bukkit.craftbukkit.v1_20_R5.block.banner.CraftPatternType;
 import org.bukkit.inventory.meta.BannerMeta;
 
 @DelegateDeserialization(SerializableMeta.class)
