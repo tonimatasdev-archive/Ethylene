@@ -25,7 +25,7 @@ public final class CraftLocation {
     public static Location toBukkit(BlockPos blockPosition) {
         return toBukkit(blockPosition, (World) null);
     }
-    public static Location toBukkit(BlockPos blockPosition, net.minecraft.world.level.World world) {
+    public static Location toBukkit(BlockPos blockPosition, net.minecraft.world.level.Level world) {
         return toBukkit(blockPosition, world.getWorld(), 0.0F, 0.0F);
     }
     public static Location toBukkit(BlockPos blockPosition, World world) {
