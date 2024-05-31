@@ -18,8 +18,8 @@ import org.bukkit.command.ProxiedCommandSender;
 import org.bukkit.command.RemoteConsoleCommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.craftbukkit.CraftServer;
-import org.bukkit.craftbukkit.entity.CraftEntity;
-import org.bukkit.craftbukkit.entity.CraftMinecartCommand;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftEntity;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftMinecartCommand;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.minecart.CommandMinecart;
 
