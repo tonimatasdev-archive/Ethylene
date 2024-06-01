@@ -2,19 +2,16 @@ package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.ImmutableSet.Builder;
-import java.util.Set;
-
 import net.minecraft.world.entity.boss.EnderDragonPart;
-import net.minecraft.world.entity.boss.EntityComplexPart;
-import net.minecraft.world.entity.boss.enderdragon.EntityEnderDragon;
-import net.minecraft.world.entity.boss.enderdragon.phases.DragonControllerPhase;
 import net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhase;
 import org.bukkit.boss.BossBar;
 import org.bukkit.boss.DragonBattle;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.boss.CraftDragonBattle;
 import org.bukkit.entity.ComplexEntityPart;
 import org.bukkit.entity.EnderDragon;
+
+import java.util.Set;
 
 public class CraftEnderDragon extends CraftMob implements EnderDragon, CraftEnemy {
 

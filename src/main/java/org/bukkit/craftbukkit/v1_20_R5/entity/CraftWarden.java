@@ -5,7 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.monster.warden.WardenAi;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 

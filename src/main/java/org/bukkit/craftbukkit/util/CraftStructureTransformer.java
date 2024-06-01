@@ -1,26 +1,26 @@
 package org.bukkit.craftbukkit.util;
 
-import java.util.Collection;
-import java.util.Objects;
 import net.minecraft.core.BlockPosition;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.ChunkPos;
-import net.minecraft.world.level.GeneratorAccessSeed;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureBoundingBox;
 import org.bukkit.Bukkit;
 import org.bukkit.block.BlockState;
-import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlockState;
 import org.bukkit.craftbukkit.entity.CraftEntity;
 import org.bukkit.craftbukkit.generator.CraftLimitedRegion;
 import org.bukkit.craftbukkit.generator.structure.CraftStructure;
+import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlockState;
 import org.bukkit.event.world.AsyncStructureGenerateEvent;
 import org.bukkit.event.world.AsyncStructureGenerateEvent.Cause;
 import org.bukkit.util.BlockTransformer;
 import org.bukkit.util.BlockTransformer.TransformationState;
 import org.bukkit.util.EntityTransformer;
+
+import java.util.Collection;
+import java.util.Objects;
 
 public class CraftStructureTransformer {
 

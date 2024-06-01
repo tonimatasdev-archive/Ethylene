@@ -2,7 +2,7 @@ package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import com.google.common.base.Preconditions;
 import org.bukkit.Color;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.Display;
 import org.bukkit.util.Transformation;
 

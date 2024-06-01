@@ -4,8 +4,8 @@ import net.minecraft.world.level.block.entity.BrushableBlockEntity;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.BrushableBlock;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.v1_20_R5.CraftLootTable;
-import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.loot.LootTable;
 

@@ -8,7 +8,7 @@ import org.bukkit.DyeColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.ShulkerBox;
-import org.bukkit.craftbukkit.inventory.CraftInventory;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventory;
 import org.bukkit.inventory.Inventory;
 
 public class CraftShulkerBox extends CraftLootable<ShulkerBoxBlockEntity> implements ShulkerBox {

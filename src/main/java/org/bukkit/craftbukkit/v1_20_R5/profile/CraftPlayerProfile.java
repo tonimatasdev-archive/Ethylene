@@ -11,7 +11,7 @@ import net.minecraft.server.dedicated.DedicatedServer;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.serialization.SerializableAs;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.configuration.ConfigSerializationUtil;
 import org.bukkit.profile.PlayerProfile;
 import org.bukkit.profile.PlayerTextures;

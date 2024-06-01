@@ -1,7 +1,5 @@
 package org.bukkit.craftbukkit.util;
 
-import java.util.List;
-import java.util.function.Predicate;
 import net.minecraft.core.BlockPosition;
 import net.minecraft.core.EnumDirection;
 import net.minecraft.core.Holder;
@@ -22,7 +20,6 @@ import net.minecraft.world.level.biome.BiomeManager;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.TileEntity;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.chunk.IChunkAccess;
 import net.minecraft.world.level.chunk.IChunkProvider;
@@ -40,6 +37,9 @@ import net.minecraft.world.phys.AxisAlignedBB;
 import net.minecraft.world.phys.Vec3D;
 import net.minecraft.world.ticks.LevelTickAccess;
 import net.minecraft.world.ticks.TickListEmpty;
+
+import java.util.List;
+import java.util.function.Predicate;
 
 public class DummyGeneratorAccess implements GeneratorAccessSeed {
 

@@ -4,8 +4,8 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import org.bukkit.Art;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.CraftArt;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.Painting;
 
 public class CraftPainting extends CraftHanging implements Painting {

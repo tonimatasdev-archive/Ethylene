@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.v1_20_R5.entity;
 import com.google.common.base.Preconditions;
 import net.minecraft.world.entity.decoration.LeashFenceKnotEntity;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.LeashHitch;
 
 public class CraftLeash extends CraftHanging implements LeashHitch {

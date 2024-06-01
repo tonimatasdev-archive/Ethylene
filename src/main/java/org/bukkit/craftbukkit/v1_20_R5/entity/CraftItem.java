@@ -1,12 +1,12 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
-import java.util.UUID;
-import net.minecraft.world.entity.item.EntityItem;
 import net.minecraft.world.entity.item.ItemEntity;
-import org.bukkit.craftbukkit.CraftServer;
-import org.bukkit.craftbukkit.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.UUID;
 
 public class CraftItem extends CraftEntity implements Item {
 

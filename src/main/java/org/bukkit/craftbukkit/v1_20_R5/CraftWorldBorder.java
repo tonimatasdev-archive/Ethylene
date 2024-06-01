@@ -5,7 +5,6 @@ import net.minecraft.core.BlockPos;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.WorldBorder;
-import org.bukkit.craftbukkit.CraftWorld;
 
 import java.util.concurrent.TimeUnit;
 

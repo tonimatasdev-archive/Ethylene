@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import net.minecraft.nbt.CompoundTag;
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.craftbukkit.CraftWorld;
+import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntitySnapshot;
 import org.bukkit.entity.EntityType;

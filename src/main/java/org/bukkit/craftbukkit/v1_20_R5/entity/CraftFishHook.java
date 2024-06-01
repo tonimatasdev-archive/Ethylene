@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.v1_20_R5.entity;
 import com.google.common.base.Preconditions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.projectile.FishingHook;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.FishHook;
 

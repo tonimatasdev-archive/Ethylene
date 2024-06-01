@@ -12,7 +12,6 @@ import org.bukkit.*;
 import org.bukkit.ban.ProfileBanList;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
-import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.entity.memory.CraftMemoryMapper;
 import org.bukkit.craftbukkit.v1_20_R5.profile.CraftPlayerProfile;
 import org.bukkit.entity.EntityType;

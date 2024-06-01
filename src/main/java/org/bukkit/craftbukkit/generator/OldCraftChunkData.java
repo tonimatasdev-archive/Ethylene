@@ -1,21 +1,25 @@
 package org.bukkit.craftbukkit.generator;
 
-import java.util.HashSet;
-import java.util.Set;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPosition;
 import net.minecraft.core.IRegistry;
+import net.minecraft.core.Registry;
 import net.minecraft.world.level.biome.BiomeBase;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkSection;
+import net.minecraft.world.level.chunk.LevelChunkSection;
 import org.bukkit.Material;
 import org.bukkit.block.Biome;
 import org.bukkit.block.data.BlockData;
+import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlockType;
 import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
-import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.material.MaterialData;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Data to be used for the block types and data in a newly generated chunk.
@@ -24,16 +28,16 @@ import org.bukkit.material.MaterialData;
 public final class OldCraftChunkData implements ChunkGenerator.ChunkData {
     private final int minHeight;
     private final int maxHeight;
-    private final ChunkSection[] sections;
-    private final IRegistry<BiomeBase> biomes;
-    private Set<BlockPosition> tiles;
-    private final Set<BlockPosition> lights = new HashSet<>();
+    private final LevelChunkSection[] sections;
+    private final Registry<net.minecraft.world.level.biome.Biome> biomes;
+    private Set<BlockPos> tiles;
+    private final Set<BlockPos> lights = new HashSet<>();
 
-    public OldCraftChunkData(int minHeight, int maxHeight, IRegistry<BiomeBase> biomes) {
+    public OldCraftChunkData(int minHeight, int maxHeight, Registry<net.minecraft.world.level.biome.Biome> biomes) {
         this.minHeight = minHeight;
         this.maxHeight = maxHeight;
         this.biomes = biomes;
-        this.sections = new ChunkSection[(((maxHeight - 1) >> 4) + 1) - (minHeight >> 4)];
+        this.sections = new LevelChunkSection[(((maxHeight - 1) >> 4) + 1) - (minHeight >> 4)];
     }
 
     @Override
@@ -150,7 +154,7 @@ public final class OldCraftChunkData implements ChunkGenerator.ChunkData {
         return CraftMagicNumbers.toLegacyData(getTypeId(x, y, z));
     }
 
-    private void setBlock(int x, int y, int z, IBlockData type) {
+    private void setBlock(int x, int y, int z, BlockState type) {
         if (x != (x & 0xf) || y < minHeight || y >= maxHeight || z != (z & 0xf)) {
             return;
         }

@@ -6,7 +6,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.alchemy.PotionContents;
 import org.bukkit.Color;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionEffectType;
 import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionType;
 import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionUtil;

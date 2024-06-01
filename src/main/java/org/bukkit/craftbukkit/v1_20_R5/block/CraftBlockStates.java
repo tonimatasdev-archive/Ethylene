@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.CraftWorld;
+import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -354,7 +354,7 @@ public final class CraftBlockStates {
     }
 
     @Deprecated
-    public static BlockState getBlockState(BlockPos blockPosition, Material material, @Nullable CompoundTag blockEntityTag) {
+    public static org.bukkit.block.BlockState getBlockState(BlockPos blockPosition, Material material, @Nullable CompoundTag blockEntityTag) {
         return getBlockState(MinecraftServer.getDefaultRegistryAccess(), blockPosition, material, blockEntityTag);
     }
 

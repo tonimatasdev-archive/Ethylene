@@ -3,8 +3,8 @@ package org.bukkit.craftbukkit.v1_20_R5.entity;
 import com.google.common.base.Preconditions;
 import net.minecraft.world.entity.animal.Animal;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.CraftServer;
-import org.bukkit.craftbukkit.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.Animals;
 import org.bukkit.inventory.ItemStack;
 

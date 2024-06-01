@@ -6,7 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionEffectType;
 import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionUtil;
 import org.bukkit.entity.MushroomCow;

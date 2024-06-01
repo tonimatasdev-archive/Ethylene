@@ -1,17 +1,6 @@
 package org.bukkit.craftbukkit.util;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
-import net.minecraft.core.BlockPosition;
-import net.minecraft.core.EnumDirection;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.IRegistry;
-import net.minecraft.core.IRegistryCustom;
+import net.minecraft.core.*;
 import net.minecraft.core.particles.ParticleParam;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
@@ -26,18 +15,12 @@ import net.minecraft.world.entity.EntityLiving;
 import net.minecraft.world.entity.ai.targeting.PathfinderTargetCondition;
 import net.minecraft.world.entity.player.EntityHuman;
 import net.minecraft.world.flag.FeatureFlagSet;
-import net.minecraft.world.level.ClipBlockStateContext;
-import net.minecraft.world.level.ColorResolver;
-import net.minecraft.world.level.EnumSkyBlock;
-import net.minecraft.world.level.GeneratorAccessSeed;
-import net.minecraft.world.level.IBlockAccess;
-import net.minecraft.world.level.RayTrace;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.biome.BiomeBase;
 import net.minecraft.world.level.biome.BiomeManager;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.TileEntity;
 import net.minecraft.world.level.block.entity.TileEntityTypes;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.chunk.IChunkAccess;
 import net.minecraft.world.level.chunk.IChunkProvider;
@@ -58,6 +41,13 @@ import net.minecraft.world.phys.shapes.VoxelShapeCollision;
 import net.minecraft.world.ticks.LevelTickAccess;
 import net.minecraft.world.ticks.TickListPriority;
 import org.bukkit.event.entity.CreatureSpawnEvent;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public abstract class DelegatedGeneratorAccess implements GeneratorAccessSeed {
 

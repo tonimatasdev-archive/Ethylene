@@ -1,7 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import net.minecraft.world.entity.monster.ZombifiedPiglin;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.PigZombie;
 
 public class CraftPigZombie extends CraftZombie implements PigZombie {

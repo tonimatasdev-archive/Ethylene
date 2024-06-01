@@ -1,7 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import net.minecraft.world.entity.animal.WaterAnimal;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.WaterMob;
 
 public class CraftWaterMob extends CraftCreature implements WaterMob {

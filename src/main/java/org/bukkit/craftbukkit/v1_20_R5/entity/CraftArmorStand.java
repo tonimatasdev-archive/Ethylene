@@ -2,9 +2,8 @@ package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import net.minecraft.core.Rotations;
 import net.minecraft.core.Vec3i;
-import net.minecraft.world.phys.Vec3;
-import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.CraftEquipmentSlot;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;

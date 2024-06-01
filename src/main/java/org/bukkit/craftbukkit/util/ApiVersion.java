@@ -1,8 +1,9 @@
 package org.bukkit.craftbukkit.util;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashMap;
 import java.util.Map;
-import org.jetbrains.annotations.NotNull;
 
 public final class ApiVersion implements Comparable<ApiVersion> {
 
