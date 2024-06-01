@@ -24,6 +24,7 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
 
+import dev.tonimatas.ethylene.link.commands.CommandSourceStackLink;
 import net.minecraft.commands.CommandSourceStack; // CraftBukkit
 
 public abstract class CommandNode<S> implements Comparable<CommandNode<S>> {
@@ -75,10 +76,10 @@ public abstract class CommandNode<S> implements Comparable<CommandNode<S>> {
     public synchronized boolean canUse(final S source) {
         if (source instanceof CommandSourceStack) {
             try {
-                ((CommandSourceStack) source).currentCommand = this;
+                ((CommandSourceStackLink) (CommandSourceStack) source).setCurrentCommand(this);
                 return requirement.test(source);
             } finally {
-                ((CommandSourceStack) source).currentCommand = null;
+                ((CommandSourceStackLink) (CommandSourceStack) source).setCurrentCommand(null);
             }
         }
         // CraftBukkit end

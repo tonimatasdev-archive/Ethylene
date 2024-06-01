@@ -10,6 +10,7 @@ import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import com.mojang.brigadier.tree.LiteralCommandNode;
+import dev.tonimatas.ethylene.link.commands.CommandSourceStackLink;
 import net.minecraft.commands.CommandSourceStack;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandException;
@@ -40,12 +41,12 @@ public class BukkitCommandWrapper implements com.mojang.brigadier.Command<Comman
 
     @Override
     public boolean test(CommandSourceStack wrapper) {
-        return command.testPermissionSilent(wrapper.getBukkitSender());
+        return command.testPermissionSilent(((CommandSourceStackLink) wrapper).getBukkitSender());
     }
 
     @Override
     public int run(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
-        CommandSender sender = context.getSource().getBukkitSender();
+        CommandSender sender = ((CommandSourceStackLink) context.getSource()).getBukkitSender();
 
         try {
             return server.dispatchCommand(sender, context.getInput()) ? 1 : 0;
@@ -58,7 +59,7 @@ public class BukkitCommandWrapper implements com.mojang.brigadier.Command<Comman
 
     @Override
     public CompletableFuture<Suggestions> getSuggestions(CommandContext<CommandSourceStack> context, SuggestionsBuilder builder) throws CommandSyntaxException {
-        List<String> results = server.tabComplete(context.getSource().getBukkitSender(), builder.getInput(), context.getSource().getLevel(), context.getSource().getPosition(), true);
+        List<String> results = server.tabComplete(((CommandSourceStackLink) context.getSource()).getBukkitSender(), builder.getInput(), context.getSource().getLevel(), context.getSource().getPosition(), true);
 
         // Defaults to sub nodes, but we have just one giant args node, so offset accordingly
         builder = builder.createOffset(builder.getInput().lastIndexOf(' ') + 1);

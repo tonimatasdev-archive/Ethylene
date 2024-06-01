@@ -5,6 +5,10 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "ethylene.refmap.json",
   "mixins": [
+    "advancements.AdvancementHolderMixin",
+    "commands.CommandSource$1Mixin",
+    "commands.CommandSourceMixin",
+    "commands.CommandSourceStackMixin"
   ],
   "injectors": {
     "defaultRequire": 1
