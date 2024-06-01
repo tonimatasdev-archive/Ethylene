@@ -10,7 +10,7 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.world.item.component.CustomData;
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
-import org.bukkit.craftbukkit.util.CraftLegacy;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftLegacy;
 import org.bukkit.craftbukkit.v1_20_R5.entity.CraftEntitySnapshot;
 import org.bukkit.craftbukkit.v1_20_R5.entity.CraftEntityType;
 import org.bukkit.entity.EntitySnapshot;

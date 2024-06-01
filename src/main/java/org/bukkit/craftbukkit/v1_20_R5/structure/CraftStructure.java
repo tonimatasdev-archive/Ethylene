@@ -18,7 +18,7 @@ import org.bukkit.RegionAccessor;
 import org.bukkit.World;
 import org.bukkit.block.structure.Mirror;
 import org.bukkit.block.structure.StructureRotation;
-import org.bukkit.craftbukkit.util.*;
+import org.bukkit.craftbukkit.v1_20_R5.util.*;
 import org.bukkit.craftbukkit.v1_20_R5.CraftRegionAccessor;
 import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 import org.bukkit.entity.Entity;

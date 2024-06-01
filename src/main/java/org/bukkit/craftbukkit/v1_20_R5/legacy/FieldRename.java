@@ -1,6 +1,5 @@
 package org.bukkit.craftbukkit.v1_20_R5.legacy;
 
-import java.util.function.BiFunction;
 import org.bukkit.Keyed;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Particle;
@@ -8,14 +7,10 @@ import org.bukkit.Registry;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Biome;
 import org.bukkit.block.banner.PatternType;
+import org.bukkit.craftbukkit.v1_20_R5.util.ApiVersion;
 import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.v1_20_R5.legacy.fieldrename.FieldRenameData;
-import org.bukkit.craftbukkit.v1_20_R5.legacy.reroute.DoNotReroute;
-import org.bukkit.craftbukkit.v1_20_R5.legacy.reroute.InjectPluginVersion;
-import org.bukkit.craftbukkit.v1_20_R5.legacy.reroute.RequireCompatibility;
-import org.bukkit.craftbukkit.v1_20_R5.legacy.reroute.RerouteMethodName;
-import org.bukkit.craftbukkit.v1_20_R5.legacy.reroute.RerouteStatic;
-import org.bukkit.craftbukkit.util.ApiVersion;
+import org.bukkit.craftbukkit.v1_20_R5.legacy.reroute.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemFlag;
@@ -23,6 +18,8 @@ import org.bukkit.loot.LootTables;
 import org.bukkit.map.MapCursor;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionType;
+
+import java.util.function.BiFunction;
 
 public class FieldRename {
 

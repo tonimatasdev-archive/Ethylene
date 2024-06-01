@@ -14,10 +14,10 @@ import org.bukkit.World;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.block.spawner.SpawnRule;
 import org.bukkit.block.spawner.SpawnerEntry;
-import org.bukkit.craftbukkit.entity.CraftEntitySnapshot;
-import org.bukkit.craftbukkit.entity.CraftEntityType;
 import org.bukkit.craftbukkit.v1_20_R5.CraftEquipmentSlot;
 import org.bukkit.craftbukkit.v1_20_R5.CraftLootTable;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftEntitySnapshot;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftEntityType;
 import org.bukkit.entity.EntitySnapshot;
 import org.bukkit.entity.EntityType;
 

@@ -1,6 +1,6 @@
 package org.bukkit.craftbukkit.v1_20_R5.block;
 
-import net.minecraft.world.ITileInventory;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
@@ -9,9 +9,9 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Chest;
+import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventory;
 import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventoryDoubleChest;
-import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 import org.bukkit.inventory.Inventory;
 
 public class CraftChest extends CraftLootable<ChestBlockEntity> implements Chest {
@@ -49,7 +49,7 @@ public class CraftChest extends CraftLootable<ChestBlockEntity> implements Chest
         CraftWorld world = (CraftWorld) this.getWorld();
 
         ChestBlock blockChest = (ChestBlock) (this.getType() == Material.CHEST ? Blocks.CHEST : Blocks.TRAPPED_CHEST);
-        ITileInventory nms = blockChest.getMenuProvider(data, world.getHandle(), this.getPosition(), true);
+        MenuProvider nms = blockChest.getMenuProvider(data, world.getHandle(), this.getPosition(), true);
 
         if (nms instanceof ChestBlock.DoubleInventory) {
             inventory = new CraftInventoryDoubleChest((ChestBlock.DoubleInventory) nms);

@@ -9,8 +9,8 @@ import net.minecraft.world.scores.ScoreHolder;
 import net.minecraft.world.scores.Scoreboard;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.craftbukkit.entity.CraftPlayer;
-import org.bukkit.craftbukkit.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftChatMessage;
 import org.bukkit.scoreboard.*;
 
 public final class CraftScoreboard implements org.bukkit.scoreboard.Scoreboard {

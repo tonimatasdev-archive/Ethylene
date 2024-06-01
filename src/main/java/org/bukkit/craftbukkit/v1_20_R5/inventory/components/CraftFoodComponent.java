@@ -117,7 +117,7 @@ public final class CraftFoodComponent implements FoodComponent {
     public FoodEffect addEffect(PotionEffect effect, float probability) {
         List<FoodProperties.PossibleEffect> effects = new ArrayList<>(handle.effects());
 
-        FoodProperties.PossibleEffect newEffect = new FoodProperties.PossibleEffect(CraftPotionUtil.fromBukkit(effect), probability);
+        FoodProperties.PossibleEffect newEffect = new FoodProperties.PossibleEffect(() -> CraftPotionUtil.fromBukkit(effect), probability); // Ethylene - Fix using supplier
         effects.add(newEffect);
 
         handle = new FoodProperties(handle.nutrition(), handle.saturation(), handle.canAlwaysEat(), handle.eatSeconds(), effects);
@@ -162,7 +162,7 @@ public final class CraftFoodComponent implements FoodComponent {
         }
 
         public CraftFoodEffect(FoodEffect bukkit) {
-            this.handle = new net.minecraft.world.food.FoodProperties.PossibleEffect(CraftPotionUtil.fromBukkit(bukkit.getEffect()), bukkit.getProbability());
+            this.handle = new net.minecraft.world.food.FoodProperties.PossibleEffect(() -> CraftPotionUtil.fromBukkit(bukkit.getEffect()), bukkit.getProbability()); // Ethylene - Fix using supplier
         }
 
         public CraftFoodEffect(Map<String, Object> map) {
@@ -173,7 +173,7 @@ public final class CraftFoodComponent implements FoodComponent {
                 probability = 1.0f;
             }
 
-            this.handle = new net.minecraft.world.food.FoodProperties.PossibleEffect(CraftPotionUtil.fromBukkit(effect), probability);
+            this.handle = new net.minecraft.world.food.FoodProperties.PossibleEffect(() -> CraftPotionUtil.fromBukkit(effect), probability); // Ethylene - Fix using supplier
         }
 
         @Override
@@ -195,7 +195,7 @@ public final class CraftFoodComponent implements FoodComponent {
 
         @Override
         public void setEffect(PotionEffect effect) {
-            handle = new FoodProperties.PossibleEffect(CraftPotionUtil.fromBukkit(effect), handle.probability());
+            handle = new FoodProperties.PossibleEffect(() -> CraftPotionUtil.fromBukkit(effect), handle.probability()); // Ethylene - Fix using supplier
         }
 
         @Override
@@ -206,7 +206,7 @@ public final class CraftFoodComponent implements FoodComponent {
         @Override
         public void setProbability(float probability) {
             Preconditions.checkArgument(0 <= probability && probability <= 1, "Probability cannot be outside range [0,1]");
-            handle = new net.minecraft.world.food.FoodProperties.PossibleEffect(handle.effect(), probability);
+            handle = new net.minecraft.world.food.FoodProperties.PossibleEffect(() -> handle.effect(), probability); // Ethylene - Fix using supplier
         }
 
         @Override

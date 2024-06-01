@@ -4,9 +4,9 @@ import com.google.common.base.Preconditions;
 import net.minecraft.world.entity.projectile.EyeOfEnder;
 import net.minecraft.world.item.Items;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
-import org.bukkit.craftbukkit.util.CraftLocation;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftLocation;
 import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
 import org.bukkit.entity.EnderSignal;
 import org.bukkit.inventory.ItemStack;
 

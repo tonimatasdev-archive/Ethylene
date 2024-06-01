@@ -9,10 +9,10 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Jukebox;
+import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventoryJukebox;
 import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemType;
-import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 import org.bukkit.inventory.JukeboxInventory;
 
 public class CraftJukebox extends CraftBlockEntityState<JukeboxBlockEntity> implements Jukebox {

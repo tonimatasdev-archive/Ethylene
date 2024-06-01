@@ -1,8 +1,8 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import com.google.common.base.Preconditions;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventoryLlama;
 import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventoryLlama;
 import org.bukkit.entity.Horse;
 import org.bukkit.entity.Llama;
 import org.bukkit.inventory.LlamaInventory;

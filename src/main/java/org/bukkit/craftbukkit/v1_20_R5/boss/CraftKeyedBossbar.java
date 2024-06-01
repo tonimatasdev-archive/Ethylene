@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.v1_20_R5.boss;
 import net.minecraft.server.bossevents.CustomBossEvent;
 import org.bukkit.NamespacedKey;
 import org.bukkit.boss.KeyedBossBar;
-import org.bukkit.craftbukkit.util.CraftNamespacedKey;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftNamespacedKey;
 
 public class CraftKeyedBossbar extends CraftBossBar implements KeyedBossBar {
 

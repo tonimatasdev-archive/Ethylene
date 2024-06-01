@@ -7,8 +7,8 @@ import net.minecraft.world.level.block.entity.BeehiveBlockEntity;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Beehive;
-import org.bukkit.craftbukkit.entity.CraftBee;
-import org.bukkit.craftbukkit.util.CraftLocation;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftBee;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftLocation;
 import org.bukkit.entity.Bee;
 
 import java.util.ArrayList;

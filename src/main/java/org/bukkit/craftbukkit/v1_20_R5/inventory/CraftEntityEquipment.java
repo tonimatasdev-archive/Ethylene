@@ -1,7 +1,6 @@
 package org.bukkit.craftbukkit.v1_20_R5.inventory;
 
 import com.google.common.base.Preconditions;
-import net.minecraft.world.entity.EntityInsentient;
 import net.minecraft.world.entity.Mob;
 import org.bukkit.craftbukkit.v1_20_R5.CraftEquipmentSlot;
 import org.bukkit.craftbukkit.v1_20_R5.entity.CraftLivingEntity;

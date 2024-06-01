@@ -5,7 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.properties.Property;
-import org.bukkit.craftbukkit.util.JsonHelper;
+import org.bukkit.craftbukkit.v1_20_R5.util.JsonHelper;
 import org.bukkit.profile.PlayerTextures;
 
 import javax.annotation.Nonnull;

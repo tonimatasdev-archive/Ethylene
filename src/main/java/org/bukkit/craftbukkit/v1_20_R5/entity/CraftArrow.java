@@ -66,7 +66,7 @@ public class CraftArrow extends CraftAbstractArrow implements Arrow {
 
     @Override
     public boolean hasCustomEffect(PotionEffectType type) {
-        for (MobEffect effect : getHandle().getPotionContents().customEffects()) {
+        for (MobEffectInstance effect : getHandle().getPotionContents().customEffects()) {
             if (CraftPotionUtil.equals(effect.getEffect(), type)) {
                 return true;
             }

@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.v1_20_R5.scoreboard;
 import com.google.common.base.Preconditions;
 import net.minecraft.world.scores.Scoreboard;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.craftbukkit.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftChatMessage;
 import org.bukkit.scoreboard.*;
 
 final class CraftObjective extends CraftScoreboardComponent implements Objective {

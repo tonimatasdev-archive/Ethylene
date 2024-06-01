@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.entity.SculkShriekerBlockEntity;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.SculkShrieker;
-import org.bukkit.craftbukkit.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 public class CraftSculkShrieker extends CraftBlockEntityState<SculkShriekerBlockEntity> implements SculkShrieker {

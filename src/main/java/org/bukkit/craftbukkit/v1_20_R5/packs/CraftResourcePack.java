@@ -1,7 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.packs;
 
 import net.minecraft.server.MinecraftServer;
-import org.bukkit.craftbukkit.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftChatMessage;
 import org.bukkit.packs.ResourcePack;
 
 import java.util.UUID;

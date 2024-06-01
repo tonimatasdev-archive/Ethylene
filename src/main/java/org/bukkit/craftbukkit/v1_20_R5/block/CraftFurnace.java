@@ -2,14 +2,14 @@ package org.bukkit.craftbukkit.v1_20_R5.block;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.BlockFurnace;
+import net.minecraft.world.level.block.FurnaceBlock;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Furnace;
 import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventoryFurnace;
-import org.bukkit.craftbukkit.util.CraftNamespacedKey;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftNamespacedKey;
 import org.bukkit.inventory.CookingRecipe;
 import org.bukkit.inventory.FurnaceInventory;
 import org.bukkit.inventory.Recipe;
@@ -49,7 +49,7 @@ public abstract class CraftFurnace<T extends AbstractFurnaceBlockEntity> extends
     public void setBurnTime(short burnTime) {
         this.getSnapshot().litTime = burnTime;
         // SPIGOT-844: Allow lighting and relighting using this API
-        this.data = this.data.setValue(BlockFurnace.LIT, burnTime > 0);
+        this.data = this.data.setValue(FurnaceBlock.LIT, burnTime > 0);
     }
 
     @Override
