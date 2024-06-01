@@ -2,32 +2,30 @@ package org.bukkit.craftbukkit.v1_20_R5.block;
 
 import com.google.common.base.Preconditions;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.BlockPosition;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.EnumHand;
-import net.minecraft.world.entity.player.EntityHuman;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.BlockAccessAir;
+import net.minecraft.world.level.EmptyBlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BlockFalling;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.MovingObjectPositionBlock;
+import net.minecraft.world.phys.BlockHitResult;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
 import org.bukkit.World;
 import org.bukkit.block.BlockType;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemType;
-import org.bukkit.craftbukkit.util.CraftMagicNumbers;
-import org.bukkit.craftbukkit.util.Handleable;
 import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
 import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemType;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftMagicNumbers;
+import org.bukkit.craftbukkit.v1_20_R5.util.Handleable;
 import org.bukkit.inventory.ItemType;
 import org.jetbrains.annotations.NotNull;
 
@@ -70,14 +68,14 @@ public class CraftBlockType<B extends BlockData> implements BlockType.Typed<B>, 
     private static boolean isInteractable(Block block) {
         Class<?> clazz = block.getClass();
 
-        boolean hasMethod = hasMethod(clazz, "useWithoutItem", BlockState.class, net.minecraft.world.level.Level.class, BlockPos.class, Player.class, MovingObjectPositionBlock.class)
-                || hasMethod(clazz, "useItemOn", net.minecraft.world.item.ItemStack.class, BlockState.class, net.minecraft.world.level.Level.class, BlockPosition.class, EntityHuman.class, EnumHand.class, MovingObjectPositionBlock.class);
+        boolean hasMethod = hasMethod(clazz, "useWithoutItem", BlockState.class, net.minecraft.world.level.Level.class, BlockPos.class, Player.class, BlockHitResult.class)
+                || hasMethod(clazz, "useItemOn", net.minecraft.world.item.ItemStack.class, BlockState.class, net.minecraft.world.level.Level.class, BlockPos.class, Player.class, InteractionHand.class, BlockHitResult.class);
 
         if (!hasMethod && clazz.getSuperclass() != Block.class) {
             clazz = clazz.getSuperclass();
 
-            hasMethod = hasMethod(clazz, "useWithoutItem", BlockState.class, net.minecraft.world.level.Level.class, BlockPos.class, Player.class, MovingObjectPositionBlock.class)
-                    || hasMethod(clazz, "useItemOn", net.minecraft.world.item.ItemStack.class, BlockState.class, net.minecraft.world.level.Level.class, BlockPosition.class, EntityHuman.class, EnumHand.class, MovingObjectPositionBlock.class);
+            hasMethod = hasMethod(clazz, "useWithoutItem", BlockState.class, net.minecraft.world.level.Level.class, BlockPos.class, Player.class, BlockHitResult.class)
+                    || hasMethod(clazz, "useItemOn", net.minecraft.world.item.ItemStack.class, BlockState.class, net.minecraft.world.level.Level.class, BlockPos.class, Player.class, InteractionHand.class, BlockHitResult.class);
         }
 
         return hasMethod;
@@ -184,12 +182,12 @@ public class CraftBlockType<B extends BlockData> implements BlockType.Typed<B>, 
 
     @Override
     public boolean isOccluding() {
-        return block.defaultBlockState().isRedstoneConductor(BlockAccessAir.INSTANCE, BlockPosition.ZERO);
+        return block.defaultBlockState().isRedstoneConductor(EmptyBlockGetter.INSTANCE, BlockPos.ZERO);
     }
 
     @Override
     public boolean hasGravity() {
-        return block instanceof BlockFalling;
+        return block instanceof FallingBlock;
     }
 
     @Override

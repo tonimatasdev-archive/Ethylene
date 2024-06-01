@@ -7,7 +7,7 @@ import net.minecraft.world.item.Instrument;
 import org.bukkit.MusicInstrument;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.util.Handleable;
+import org.bukkit.craftbukkit.v1_20_R5.util.Handleable;
 import org.jetbrains.annotations.NotNull;
 
 public class CraftMusicInstrument extends MusicInstrument implements Handleable<Instrument> {

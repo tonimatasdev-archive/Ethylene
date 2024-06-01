@@ -1,7 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.command;
 
 import jline.console.completer.Completer;
-import org.bukkit.craftbukkit.util.Waitable;
+import org.bukkit.craftbukkit.v1_20_R5.util.Waitable;
 import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.event.server.TabCompleteEvent;
 

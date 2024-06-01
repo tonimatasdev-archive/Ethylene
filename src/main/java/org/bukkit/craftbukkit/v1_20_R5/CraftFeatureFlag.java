@@ -5,7 +5,7 @@ import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import org.bukkit.FeatureFlag;
 import org.bukkit.NamespacedKey;
-import org.bukkit.craftbukkit.util.CraftNamespacedKey;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftNamespacedKey;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;

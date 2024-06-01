@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.entity.CommandBlockEntity;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.CommandBlock;
-import org.bukkit.craftbukkit.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftChatMessage;
 
 public class CraftCommandBlock extends CraftBlockEntityState<CommandBlockEntity> implements CommandBlock {
 

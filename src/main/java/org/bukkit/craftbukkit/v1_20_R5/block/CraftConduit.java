@@ -7,7 +7,7 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.Conduit;
-import org.bukkit.craftbukkit.entity.CraftLivingEntity;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftLivingEntity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.util.BoundingBox;
 

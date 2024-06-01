@@ -8,9 +8,9 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.Dispenser;
+import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventory;
 import org.bukkit.craftbukkit.v1_20_R5.projectiles.CraftBlockProjectileSource;
-import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.projectiles.BlockProjectileSource;
 

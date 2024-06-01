@@ -4,7 +4,7 @@ import net.minecraft.world.phys.Vec3;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.util.CraftLocation;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftLocation;
 import org.bukkit.craftbukkit.v1_20_R5.entity.CraftEntity;
 import org.bukkit.damage.DamageSource;
 import org.bukkit.damage.DamageType;

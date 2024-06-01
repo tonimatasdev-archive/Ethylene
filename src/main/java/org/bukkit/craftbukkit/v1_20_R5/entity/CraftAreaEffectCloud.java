@@ -1,14 +1,9 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import com.google.common.collect.ImmutableList;
-import java.util.List;
-import java.util.Optional;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffectList;
-import net.minecraft.world.entity.EntityAreaEffectCloud;
-import net.minecraft.world.entity.EntityLiving;
 import net.minecraft.world.item.alchemy.PotionContents;
 import org.bukkit.Color;
 import org.bukkit.Particle;
@@ -24,6 +19,9 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionType;
 import org.bukkit.projectiles.ProjectileSource;
+
+import java.util.List;
+import java.util.Optional;
 
 public class CraftAreaEffectCloud extends CraftEntity implements AreaEffectCloud {
 

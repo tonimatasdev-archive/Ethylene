@@ -10,7 +10,7 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Bell;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.entity.CraftEntity;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftEntity;
 import org.bukkit.entity.Entity;
 
 public class CraftBell extends CraftBlockEntityState<BellBlockEntity> implements Bell {

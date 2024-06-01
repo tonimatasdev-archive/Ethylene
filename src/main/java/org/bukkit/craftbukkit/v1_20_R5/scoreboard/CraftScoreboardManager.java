@@ -8,8 +8,8 @@ import net.minecraft.server.ServerScoreboard;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.scores.*;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
-import org.bukkit.craftbukkit.entity.CraftPlayer;
-import org.bukkit.craftbukkit.util.WeakCollection;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_20_R5.util.WeakCollection;
 import org.bukkit.scoreboard.ScoreboardManager;
 
 import java.util.*;

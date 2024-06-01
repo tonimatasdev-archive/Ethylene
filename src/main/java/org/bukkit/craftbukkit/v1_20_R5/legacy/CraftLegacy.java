@@ -22,7 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.Property;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.util.CraftMagicNumbers;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftMagicNumbers;
 import org.bukkit.entity.EntityType;
 import org.bukkit.material.MaterialData;
 

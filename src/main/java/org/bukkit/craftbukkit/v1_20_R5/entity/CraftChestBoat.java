@@ -1,9 +1,9 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import net.minecraft.world.entity.vehicle.ChestBoat;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventory;
 import org.bukkit.craftbukkit.v1_20_R5.CraftLootTable;
 import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.loot.LootTable;
 

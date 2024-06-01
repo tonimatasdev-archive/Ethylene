@@ -5,8 +5,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.world.level.IWorldReader;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.entity.vault.VaultBlockEntity;
 import net.minecraft.world.level.block.piston.PistonMovingBlockEntity;
@@ -358,11 +358,11 @@ public final class CraftBlockStates {
         return getBlockState(MinecraftServer.getDefaultRegistryAccess(), blockPosition, material, blockEntityTag);
     }
 
-    public static BlockState getBlockState(IWorldReader world, BlockPos blockPosition, Material material, @Nullable CompoundTag blockEntityTag) {
+    public static org.bukkit.block.BlockState getBlockState(LevelReader world, BlockPos blockPosition, Material material, @Nullable CompoundTag blockEntityTag) {
         return getBlockState(world.registryAccess(), blockPosition, material, blockEntityTag);
     }
 
-    public static BlockState getBlockState(RegistryAccess registry, BlockPos blockPosition, Material material, @Nullable CompoundTag blockEntityTag) {
+    public static org.bukkit.block.BlockState getBlockState(RegistryAccess registry, BlockPos blockPosition, Material material, @Nullable CompoundTag blockEntityTag) {
         Preconditions.checkNotNull(material, "material is null");
         BlockState blockData = CraftBlockType.bukkitToMinecraft(material).defaultBlockState();
         return getBlockState(registry, blockPosition, blockData, blockEntityTag);
@@ -373,11 +373,11 @@ public final class CraftBlockStates {
         return getBlockState(MinecraftServer.getDefaultRegistryAccess(), BlockPos.ZERO, blockData, blockEntityTag);
     }
 
-    public static BlockState getBlockState(IWorldReader world, BlockPos blockPosition, BlockState blockData, @Nullable CompoundTag blockEntityTag) {
+    public static org.bukkit.block.BlockState getBlockState(LevelReader world, BlockPos blockPosition, BlockState blockData, @Nullable CompoundTag blockEntityTag) {
         return getBlockState(world.registryAccess(), blockPosition, blockData, blockEntityTag);
     }
 
-    public static BlockState getBlockState(RegistryAccess registry, BlockPos blockPosition, net.minecraft.world.level.block.state.BlockState blockData, @Nullable CompoundTag blockEntityTag) {
+    public static org.bukkit.block.BlockState getBlockState(RegistryAccess registry, BlockPos blockPosition, net.minecraft.world.level.block.state.BlockState blockData, @Nullable CompoundTag blockEntityTag) {
         Preconditions.checkNotNull(blockPosition, "blockPosition is null");
         Preconditions.checkNotNull(blockData, "blockData is null");
         BlockEntity tileEntity = (blockEntityTag == null) ? null : BlockEntity.loadStatic(blockPosition, blockData, blockEntityTag, registry);

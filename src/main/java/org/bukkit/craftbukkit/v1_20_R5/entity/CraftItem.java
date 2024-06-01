@@ -1,8 +1,8 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import net.minecraft.world.entity.item.ItemEntity;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
 import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 

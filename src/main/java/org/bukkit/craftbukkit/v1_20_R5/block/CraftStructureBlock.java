@@ -10,8 +10,8 @@ import org.bukkit.block.Structure;
 import org.bukkit.block.structure.Mirror;
 import org.bukkit.block.structure.StructureRotation;
 import org.bukkit.block.structure.UsageMode;
-import org.bukkit.craftbukkit.entity.CraftLivingEntity;
-import org.bukkit.craftbukkit.util.CraftBlockVector;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftLivingEntity;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftBlockVector;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.util.BlockVector;
 

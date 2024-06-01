@@ -10,7 +10,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
-import org.bukkit.craftbukkit.util.CraftLocation;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftLocation;
 
 public final class CapturedBlockState extends CraftBlockState {
 

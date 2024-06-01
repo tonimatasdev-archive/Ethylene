@@ -6,7 +6,7 @@ import net.minecraft.world.scores.PlayerTeam;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.craftbukkit.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftChatMessage;
 import org.bukkit.scoreboard.NameTagVisibility;
 import org.bukkit.scoreboard.Team;
 

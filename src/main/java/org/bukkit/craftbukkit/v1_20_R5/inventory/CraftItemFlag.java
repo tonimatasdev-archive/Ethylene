@@ -1,7 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.inventory;
 
 import com.google.common.base.Preconditions;
-import org.bukkit.craftbukkit.util.ApiVersion;
+import org.bukkit.craftbukkit.v1_20_R5.util.ApiVersion;
 import org.bukkit.craftbukkit.v1_20_R5.legacy.FieldRename;
 import org.bukkit.inventory.ItemFlag;
 

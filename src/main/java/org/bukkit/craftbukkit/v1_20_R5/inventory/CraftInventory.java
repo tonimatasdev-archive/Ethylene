@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.entity.*;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.util.CraftLegacy;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftLegacy;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;

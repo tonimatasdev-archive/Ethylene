@@ -10,8 +10,8 @@ import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarFlag;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
-import org.bukkit.craftbukkit.entity.CraftPlayer;
-import org.bukkit.craftbukkit.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftChatMessage;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;

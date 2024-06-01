@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.v1_20_R5.tag;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.tags.TagKey;
-import org.bukkit.craftbukkit.entity.CraftEntityType;
+import org.bukkit.craftbukkit.v1_20_R5.entity.CraftEntityType;
 import org.bukkit.entity.EntityType;
 
 import java.util.Set;

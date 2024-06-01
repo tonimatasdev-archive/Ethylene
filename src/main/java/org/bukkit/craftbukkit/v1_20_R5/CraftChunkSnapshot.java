@@ -13,7 +13,7 @@ import org.bukkit.ChunkSnapshot;
 import org.bukkit.Material;
 import org.bukkit.block.Biome;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.util.CraftMagicNumbers;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftMagicNumbers;
 import org.bukkit.craftbukkit.v1_20_R5.block.CraftBiome;
 import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlockType;
 import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;

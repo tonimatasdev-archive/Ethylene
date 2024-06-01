@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.entity.EnchantingTableBlockEntity;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.EnchantingTable;
-import org.bukkit.craftbukkit.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftChatMessage;
 
 public class CraftEnchantingTable extends CraftBlockEntityState<EnchantingTableBlockEntity> implements EnchantingTable {
 

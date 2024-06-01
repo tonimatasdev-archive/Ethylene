@@ -2,8 +2,8 @@ package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import com.google.common.base.Preconditions;
 import net.minecraft.world.entity.animal.horse.Markings;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventoryHorse;
 import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventoryHorse;
 import org.bukkit.entity.Horse;
 import org.bukkit.inventory.HorseInventory;
 

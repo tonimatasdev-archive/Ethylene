@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import org.bukkit.NamespacedKey;
-import org.bukkit.craftbukkit.util.CraftNBTTagConfigSerializer;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftNBTTagConfigSerializer;
 import org.bukkit.persistence.PersistentDataAdapterContext;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;

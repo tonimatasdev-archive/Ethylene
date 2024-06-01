@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import net.minecraft.core.registries.Registries;
 import org.bukkit.Fluid;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.util.CraftNamespacedKey;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftNamespacedKey;
 
 public class CraftFluid {
 

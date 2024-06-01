@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.v1_20_R5.advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import org.bukkit.NamespacedKey;
 import org.bukkit.advancement.AdvancementDisplay;
-import org.bukkit.craftbukkit.util.CraftNamespacedKey;
+import org.bukkit.craftbukkit.v1_20_R5.util.CraftNamespacedKey;
 
 import java.util.Collection;
 import java.util.Collections;

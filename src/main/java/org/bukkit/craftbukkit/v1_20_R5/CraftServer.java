@@ -56,7 +56,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.MapItem;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.RecipeRepair;
+import net.minecraft.world.item.crafting.RepairItemRecipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.CustomSpawner;
 import net.minecraft.world.level.GameRules;
@@ -88,13 +88,10 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.conversations.Conversable;
 import org.bukkit.craftbukkit.Main;
-import org.bukkit.craftbukkit.event.CraftEventFactory;
-import org.bukkit.craftbukkit.generator.CraftWorldInfo;
-import org.bukkit.craftbukkit.generator.OldCraftChunkData;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.*;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.util.CraftInventoryCreator;
-import org.bukkit.craftbukkit.util.*;
-import org.bukkit.craftbukkit.util.permissions.CraftDefaultPermissions;
+import org.bukkit.craftbukkit.v1_20_R5.generator.CraftWorldInfo;
+import org.bukkit.craftbukkit.v1_20_R5.generator.OldCraftChunkData;
+import org.bukkit.craftbukkit.v1_20_R5.util.*;
+import org.bukkit.craftbukkit.v1_20_R5.util.permissions.CraftDefaultPermissions;
 import org.bukkit.craftbukkit.v1_20_R5.ban.CraftIpBanList;
 import org.bukkit.craftbukkit.v1_20_R5.ban.CraftProfileBanList;
 import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
@@ -105,7 +102,10 @@ import org.bukkit.craftbukkit.v1_20_R5.command.CraftCommandMap;
 import org.bukkit.craftbukkit.v1_20_R5.command.VanillaCommandWrapper;
 import org.bukkit.craftbukkit.v1_20_R5.entity.CraftEntityFactory;
 import org.bukkit.craftbukkit.v1_20_R5.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_20_R5.event.CraftEventFactory;
 import org.bukkit.craftbukkit.v1_20_R5.help.SimpleHelpMap;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.*;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.util.CraftInventoryCreator;
 import org.bukkit.craftbukkit.v1_20_R5.map.CraftMapColorCache;
 import org.bukkit.craftbukkit.v1_20_R5.map.CraftMapCursor;
 import org.bukkit.craftbukkit.v1_20_R5.map.CraftMapView;
@@ -1361,7 +1361,7 @@ public final class CraftServer implements Server {
         }
 
         // Call Bukkit event to check for matrix/result changes.
-        net.minecraft.world.item.ItemStack result = CraftEventFactory.callPreCraftEvent(inventoryCrafting, craftResult, itemstack, container.getBukkitView(), recipe.map(RecipeHolder::value).orElse(null) instanceof RecipeRepair);
+        net.minecraft.world.item.ItemStack result = CraftEventFactory.callPreCraftEvent(inventoryCrafting, craftResult, itemstack, container.getBukkitView(), recipe.map(RecipeHolder::value).orElse(null) instanceof RepairItemRecipe);
 
         return createItemCraftResult(CraftItemStack.asBukkitCopy(result), inventoryCrafting, craftWorld.getHandle());
     }
