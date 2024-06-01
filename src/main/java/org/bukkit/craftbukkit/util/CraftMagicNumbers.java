@@ -11,23 +11,16 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.JsonOps;
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import net.minecraft.SharedConstants;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.commands.CommandDispatcher;
 import net.minecraft.commands.arguments.item.ArgumentParserItemStack;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.MinecraftKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.AdvancementDataWorld;
 import net.minecraft.server.MinecraftServer;
@@ -40,27 +33,21 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.SavedFile;
-import org.bukkit.Bukkit;
-import org.bukkit.FeatureFlag;
-import org.bukkit.Keyed;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Registry;
-import org.bukkit.UnsafeValues;
+import org.bukkit.*;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.block.data.BlockData;
+import org.bukkit.craftbukkit.v1_20_R5.damage.CraftDamageEffect;
+import org.bukkit.craftbukkit.v1_20_R5.damage.CraftDamageSourceBuilder;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.v1_20_R5.CraftEquipmentSlot;
 import org.bukkit.craftbukkit.v1_20_R5.CraftFeatureFlag;
 import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.attribute.CraftAttribute;
 import org.bukkit.craftbukkit.v1_20_R5.attribute.CraftAttributeInstance;
 import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
-import org.bukkit.craftbukkit.damage.CraftDamageEffect;
-import org.bukkit.craftbukkit.damage.CraftDamageSourceBuilder;
-import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.v1_20_R5.legacy.CraftLegacy;
 import org.bukkit.craftbukkit.v1_20_R5.legacy.FieldRename;
 import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionType;
@@ -76,6 +63,14 @@ import org.bukkit.material.MaterialData;
 import org.bukkit.plugin.InvalidPluginException;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.potion.PotionType;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @SuppressWarnings("deprecation")
 public final class CraftMagicNumbers implements UnsafeValues {
@@ -261,7 +256,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
     @Override
     public Advancement loadAdvancement(NamespacedKey key, String advancement) {
         Preconditions.checkArgument(Bukkit.getAdvancement(key) == null, "Advancement %s already exists", key);
-        MinecraftKey minecraftkey = CraftNamespacedKey.toMinecraft(key);
+        ResourceLocation minecraftkey = CraftNamespacedKey.toMinecraft(key);
 
         JsonElement jsonelement = AdvancementDataWorld.GSON.fromJson(advancement, JsonElement.class);
         net.minecraft.advancements.Advancement nms = net.minecraft.advancements.Advancement.CODEC.parse(JsonOps.INSTANCE, jsonelement).getOrThrow(JsonParseException::new);

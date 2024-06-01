@@ -1,7 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import org.bukkit.DyeColor;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.TropicalFish;
 
 import java.util.HashMap;

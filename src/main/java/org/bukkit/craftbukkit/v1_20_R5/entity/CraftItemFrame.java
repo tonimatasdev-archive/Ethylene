@@ -6,8 +6,8 @@ import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.level.block.Blocks;
 import org.bukkit.Rotation;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.CraftServer;
-import org.bukkit.craftbukkit.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlock;
 import org.bukkit.entity.ItemFrame;
 

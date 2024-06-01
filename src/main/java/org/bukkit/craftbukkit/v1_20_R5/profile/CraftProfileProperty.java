@@ -1,24 +1,20 @@
 package org.bukkit.craftbukkit.v1_20_R5.profile;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.yggdrasil.ServicesKeySet;
 import com.mojang.authlib.yggdrasil.ServicesKeyType;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
+import org.bukkit.craftbukkit.v1_20_R5.configuration.ConfigSerializationUtil;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.net.Proxy;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import org.bukkit.craftbukkit.v1_20_R5.configuration.ConfigSerializationUtil;
 
 final class CraftProfileProperty {
 

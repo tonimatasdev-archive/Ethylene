@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.v1_20_R5.entity;
 import net.minecraft.world.entity.vehicle.MinecartCommandBlock;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.util.CraftChatMessage;
 import org.bukkit.entity.minecart.CommandMinecart;
 import org.bukkit.permissions.PermissibleBase;

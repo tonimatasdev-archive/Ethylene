@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import org.bukkit.Material;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
 import org.bukkit.entity.FallingBlock;
 

@@ -8,7 +8,7 @@ import org.bukkit.World;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.ChiseledBookshelf;
 import org.bukkit.block.data.Directional;
-import org.bukkit.craftbukkit.inventory.CraftInventoryChiseledBookshelf;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventoryChiseledBookshelf;
 import org.bukkit.inventory.ChiseledBookshelfInventory;
 import org.bukkit.util.Vector;
 

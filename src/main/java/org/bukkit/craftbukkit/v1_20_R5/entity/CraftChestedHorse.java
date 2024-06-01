@@ -1,7 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
 import net.minecraft.world.entity.animal.horse.AbstractChestedHorse;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.ChestedHorse;
 
 public abstract class CraftChestedHorse extends CraftAbstractHorse implements ChestedHorse {

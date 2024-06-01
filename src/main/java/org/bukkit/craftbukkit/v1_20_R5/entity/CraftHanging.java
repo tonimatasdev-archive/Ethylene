@@ -3,7 +3,7 @@ package org.bukkit.craftbukkit.v1_20_R5.entity;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.decoration.HangingEntity;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlock;
 import org.bukkit.entity.Hanging;
 

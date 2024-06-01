@@ -1,23 +1,23 @@
 package org.bukkit.craftbukkit.generator;
 
 import com.google.common.base.Preconditions;
-import java.lang.ref.WeakReference;
 import net.minecraft.core.BlockPosition;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ITileEntity;
 import net.minecraft.world.level.block.entity.TileEntity;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.IChunkAccess;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 import org.bukkit.block.data.BlockData;
+import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 import org.bukkit.craftbukkit.v1_20_R5.block.CraftBiome;
 import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlockType;
 import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
-import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.material.MaterialData;
+
+import java.lang.ref.WeakReference;
 
 /**
  * Data to be used for the block types and data in a newly generated chunk.

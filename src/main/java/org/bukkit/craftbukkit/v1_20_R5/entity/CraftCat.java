@@ -6,9 +6,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.animal.CatVariant;
 import org.bukkit.DyeColor;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.util.CraftNamespacedKey;
 import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.entity.Cat;
 
 public class CraftCat extends CraftTameableAnimal implements Cat {

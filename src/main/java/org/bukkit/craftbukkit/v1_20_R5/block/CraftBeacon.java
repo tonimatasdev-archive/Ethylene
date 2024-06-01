@@ -1,23 +1,20 @@
 package org.bukkit.craftbukkit.v1_20_R5.block;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import net.minecraft.world.ChestLock;
 import net.minecraft.world.LockCode;
-import net.minecraft.world.entity.player.EntityHuman;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.entity.BeaconBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.TileEntity;
-import net.minecraft.world.level.block.entity.TileEntityBeacon;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Beacon;
-import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionEffectType;
 import org.bukkit.craftbukkit.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_20_R5.potion.CraftPotionEffectType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class CraftBeacon extends CraftBlockEntityState<BeaconBlockEntity> implements Beacon {
 

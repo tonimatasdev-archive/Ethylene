@@ -2,7 +2,6 @@ package org.bukkit.craftbukkit.util;
 
 import net.minecraft.core.BlockPosition;
 import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.MovingObjectPosition;
 import net.minecraft.world.phys.MovingObjectPosition.EnumMovingObjectType;
 import net.minecraft.world.phys.MovingObjectPositionBlock;
 import net.minecraft.world.phys.MovingObjectPositionEntity;

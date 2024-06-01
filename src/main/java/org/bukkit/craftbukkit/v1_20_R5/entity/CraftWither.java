@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import org.bukkit.boss.BossBar;
-import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.boss.CraftBossBar;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Wither;

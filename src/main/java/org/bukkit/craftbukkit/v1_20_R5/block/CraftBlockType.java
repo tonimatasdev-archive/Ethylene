@@ -1,8 +1,6 @@
 package org.bukkit.craftbukkit.v1_20_R5.block;
 
 import com.google.common.base.Preconditions;
-import java.util.function.Consumer;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPosition;
 import net.minecraft.core.registries.Registries;
@@ -14,10 +12,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockAccessAir;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BlockFalling;
-import net.minecraft.world.level.block.BlockFire;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
-import net.minecraft.world.level.block.state.BlockBase;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.MovingObjectPositionBlock;
 import org.bukkit.Material;
@@ -26,14 +22,16 @@ import org.bukkit.Registry;
 import org.bukkit.World;
 import org.bukkit.block.BlockType;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
-import org.bukkit.craftbukkit.CraftWorld;
-import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
-import org.bukkit.craftbukkit.inventory.CraftItemType;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemType;
 import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 import org.bukkit.craftbukkit.util.Handleable;
+import org.bukkit.craftbukkit.v1_20_R5.CraftRegistry;
+import org.bukkit.craftbukkit.v1_20_R5.CraftWorld;
+import org.bukkit.craftbukkit.v1_20_R5.block.data.CraftBlockData;
 import org.bukkit.inventory.ItemType;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.function.Consumer;
 
 public class CraftBlockType<B extends BlockData> implements BlockType.Typed<B>, Handleable<Block> {
 

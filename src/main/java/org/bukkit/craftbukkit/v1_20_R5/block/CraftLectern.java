@@ -6,7 +6,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Lectern;
-import org.bukkit.craftbukkit.inventory.CraftInventoryLectern;
+import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventoryLectern;
 import org.bukkit.inventory.Inventory;
 
 public class CraftLectern extends CraftBlockEntityState<LecternBlockEntity> implements Lectern {

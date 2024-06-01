@@ -3,7 +3,6 @@ package org.bukkit.craftbukkit.util;
 import net.minecraft.core.BlockPosition;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.entity.TileEntity;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.material.Fluid;
 import org.bukkit.craftbukkit.v1_20_R5.block.CraftBlockEntityState;
