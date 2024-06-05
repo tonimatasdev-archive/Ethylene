@@ -4,6 +4,7 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.mojang.brigadier.ParseResults;
 import com.mojang.brigadier.tree.CommandNode;
+import dev.tonimatas.ethylene.link.commands.CommandsLink;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.world.entity.vehicle.MinecartCommandBlock;
@@ -37,7 +38,7 @@ public final class VanillaCommandWrapper extends BukkitCommand {
         if (!testPermission(sender)) return true;
 
         CommandSourceStack icommandlistener = getListener(sender);
-        dispatcher.performPrefixedCommand(icommandlistener, toDispatcher(args, getName()), toDispatcher(args, commandLabel));
+        ((CommandsLink) dispatcher).performPrefixedCommand(icommandlistener, toDispatcher(args, getName()), toDispatcher(args, commandLabel));
         return true;
     }
 
