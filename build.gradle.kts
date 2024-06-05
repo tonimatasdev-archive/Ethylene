@@ -1,7 +1,7 @@
 plugins {
     id("java-library")
     id("idea")
-    id("net.neoforged.gradle.userdev") version "7.0.136"
+    id("net.neoforged.gradle.userdev") version "7.+"
 }
 
 val minecraftVersion: String by extra
