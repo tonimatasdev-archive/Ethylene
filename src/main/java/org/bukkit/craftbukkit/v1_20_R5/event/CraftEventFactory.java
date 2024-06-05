@@ -5,6 +5,7 @@ import com.google.common.base.Functions;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Either;
+import dev.tonimatas.ethylene.link.world.damagesource.DamageSourceLink;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.protocol.game.ServerboundContainerClosePacket;
@@ -790,15 +791,15 @@ public class CraftEventFactory {
 
     private static EntityDamageEvent handleEntityDamageEvent(Entity entity, DamageSource source, Map<DamageModifier, Double> modifiers, Map<DamageModifier, Function<? super Double, Double>> modifierFunctions, boolean cancelled) {
         CraftDamageSource bukkitDamageSource = new CraftDamageSource(source);
-        Entity damager = (source.getDamager() != null) ? source.getDamager() : source.getEntity();
+        Entity damager = (((DamageSourceLink)source).getDamager() != null) ? ((DamageSourceLink) source).getDamager() : source.getEntity();
         if (source.is(DamageTypeTags.IS_EXPLOSION)) {
             if (damager == null) {
-                return callEntityDamageEvent(source.getDirectBlock(), source.getDirectBlockState(), entity, DamageCause.BLOCK_EXPLOSION, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
+                return callEntityDamageEvent(((DamageSourceLink) source).getDirectBlock(), ((DamageSourceLink) source).getDirectBlockState(), entity, DamageCause.BLOCK_EXPLOSION, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
             }
             DamageCause damageCause = (damager.getBukkitEntity() instanceof org.bukkit.entity.TNTPrimed) ? DamageCause.BLOCK_EXPLOSION : DamageCause.ENTITY_EXPLOSION;
             return callEntityDamageEvent(damager, entity, damageCause, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
         } else if (damager != null || source.getDirectEntity() != null) {
-            DamageCause cause = (source.isSweep()) ? DamageCause.ENTITY_SWEEP_ATTACK : DamageCause.ENTITY_ATTACK;
+            DamageCause cause = (((DamageSourceLink)source).isSweep()) ? DamageCause.ENTITY_SWEEP_ATTACK : DamageCause.ENTITY_ATTACK;
 
             if (damager instanceof net.minecraft.world.entity.projectile.Projectile) {
                 if (damager.getBukkitEntity() instanceof ThrownPotion) {
@@ -824,10 +825,10 @@ public class CraftEventFactory {
 
             return callEntityDamageEvent(damager, entity, cause, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
         } else if (source.is(DamageTypes.FELL_OUT_OF_WORLD)) {
-            return callEntityDamageEvent(source.getDirectBlock(), source.getDirectBlockState(), entity, DamageCause.VOID, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
+            return callEntityDamageEvent(((DamageSourceLink)source).getDirectBlock(), ((DamageSourceLink)source).getDirectBlockState(), entity, DamageCause.VOID, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
         } else if (source.is(DamageTypes.LAVA)) {
-            return callEntityDamageEvent(source.getDirectBlock(), source.getDirectBlockState(), entity, DamageCause.LAVA, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
-        } else if (source.getDirectBlock() != null) {
+            return callEntityDamageEvent(((DamageSourceLink)source).getDirectBlock(), ((DamageSourceLink)source).getDirectBlockState(), entity, DamageCause.LAVA, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
+        } else if (((DamageSourceLink)source).getDirectBlock() != null) {
             DamageCause cause;
             if (source.is(DamageTypes.CACTUS) || source.is(DamageTypes.SWEET_BERRY_BUSH) || source.is(DamageTypes.STALAGMITE) || source.is(DamageTypes.FALLING_STALACTITE) || source.is(DamageTypes.FALLING_ANVIL)) {
                 cause = DamageCause.CONTACT;
@@ -838,9 +839,9 @@ public class CraftEventFactory {
             } else if (source.is(DamageTypes.IN_FIRE)) {
                 cause = DamageCause.FIRE;
             } else {
-                throw new IllegalStateException(String.format("Unhandled damage of %s by %s from %s", entity, source.getDirectBlock(), source.getMsgId()));
+                throw new IllegalStateException(String.format("Unhandled damage of %s by %s from %s", entity, ((DamageSourceLink)source).getDirectBlock(), source.getMsgId()));
             }
-            return callEntityDamageEvent(source.getDirectBlock(), source.getDirectBlockState(), entity, cause, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
+            return callEntityDamageEvent(((DamageSourceLink)source).getDirectBlock(), ((DamageSourceLink)source).getDirectBlockState(), entity, cause, bukkitDamageSource, modifiers, modifierFunctions, cancelled);
         }
 
         DamageCause cause;
@@ -856,9 +857,9 @@ public class CraftEventFactory {
             cause = DamageCause.DROWNING;
         } else if (source.is(DamageTypes.ON_FIRE)) {
             cause = DamageCause.FIRE_TICK;
-        } else if (source.isMelting()) {
+        } else if (((DamageSourceLink)source).isMelting()) {
             cause = DamageCause.MELTING;
-        } else if (source.isPoison()) {
+        } else if (((DamageSourceLink)source).isPoison()) {
             cause = DamageCause.POISON;
         } else if (source.is(DamageTypes.MAGIC)) {
             cause = DamageCause.MAGIC;
@@ -893,7 +894,7 @@ public class CraftEventFactory {
         return callEntityDamageEvent(event, damagee, cancelled);
     }
 
-    private static EntityDamageEvent callEntityDamageEvent(Block damager, BlockState damagerState, Entity damagee, DamageCause cause, org.bukkit.damage.DamageSource bukkitDamageSource, Map<DamageModifier, Double> modifiers, Map<DamageModifier, Function<? super Double, Double>> modifierFunctions, boolean cancelled) {
+    private static EntityDamageEvent callEntityDamageEvent(Block damager, org.bukkit.block.BlockState damagerState, Entity damagee, DamageCause cause, org.bukkit.damage.DamageSource bukkitDamageSource, Map<DamageModifier, Double> modifiers, Map<DamageModifier, Function<? super Double, Double>> modifierFunctions, boolean cancelled) {
         EntityDamageByBlockEvent event = new EntityDamageByBlockEvent(damager, damagerState, damagee.getBukkitEntity(), cause, bukkitDamageSource, modifiers, modifierFunctions);
         return callEntityDamageEvent(event, damagee, cancelled);
     }

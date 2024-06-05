@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.v1_20_R5.damage;
 
+import dev.tonimatas.ethylene.link.world.damagesource.DamageSourceLink;
 import net.minecraft.world.phys.Vec3;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -32,7 +33,7 @@ public class CraftDamageSource implements DamageSource {
     }
 
     public Block getDirectBlock() {
-        return this.getHandle().getDirectBlock();
+        return ((DamageSourceLink) this.getHandle()).getDirectBlock();
     }
 
     @Override
@@ -48,7 +49,7 @@ public class CraftDamageSource implements DamageSource {
 
     @Override
     public org.bukkit.entity.Entity getDirectEntity() {
-        net.minecraft.world.entity.Entity entity = this.getHandle().getDamager();
+        net.minecraft.world.entity.Entity entity = ((DamageSourceLink) this.getHandle()).getDamager();
         return (entity != null) ? entity.getBukkitEntity() : null;
     }
 
@@ -66,7 +67,7 @@ public class CraftDamageSource implements DamageSource {
 
     @Override
     public boolean isIndirect() {
-        return this.getHandle().getEntity() != this.getHandle().getDamager();
+        return this.getHandle().getEntity() != ((DamageSourceLink) this.getHandle()).getDamager();
     }
 
     @Override
