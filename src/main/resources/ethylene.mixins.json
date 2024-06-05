@@ -5,10 +5,15 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "ethylene.refmap.json",
   "mixins": [
+    "CrashReportMixin",
     "advancements.AdvancementHolderMixin",
+    "commands.CommandsMixin",
     "commands.CommandSource$1Mixin",
     "commands.CommandSourceMixin",
-    "commands.CommandSourceStackMixin"
+    "commands.CommandSourceStackMixin",
+    "commands.arguments.EntityArgumentMixin",
+    "commands.arguments.selector.EntitySelectorMixin",
+    "commands.arguments.selector.EntitySelectorParserMixin"
   ],
   "injectors": {
     "defaultRequire": 1

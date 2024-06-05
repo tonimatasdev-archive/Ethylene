@@ -5,4 +5,4 @@
  - **CraftBukkit:** b148ed33225e415a25cf32d53bd5142914c17c80
 
 ## Patches:
- - **CraftBukkit:** 548 (7 done)
+ - **CraftBukkit:** 548 (12 done)
