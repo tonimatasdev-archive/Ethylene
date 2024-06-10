@@ -15,10 +15,10 @@
     "commands.arguments.selector.EntitySelectorMixin",
     "commands.arguments.selector.EntitySelectorParserMixin",
     "world.damagesource.DamageSourceMixin",
+    "world.damagesource.DamageSourcesMixin",
     "world.effect.HealOrHarmMobEffectMixin",
     "world.effect.HungerMobEffectMixin",
     "world.effect.MobEffectUtilMixin",
-    "world.effect.PoisonMobEffectMixin",
     "world.effect.RegenerationMobEffectMixin",
     "world.effect.SaturationMobEffectMixin"
   ],
