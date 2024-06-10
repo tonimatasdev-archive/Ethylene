@@ -14,6 +14,7 @@
     "commands.arguments.EntityArgumentMixin",
     "commands.arguments.selector.EntitySelectorMixin",
     "commands.arguments.selector.EntitySelectorParserMixin",
+    "world.ChestLockMixin",
     "world.damagesource.DamageSourceMixin",
     "world.damagesource.DamageSourcesMixin",
     "world.effect.HealOrHarmMobEffectMixin",
