@@ -10,10 +10,7 @@ import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.server.MinecraftServer;
 import org.bukkit.ChatColor;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -76,7 +73,7 @@ public final class CraftChatMessage {
                 }
                 switch (groupId) {
                 case 1:
-                    char c = match.toLowerCase(java.util.Locale.ENGLISH).charAt(1);
+                    char c = match.toLowerCase(Locale.ROOT).charAt(1);
                     ChatFormatting format = formatMap.get(c);
 
                     if (c == 'x') {
