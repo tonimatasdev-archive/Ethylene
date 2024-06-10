@@ -1,8 +1,8 @@
 # Ethylene
 
 ### Upstream:
- - **Bukkit:** 8df1ed1847f33981388147a1db4c73634e5231d5
+ - **Bukkit:** 19b7caaabe6 (19b7caaabe61c0c789515b09331be675611d6390)
  - **CraftBukkit:** b148ed33225e415a25cf32d53bd5142914c17c80
 
 ## Patches:
- - **CraftBukkit:** 548 (12 done)
+ - **CraftBukkit:** 548
