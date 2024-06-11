@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.v1_20_R5.inventory;
 
+import dev.tonimatas.ethylene.link.world.item.crafting.RecipeHolderLink;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import org.bukkit.inventory.Recipe;
@@ -21,7 +22,7 @@ public class RecipeIterator implements Iterator<Recipe> {
 
     @Override
     public Recipe next() {
-        return recipes.next().getValue().toBukkitRecipe();
+        return ((RecipeHolderLink) (Object) recipes.next().getValue()).toBukkitRecipe(); // Ethylene
     }
 
     @Override

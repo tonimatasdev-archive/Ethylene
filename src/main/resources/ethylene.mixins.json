@@ -21,7 +21,20 @@
     "world.effect.HungerMobEffectMixin",
     "world.effect.MobEffectUtilMixin",
     "world.effect.RegenerationMobEffectMixin",
-    "world.effect.SaturationMobEffectMixin"
+    "world.effect.SaturationMobEffectMixin",
+    "world.item.crafting.BlastingRecipeMixin",
+    "world.item.crafting.CampfireCookingRecipeMixin",
+    "world.item.crafting.CustomRecipeMixin",
+    "world.item.crafting.IngredientMixin",
+    "world.item.crafting.RecipeHolderMixin",
+    "world.item.crafting.RecipeMixin",
+    "world.item.crafting.SmeltingRecipeMixin",
+    "world.item.crafting.SmokingRecipeMixin",
+    "world.item.crafting.StonecutterRecipeMixin",
+    "world.item.enchantment.DamageEnchantmentMixin",
+    "world.item.enchantment.FrostWalkerEnchantmentMixin",
+    "world.item.trading.MerchantMixin",
+    "world.item.trading.MerchantRecipeMixin"
   ],
   "injectors": {
     "defaultRequire": 1

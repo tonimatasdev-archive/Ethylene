@@ -2,6 +2,7 @@ package org.bukkit.craftbukkit.v1_20_R5.inventory;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
+import dev.tonimatas.ethylene.link.world.item.trading.MerchantOfferLink;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.trading.MerchantOffers;
 import org.bukkit.entity.HumanEntity;
@@ -28,7 +29,7 @@ public class CraftMerchant implements Merchant {
         return Collections.unmodifiableList(Lists.transform(merchant.getOffers(), new Function<net.minecraft.world.item.trading.MerchantOffer, MerchantRecipe>() {
             @Override
             public MerchantRecipe apply(net.minecraft.world.item.trading.MerchantOffer recipe) {
-                return recipe.asBukkit();
+                return ((MerchantOfferLink) recipe).asBukkit(); // Ethylene
             }
         }));
     }
@@ -44,7 +45,7 @@ public class CraftMerchant implements Merchant {
 
     @Override
     public MerchantRecipe getRecipe(int i) {
-        return merchant.getOffers().get(i).asBukkit();
+        return ((MerchantOfferLink) merchant.getOffers().get(i)).asBukkit(); // Ethylene
     }
 
     @Override

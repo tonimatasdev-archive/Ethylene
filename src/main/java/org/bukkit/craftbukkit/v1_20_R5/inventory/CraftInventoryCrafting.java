@@ -1,6 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.inventory;
 
 import com.google.common.base.Preconditions;
+import dev.tonimatas.ethylene.link.world.item.crafting.RecipeHolderLink;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import org.bukkit.inventory.CraftingInventory;
@@ -117,6 +118,6 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
     @Override
     public Recipe getRecipe() {
         RecipeHolder<?> recipe = getInventory().getCurrentRecipe();
-        return recipe == null ? null : recipe.toBukkitRecipe();
+        return recipe == null ? null : ((RecipeHolderLink) (Object) recipe).toBukkitRecipe(); // Ethylene
     }
 }
