@@ -1,6 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.inventory;
 
 import com.google.common.base.Preconditions;
+import dev.tonimatas.ethylene.link.world.item.trading.MerchantLink;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -28,7 +29,7 @@ public class CraftMerchantCustom extends CraftMerchant {
         return (MinecraftMerchant) super.getMerchant();
     }
 
-    public static class MinecraftMerchant implements Merchant {
+    public static class MinecraftMerchant implements Merchant, MerchantLink { // Ethylene
 
         private final Component title;
         private final MerchantOffers trades = new MerchantOffers();

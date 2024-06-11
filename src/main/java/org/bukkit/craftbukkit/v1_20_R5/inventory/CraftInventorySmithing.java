@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.v1_20_R5.inventory;
 
+import dev.tonimatas.ethylene.link.world.item.crafting.RecipeHolderLink;
 import net.minecraft.world.Container;
 import net.minecraft.world.inventory.ResultContainer;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -40,6 +41,6 @@ public class CraftInventorySmithing extends CraftResultInventory implements Smit
     @Override
     public Recipe getRecipe() {
         RecipeHolder<?> recipe = getResultInventory().getRecipeUsed();
-        return (recipe == null) ? null : recipe.toBukkitRecipe();
+        return (recipe == null) ? null : ((RecipeHolderLink) (Object) recipe).toBukkitRecipe(); // Ethylene
     }
 }

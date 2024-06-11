@@ -16,6 +16,7 @@ import com.mojang.brigadier.tree.LiteralCommandNode;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.Lifecycle;
 import dev.tonimatas.ethylene.link.advancements.AdvancementHolderLink;
+import dev.tonimatas.ethylene.link.world.item.crafting.RecipeHolderLink;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import jline.console.ConsoleReader;
 import net.minecraft.advancements.AdvancementHolder;
@@ -1301,7 +1302,7 @@ public final class CraftServer implements Server {
     public Recipe getRecipe(NamespacedKey recipeKey) {
         Preconditions.checkArgument(recipeKey != null, "NamespacedKey recipeKey cannot be null");
 
-        return getServer().getRecipeManager().byKey(CraftNamespacedKey.toMinecraft(recipeKey)).map(RecipeHolder::toBukkitRecipe).orElse(null);
+        return getServer().getRecipeManager().byKey(CraftNamespacedKey.toMinecraft(recipeKey)).map(recipeHolder -> ((RecipeHolderLink) (Object) recipeHolder).toBukkitRecipe()).orElse(null); // Ethylene
     }
 
     private CraftingContainer createInventoryCrafting() {
@@ -1328,7 +1329,7 @@ public final class CraftServer implements Server {
 
     @Override
     public Recipe getCraftingRecipe(ItemStack[] craftingMatrix, World world) {
-        return getNMSRecipe(craftingMatrix, createInventoryCrafting(), (CraftWorld) world).map(RecipeHolder::toBukkitRecipe).orElse(null);
+        return getNMSRecipe(craftingMatrix, createInventoryCrafting(), (CraftWorld) world).map(craftingRecipeRecipeHolder -> ((RecipeHolderLink) (Object) craftingRecipeRecipeHolder).toBukkitRecipe()).orElse(null); // Ehtylene
     }
 
     @Override

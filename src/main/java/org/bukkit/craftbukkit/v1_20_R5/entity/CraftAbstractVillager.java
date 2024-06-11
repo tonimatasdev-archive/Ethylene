@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.v1_20_R5.entity;
 
+import dev.tonimatas.ethylene.link.world.item.trading.MerchantLink;
 import net.minecraft.world.entity.npc.Villager;
 import org.bukkit.craftbukkit.v1_20_R5.CraftServer;
 import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftInventory;
@@ -34,7 +35,7 @@ public class CraftAbstractVillager extends CraftAgeable implements AbstractVilla
     }
 
     private CraftMerchant getMerchant() {
-        return getHandle().getCraftMerchant();
+        return ((MerchantLink) getHandle()).getCraftMerchant(); // Ethylene
     }
 
     @Override
