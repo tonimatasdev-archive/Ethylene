@@ -1,6 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.inventory;
 
 import com.google.common.base.Preconditions;
+import dev.tonimatas.ethylene.link.world.ContainerLink;
 import dev.tonimatas.ethylene.link.world.item.crafting.RecipeHolderLink;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -41,14 +42,14 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
     @Override
     public ItemStack[] getContents() {
         ItemStack[] items = new ItemStack[getSize()];
-        List<net.minecraft.world.item.ItemStack> mcResultItems = getResultInventory().getContents();
+        List<net.minecraft.world.item.ItemStack> mcResultItems = ((ContainerLink) getResultInventory()).getContents(); // Ethylene
 
         int i = 0;
         for (i = 0; i < mcResultItems.size(); i++) {
             items[i] = CraftItemStack.asCraftMirror(mcResultItems.get(i));
         }
 
-        List<net.minecraft.world.item.ItemStack> mcItems = getMatrixInventory().getContents();
+        List<net.minecraft.world.item.ItemStack> mcItems = ((ContainerLink) getMatrixInventory()).getContents(); // Ethylene
 
         for (int j = 0; j < mcItems.size(); j++) {
             items[i + j] = CraftItemStack.asCraftMirror(mcItems.get(j));
@@ -84,7 +85,7 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
 
     @Override
     public ItemStack[] getMatrix() {
-        List<net.minecraft.world.item.ItemStack> matrix = getMatrixInventory().getContents();
+        List<net.minecraft.world.item.ItemStack> matrix = ((ContainerLink) getMatrixInventory()).getContents(); // Ethylene
 
         return asCraftMirror(matrix);
     }
@@ -111,13 +112,13 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
 
     @Override
     public void setResult(ItemStack item) {
-        List<net.minecraft.world.item.ItemStack> contents = getResultInventory().getContents();
+        List<net.minecraft.world.item.ItemStack> contents = ((ContainerLink) getResultInventory()).getContents(); // Ethylene
         contents.set(0, CraftItemStack.asNMSCopy(item));
     }
 
     @Override
     public Recipe getRecipe() {
-        RecipeHolder<?> recipe = getInventory().getCurrentRecipe();
+        RecipeHolder<?> recipe = ((ContainerLink) getInventory()).getCurrentRecipe(); // Ethylene
         return recipe == null ? null : ((RecipeHolderLink) (Object) recipe).toBukkitRecipe(); // Ethylene
     }
 }

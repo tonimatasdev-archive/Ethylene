@@ -1,6 +1,7 @@
 package org.bukkit.craftbukkit.v1_20_R5.inventory;
 
 import com.google.common.base.Preconditions;
+import dev.tonimatas.ethylene.link.world.ContainerLink;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
@@ -32,7 +33,7 @@ public class CraftInventoryCustom extends CraftInventory {
         super(new MinecraftInventory(owner, size, title));
     }
 
-    static class MinecraftInventory implements Container {
+    static class MinecraftInventory implements Container, ContainerLink { // Ethylene
         private final NonNullList<ItemStack> items;
         private int maxStack = MAX_STACK;
         private final List<HumanEntity> viewers;
