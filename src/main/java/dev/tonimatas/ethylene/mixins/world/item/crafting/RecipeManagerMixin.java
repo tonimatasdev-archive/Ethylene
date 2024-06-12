@@ -3,8 +3,11 @@ package dev.tonimatas.ethylene.mixins.world.item.crafting;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
+import dev.tonimatas.ethylene.link.world.ContainerLink;
 import dev.tonimatas.ethylene.link.world.item.crafting.RecipeManagerLink;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.stats.Stat;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -80,7 +83,7 @@ public abstract class RecipeManagerMixin implements RecipeManagerLink {
             return recipeholder.value().matches(p_44017_, p_44018_);
         }).toList();
         Optional<RecipeHolder<T>> recipe = (list.isEmpty()) ? Optional.empty() : Optional.of(list.getLast()); // CraftBukkit - SPIGOT-4638: last recipe gets priority
-        p_44017_.setCurrentRecipe(recipe.orElse(null)); // CraftBukkit - Clear recipe when no recipe is found
+        ((ContainerLink) p_44017_).setCurrentRecipe(recipe.orElse(null)); // CraftBukkit - Clear recipe when no recipe is found
         return recipe;
         // CraftBukkit end
     }
@@ -97,13 +100,13 @@ public abstract class RecipeManagerMixin implements RecipeManagerLink {
                 return Optional.of(recipeholder);
             }
         }
-
+        
         // CraftBukkit start
         List<RecipeHolder<T>> list = this.byType(p_220249_).stream().filter((recipeholder1) -> {
             return recipeholder1.value().matches(p_220250_, p_220251_);
         }).toList();
         Optional<RecipeHolder<T>> recipe = (list.isEmpty()) ? Optional.empty() : Optional.of(list.getLast()); // CraftBukkit - SPIGOT-4638: last recipe gets priority
-        p_220250_.setCurrentRecipe(recipe.orElse(null)); // CraftBukkit - Clear recipe when no recipe is found
+        ((ContainerLink) p_220250_).setCurrentRecipe(recipe.orElse(null)); // CraftBukkit - Clear recipe when no recipe is found
         return recipe;
         // CraftBukkit end
     }
