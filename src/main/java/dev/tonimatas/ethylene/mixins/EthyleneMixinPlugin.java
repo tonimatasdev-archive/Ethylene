@@ -1,6 +1,6 @@
-package dev.tonimatas.ethylene.mixins.mixinplugin;
+package dev.tonimatas.ethylene.mixins;
 
-import dev.tonimatas.ethylene.mixins.mixinplugin.annotations.*;
+import dev.tonimatas.ethylene.annotations.*;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.*;

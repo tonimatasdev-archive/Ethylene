@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "dev.tonimatas.ethylene.mixins",
   "compatibilityLevel": "JAVA_21",
-  "plugin": "dev.tonimatas.ethylene.mixins.mixinplugin.EthyleneMixinPlugin",
+  "plugin": "dev.tonimatas.ethylene.mixins.EthyleneMixinPlugin",
   "refmap": "ethylene.refmap.json",
   "mixins": [
     "CrashReportMixin",
