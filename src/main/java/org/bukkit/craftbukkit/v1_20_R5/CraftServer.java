@@ -17,6 +17,7 @@ import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.Lifecycle;
 import dev.tonimatas.ethylene.link.advancements.AdvancementHolderLink;
 import dev.tonimatas.ethylene.link.world.item.crafting.RecipeHolderLink;
+import dev.tonimatas.ethylene.link.world.item.crafting.RecipeManagerLink;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import jline.console.ConsoleReader;
 import net.minecraft.advancements.AdvancementHolder;
@@ -1446,7 +1447,7 @@ public final class CraftServer implements Server {
 
     @Override
     public void clearRecipes() {
-        console.getRecipeManager().clearRecipes();
+        ((RecipeManagerLink) console.getRecipeManager()).clearRecipes(); // Ethylene
     }
 
     @Override
@@ -1459,7 +1460,7 @@ public final class CraftServer implements Server {
         Preconditions.checkArgument(recipeKey != null, "recipeKey == null");
 
         ResourceLocation mcKey = CraftNamespacedKey.toMinecraft(recipeKey);
-        return getServer().getRecipeManager().removeRecipe(mcKey);
+        return ((RecipeManagerLink) getServer().getRecipeManager()).removeRecipe(mcKey); // Ethylene
     }
 
     @Override
