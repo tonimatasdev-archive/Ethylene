@@ -1,7 +1,7 @@
 package dev.tonimatas.ethylene.mixins.world.item.trading;
 
 import net.minecraft.world.item.trading.Merchant;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftMerchant;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftMerchant;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

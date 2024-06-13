@@ -3,8 +3,8 @@ package dev.tonimatas.ethylene.mixins.world.item.crafting;
 import dev.tonimatas.ethylene.link.world.item.crafting.RecipeLink;
 import net.minecraft.world.item.crafting.SmithingTrimRecipe;
 import org.bukkit.NamespacedKey;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftRecipe;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftSmithingTrimRecipe;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftRecipe;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftSmithingTrimRecipe;
 import org.bukkit.inventory.Recipe;
 import org.spongepowered.asm.mixin.Mixin;
 
