@@ -15,6 +15,6 @@ public class CrashReportMixin {
 
     @Inject(method = "<init>", at = @At("RETURN"))
     public void craftbukkit$init(CallbackInfo ci) {
-        this.systemReport.setDetail("CraftBukkit Information", new org.bukkit.craftbukkit.v1_20_R5.CraftCrashReport()); // CraftBukkit
+        this.systemReport.setDetail("CraftBukkit Information", new org.bukkit.craftbukkit.v1_21_R1.CraftCrashReport()); // CraftBukkit
     }
 }

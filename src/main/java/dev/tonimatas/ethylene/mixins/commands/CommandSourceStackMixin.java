@@ -48,7 +48,7 @@ public abstract class CommandSourceStackMixin implements CommandSourceStackLink 
         // CraftBukkit start
         CommandNode currentCommand = this.currentCommand;
         if (currentCommand != null) {
-            cir.setReturnValue(hasPermission(p_81370_, org.bukkit.craftbukkit.v1_20_R5.command.VanillaCommandWrapper.getPermission(currentCommand)));
+            cir.setReturnValue(hasPermission(p_81370_, org.bukkit.craftbukkit.v1_21_R1.command.VanillaCommandWrapper.getPermission(currentCommand)));
         }
         // CraftBukkit end
     }

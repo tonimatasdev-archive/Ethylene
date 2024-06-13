@@ -2,7 +2,7 @@ package dev.tonimatas.ethylene.link.world;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import org.bukkit.craftbukkit.v1_20_R5.entity.CraftHumanEntity;
+import org.bukkit.craftbukkit.v1_21_R1.entity.CraftHumanEntity;
 
 public interface ContainerLink {
     java.util.List<ItemStack> getContents();

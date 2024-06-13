@@ -3,7 +3,7 @@ package dev.tonimatas.ethylene.mixins.advancements;
 import dev.tonimatas.ethylene.link.advancements.AdvancementHolderLink;
 import net.minecraft.advancements.AdvancementHolder;
 import org.bukkit.advancement.Advancement;
-import org.bukkit.craftbukkit.v1_20_R5.advancement.CraftAdvancement;
+import org.bukkit.craftbukkit.v1_21_R1.advancement.CraftAdvancement;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

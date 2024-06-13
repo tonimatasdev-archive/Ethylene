@@ -58,8 +58,8 @@ dependencies {
     implementation("com.googlecode.json-simple:json-simple:1.1.1") {
         exclude("junit")
     }
-    implementation("org.xerial:sqlite-jdbc:3.45.3.0")
-    implementation("com.mysql:mysql-connector-j:8.3.0")
+    implementation("org.xerial:sqlite-jdbc:3.46.0.0")
+    implementation("com.mysql:mysql-connector-j:8.4.0")
 }
 
 tasks.withType<ProcessResources> {

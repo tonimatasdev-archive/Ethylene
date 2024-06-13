@@ -6,7 +6,7 @@ import dev.tonimatas.ethylene.annotations.SelfConstructorStub;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftMerchantRecipe;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftMerchantRecipe;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;

@@ -2,9 +2,9 @@ package dev.tonimatas.ethylene.mixins.world.item.crafting;
 
 import net.minecraft.world.item.crafting.BlastingRecipe;
 import org.bukkit.NamespacedKey;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftBlastingRecipe;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftRecipe;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftBlastingRecipe;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftRecipe;
 import org.bukkit.inventory.Recipe;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;

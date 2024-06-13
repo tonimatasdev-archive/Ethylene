@@ -3,7 +3,7 @@ package dev.tonimatas.ethylene.mixins.world;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.LockCode;
 import org.bukkit.ChatColor;
-import org.bukkit.craftbukkit.v1_20_R5.util.CraftChatMessage;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftChatMessage;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

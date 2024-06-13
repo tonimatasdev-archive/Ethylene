@@ -4,9 +4,9 @@ import dev.tonimatas.ethylene.link.world.item.crafting.RecipeLink;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.ShapelessRecipe;
 import org.bukkit.NamespacedKey;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftItemStack;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftRecipe;
-import org.bukkit.craftbukkit.v1_20_R5.inventory.CraftShapelessRecipe;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftRecipe;
+import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftShapelessRecipe;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
