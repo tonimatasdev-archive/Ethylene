@@ -1,6 +1,7 @@
 package org.bukkit.craftbukkit.v1_21_R1.entity;
 
 import com.google.common.base.Preconditions;
+import dev.tonimatas.ethylene.link.network.syncher.SynchedEntityDataLink;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.level.block.Blocks;
@@ -40,8 +41,8 @@ public class CraftItemFrame extends CraftHanging implements ItemFrame {
         super.update();
 
         // mark dirty, so that the client gets updated with item and rotation
-        getHandle().getEntityData().markDirty(net.minecraft.world.entity.decoration.ItemFrame.DATA_ITEM);
-        getHandle().getEntityData().markDirty(net.minecraft.world.entity.decoration.ItemFrame.DATA_ROTATION);
+        ((SynchedEntityDataLink) getHandle().getEntityData()).markDirty(net.minecraft.world.entity.decoration.ItemFrame.DATA_ITEM); // Ethylene
+        ((SynchedEntityDataLink) getHandle().getEntityData()).markDirty(net.minecraft.world.entity.decoration.ItemFrame.DATA_ROTATION); // Ethylene
 
         // update redstone
         if (!getHandle().generation) {
