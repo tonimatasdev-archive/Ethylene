@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.*;
 import com.mojang.serialization.DynamicOps;
+import dev.tonimatas.ethylene.link.core.component.DataComponentPatchBuilderLink;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
@@ -155,7 +156,7 @@ class CraftMetaItem implements ItemMeta, Damageable, Repairable, BlockDataMeta {
         }
 
         <T> Applicator putIfAbsent(TypedDataComponent<?> component) {
-            if (!builder.isSet(component.type())) {
+            if (!((DataComponentPatchBuilderLink) builder).isSet(component.type())) { // Ethylene
                 builder.set(component);
             }
             return this;
