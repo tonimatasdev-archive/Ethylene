@@ -45,11 +45,8 @@ runs {
 dependencies {
     implementation("net.neoforged:neoforge:${neoVersion}")
     
-    // Bukkit
-    implementation("org.yaml:snakeyaml:2.2")
-    implementation("org.apache.maven:maven-resolver-provider:3.9.6")
-    implementation("org.apache.maven.resolver:maven-resolver-connector-basic:1.9.18")
-    implementation("org.apache.maven.resolver:maven-resolver-transport-http:1.9.18")
+    // Ethylene
+    implementation("dev.tonimatas:ethylene-bukkit:dev-env")
     
     // CraftBukkit
     implementation("jline:jline:2.12.1")
