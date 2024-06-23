@@ -43,7 +43,7 @@ public class CraftDamageSource implements DamageSource {
 
     @Override
     public org.bukkit.entity.Entity getCausingEntity() {
-        net.minecraft.world.entity.Entity entity = this.getHandle().getEntity();
+        net.minecraft.world.entity.Entity entity = this.getHandle().getCausingDamager();
         return (entity != null) ? entity.getBukkitEntity() : null;
     }
 
@@ -67,7 +67,7 @@ public class CraftDamageSource implements DamageSource {
 
     @Override
     public boolean isIndirect() {
-        return this.getHandle().getEntity() != ((DamageSourceLink) this.getHandle()).getDamager();
+        return this.getHandle().getCausingDamager() != ((DamageSourceLink) this.getHandle()).getDamager(); // Ethylene
     }
 
     @Override

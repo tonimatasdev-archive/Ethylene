@@ -4,7 +4,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap.Builder;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
-import org.bukkit.Material;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
 import org.bukkit.inventory.meta.OminousBottleMeta;
 
@@ -56,11 +55,6 @@ public class CraftMetaOminousBottle extends CraftMetaItem implements OminousBott
 
     boolean isBottleEmpty() {
         return !(hasAmplifier());
-    }
-
-    @Override
-    boolean applicableTo(Material type) {
-        return type == Material.OMINOUS_BOTTLE;
     }
 
     @Override
