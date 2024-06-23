@@ -5,7 +5,6 @@ import com.google.common.collect.ImmutableMap.Builder;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
-import org.bukkit.Material;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -56,11 +55,6 @@ class CraftMetaEnchantedBook extends CraftMetaItem implements EnchantmentStorage
         super.applyToItem(itemTag);
 
         applyEnchantments(enchantments, itemTag, STORED_ENCHANTMENTS, ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
-    }
-
-    @Override
-    boolean applicableTo(Material type) {
-        return type == Material.ENCHANTED_BOOK;
     }
 
     @Override

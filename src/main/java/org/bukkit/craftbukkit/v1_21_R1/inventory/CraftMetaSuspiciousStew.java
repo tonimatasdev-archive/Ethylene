@@ -6,7 +6,6 @@ import com.google.common.collect.ImmutableMap.Builder;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
-import org.bukkit.Material;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
 import org.bukkit.craftbukkit.v1_21_R1.potion.CraftPotionEffectType;
 import org.bukkit.inventory.meta.SuspiciousStewMeta;
@@ -89,11 +88,6 @@ public class CraftMetaSuspiciousStew extends CraftMetaItem implements Suspicious
 
     boolean isStewEmpty() {
         return !hasCustomEffects();
-    }
-
-    @Override
-    boolean applicableTo(Material type) {
-        return type == Material.SUSPICIOUS_STEW;
     }
 
     @Override
