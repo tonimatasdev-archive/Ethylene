@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.v1_21_R1.block;
 
+import dev.tonimatas.ethylene.mixins.world.level.LevelLink;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
@@ -79,11 +80,11 @@ public final class CapturedBlockState extends CraftBlockState {
     }
 
     public static CapturedBlockState getBlockState(Level world, BlockPos pos, int flag) {
-        return new CapturedBlockState(world.getWorld().getBlockAt(pos.getX(), pos.getY(), pos.getZ()), flag, false);
+        return new CapturedBlockState(((LevelLink) world).getWorld().getBlockAt(pos.getX(), pos.getY(), pos.getZ()), flag, false); // Ethylene
     }
 
     public static CapturedBlockState getTreeBlockState(Level world, BlockPos pos, int flag) {
-        return new CapturedBlockState(world.getWorld().getBlockAt(pos.getX(), pos.getY(), pos.getZ()), flag, true);
+        return new CapturedBlockState(((LevelLink) world).getWorld().getBlockAt(pos.getX(), pos.getY(), pos.getZ()), flag, true); // Ethylene
     }
 
     public static void setBlockState(BlockState blockState) {

@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.v1_21_R1.block;
 
+import dev.tonimatas.ethylene.mixins.world.block.entity.ContainerOpenersCounterLink;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.BarrelBlock;
 import net.minecraft.world.level.block.entity.BarrelBlockEntity;
@@ -37,7 +38,7 @@ public class CraftBarrel extends CraftLootable<BarrelBlockEntity> implements Bar
     @Override
     public void open() {
         requirePlaced();
-        if (!getTileEntity().openersCounter.opened) {
+        if (!((ContainerOpenersCounterLink) getTileEntity().openersCounter).getOpened()) {
             BlockState blockData = getTileEntity().getBlockState();
             boolean open = blockData.getValue(BarrelBlock.OPEN);
 
@@ -48,20 +49,20 @@ public class CraftBarrel extends CraftLootable<BarrelBlockEntity> implements Bar
                 }
             }
         }
-        getTileEntity().openersCounter.opened = true;
+        ((ContainerOpenersCounterLink)getTileEntity().openersCounter).setOpened(true);
     }
 
     @Override
     public void close() {
         requirePlaced();
-        if (getTileEntity().openersCounter.opened) {
+        if (((ContainerOpenersCounterLink) getTileEntity().openersCounter).getOpened()) {
             BlockState blockData = getTileEntity().getBlockState();
             getTileEntity().updateBlockState(blockData, false);
             if (getWorldHandle() instanceof net.minecraft.world.level.Level) {
                 getTileEntity().playSound(blockData, SoundEvents.BARREL_CLOSE);
             }
         }
-        getTileEntity().openersCounter.opened = false;
+        ((ContainerOpenersCounterLink) getTileEntity().openersCounter).setOpened(false);
     }
 
     @Override

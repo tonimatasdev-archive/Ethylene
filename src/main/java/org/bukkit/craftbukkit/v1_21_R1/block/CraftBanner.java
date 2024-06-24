@@ -1,6 +1,7 @@
 package org.bukkit.craftbukkit.v1_21_R1.block;
 
 import com.google.common.base.Preconditions;
+import dev.tonimatas.ethylene.mixins.world.block.entity.BannerBlockEntityLink;
 import net.minecraft.world.level.block.AbstractBannerBlock;
 import net.minecraft.world.level.block.entity.BannerBlockEntity;
 import net.minecraft.world.level.block.entity.BannerPatternLayers;
@@ -99,7 +100,7 @@ public class CraftBanner extends CraftBlockEntityState<BannerBlockEntity> implem
         for (Pattern p : patterns) {
             newPatterns.add(new BannerPatternLayers.Layer(CraftPatternType.bukkitToMinecraftHolder(p.getPattern()), net.minecraft.world.item.DyeColor.byId(p.getColor().getWoolData())));
         }
-        banner.setPatterns(new BannerPatternLayers(newPatterns));
+        ((BannerBlockEntityLink) banner).setPatterns(new BannerPatternLayers(newPatterns)); // Ethylene
     }
 
     @Override
