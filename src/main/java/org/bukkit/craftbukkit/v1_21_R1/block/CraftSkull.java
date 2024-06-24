@@ -2,9 +2,9 @@ package org.bukkit.craftbukkit.v1_21_R1.block;
 
 import com.google.common.base.Preconditions;
 import com.mojang.authlib.GameProfile;
+import dev.tonimatas.ethylene.StaticMethods;
 import net.minecraft.Util;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.component.ResolvableProfile;
 import net.minecraft.world.level.block.entity.SkullBlockEntity;
 import org.bukkit.*;
@@ -58,7 +58,7 @@ public class CraftSkull extends CraftBlockEntityState<SkullBlockEntity> implemen
             return false;
         }
 
-        GameProfile profile = MinecraftServer.getServer().getProfileCache().get(name).orElse(null);
+        GameProfile profile = StaticMethods.getServer().getProfileCache().get(name).orElse(null); // Ethylene
         if (profile == null) {
             return false;
         }

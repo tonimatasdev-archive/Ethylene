@@ -8,9 +8,9 @@ import net.minecraft.util.InclusiveRange;
 import org.bukkit.Bukkit;
 import org.bukkit.FeatureFlag;
 import org.bukkit.NamespacedKey;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftChatMessage;
 import org.bukkit.craftbukkit.v1_21_R1.CraftFeatureFlag;
 import org.bukkit.craftbukkit.v1_21_R1.CraftServer;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftChatMessage;
 import org.bukkit.packs.DataPack;
 
 import java.io.IOException;

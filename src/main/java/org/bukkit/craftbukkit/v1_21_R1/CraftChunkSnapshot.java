@@ -13,10 +13,10 @@ import org.bukkit.ChunkSnapshot;
 import org.bukkit.Material;
 import org.bukkit.block.Biome;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftMagicNumbers;
 import org.bukkit.craftbukkit.v1_21_R1.block.CraftBiome;
 import org.bukkit.craftbukkit.v1_21_R1.block.CraftBlockType;
 import org.bukkit.craftbukkit.v1_21_R1.block.data.CraftBlockData;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftMagicNumbers;
 
 import java.util.function.Predicate;
 

@@ -1,12 +1,13 @@
 package org.bukkit.craftbukkit.v1_21_R1;
 
 import com.google.common.base.Preconditions;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
 import net.minecraft.server.dedicated.DedicatedServer;
 import org.bukkit.ServerLinks;
 import org.bukkit.craftbukkit.v1_21_R1.util.CraftChatMessage;
+
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CraftServerLinks implements ServerLinks {
 

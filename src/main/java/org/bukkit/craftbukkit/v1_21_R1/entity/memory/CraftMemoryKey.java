@@ -3,8 +3,8 @@ package org.bukkit.craftbukkit.v1_21_R1.entity.memory;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 import org.bukkit.craftbukkit.v1_21_R1.CraftRegistry;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 import org.bukkit.entity.memory.MemoryKey;
 
 public final class CraftMemoryKey {

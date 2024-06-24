@@ -14,7 +14,7 @@ public class CustomBossEventMixin implements CustomBossEventLink {
 
     @Override
     @Unique
-    public KeyedBossBar getBukkitEntity() {net.minecraft.server.players.StoredUserList
+    public KeyedBossBar getBukkitEntity() {
         if (bossBar == null) {
             bossBar = new CraftKeyedBossbar((CustomBossEvent) (Object) this);
         }

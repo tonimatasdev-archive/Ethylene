@@ -2,7 +2,6 @@ package org.bukkit.craftbukkit.v1_21_R1.util;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.io.Files;
 import com.google.gson.JsonElement;
@@ -11,6 +10,7 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.JsonOps;
+import dev.tonimatas.ethylene.StaticMethods;
 import net.minecraft.SharedConstants;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.commands.Commands;
@@ -27,7 +27,6 @@ import net.minecraft.util.datafix.DataFixers;
 import net.minecraft.util.datafix.fixes.References;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.LevelResource;
@@ -36,12 +35,10 @@ import org.bukkit.advancement.Advancement;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.v1_21_R1.CraftEquipmentSlot;
 import org.bukkit.craftbukkit.v1_21_R1.CraftFeatureFlag;
 import org.bukkit.craftbukkit.v1_21_R1.CraftRegistry;
 import org.bukkit.craftbukkit.v1_21_R1.CraftServer;
 import org.bukkit.craftbukkit.v1_21_R1.attribute.CraftAttribute;
-import org.bukkit.craftbukkit.v1_21_R1.attribute.CraftAttributeInstance;
 import org.bukkit.craftbukkit.v1_21_R1.block.data.CraftBlockData;
 import org.bukkit.craftbukkit.v1_21_R1.damage.CraftDamageEffect;
 import org.bukkit.craftbukkit.v1_21_R1.damage.CraftDamageSourceBuilder;
@@ -248,7 +245,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
     }
 
     private static File getBukkitDataPackFolder() {
-        return new File(MinecraftServer.getServer().getWorldPath(LevelResource.DATAPACK_DIR).toFile(), "bukkit");
+        return new File(StaticMethods.getServer().getWorldPath(LevelResource.DATAPACK_DIR).toFile(), "bukkit"); // Ethylene
     }
 
     @Override
@@ -259,7 +256,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
         JsonElement jsonelement = ServerAdvancementManager.GSON.fromJson(advancement, JsonElement.class);
         net.minecraft.advancements.Advancement nms = net.minecraft.advancements.Advancement.CODEC.parse(JsonOps.INSTANCE, jsonelement).getOrThrow(JsonParseException::new);
         if (nms != null) {
-            MinecraftServer.getServer().getAdvancements().advancements.put(minecraftkey, new AdvancementHolder(minecraftkey, nms));
+            StaticMethods.getServer().getAdvancements().advancements.put(minecraftkey, new AdvancementHolder(minecraftkey, nms)); // Ethylene
             Advancement bukkit = Bukkit.getAdvancement(key);
 
             if (bukkit != null) {
@@ -272,7 +269,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
                     Bukkit.getLogger().log(Level.SEVERE, "Error saving advancement " + key, ex);
                 }
 
-                MinecraftServer.getServer().getPlayerList().reloadResources();
+                StaticMethods.getServer().getPlayerList().reloadResources(); // Ethylene
 
                 return bukkit;
             }
@@ -290,7 +287,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
     @Override
     public void checkSupported(PluginDescriptionFile pdf) throws InvalidPluginException {
         ApiVersion toCheck = ApiVersion.getOrCreateVersion(pdf.getAPIVersion());
-        ApiVersion minimumVersion = MinecraftServer.getServer().server.minimumAPI;
+        ApiVersion minimumVersion = StaticMethods.getServer().server.minimumAPI; // Ethylene
 
         if (toCheck.isNewerThan(ApiVersion.CURRENT)) {
             // Newer than supported

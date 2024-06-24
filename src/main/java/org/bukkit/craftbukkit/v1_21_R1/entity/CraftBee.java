@@ -3,8 +3,8 @@ package org.bukkit.craftbukkit.v1_21_R1.entity;
 import com.google.common.base.Preconditions;
 import net.minecraft.core.BlockPos;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftLocation;
 import org.bukkit.craftbukkit.v1_21_R1.CraftServer;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftLocation;
 import org.bukkit.entity.Bee;
 
 public class CraftBee extends CraftAnimals implements Bee {

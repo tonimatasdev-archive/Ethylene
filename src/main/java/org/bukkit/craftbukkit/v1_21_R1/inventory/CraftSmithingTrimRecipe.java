@@ -1,6 +1,7 @@
 package org.bukkit.craftbukkit.v1_21_R1.inventory;
 
-import net.minecraft.server.MinecraftServer;
+import dev.tonimatas.ethylene.StaticMethods;
+import dev.tonimatas.ethylene.link.world.item.crafting.RecipeManagerLink;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import org.bukkit.NamespacedKey;
 import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
@@ -23,6 +24,6 @@ public class CraftSmithingTrimRecipe extends SmithingTrimRecipe implements Craft
 
     @Override
     public void addToCraftingManager() {
-        MinecraftServer.getServer().getRecipeManager().addRecipe(new RecipeHolder<>(CraftNamespacedKey.toMinecraft(this.getKey()), new net.minecraft.world.item.crafting.SmithingTrimRecipe(toNMS(this.getTemplate(), true), toNMS(this.getBase(), true), toNMS(this.getAddition(), true))));
+        ((RecipeManagerLink) StaticMethods.getServer().getRecipeManager()).addRecipe(new RecipeHolder<>(CraftNamespacedKey.toMinecraft(this.getKey()), new net.minecraft.world.item.crafting.SmithingTrimRecipe(toNMS(this.getTemplate(), true), toNMS(this.getBase(), true), toNMS(this.getAddition(), true)))); // Ethylene
     }
 }

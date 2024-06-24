@@ -26,7 +26,6 @@ import org.bukkit.block.*;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.block.structure.Mirror;
 import org.bukkit.block.structure.StructureRotation;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftLocation;
 import org.bukkit.craftbukkit.v1_21_R1.CraftSoundGroup;
 import org.bukkit.craftbukkit.v1_21_R1.CraftWorld;
 import org.bukkit.craftbukkit.v1_21_R1.block.CraftBlock;
@@ -35,6 +34,7 @@ import org.bukkit.craftbukkit.v1_21_R1.block.CraftBlockSupport;
 import org.bukkit.craftbukkit.v1_21_R1.block.CraftBlockType;
 import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftItemType;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftLocation;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 

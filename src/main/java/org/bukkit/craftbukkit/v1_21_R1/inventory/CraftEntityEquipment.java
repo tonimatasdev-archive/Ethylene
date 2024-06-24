@@ -160,7 +160,10 @@ public class CraftEntityEquipment implements EntityEquipment {
     }
 
     private void setEquipment(net.minecraft.world.entity.EquipmentSlot slot, ItemStack stack, boolean silent) {
-        entity.getHandle().setItemSlot(slot, CraftItemStack.asNMSCopy(stack), silent);
+        boolean isSilent = entity.getHandle().isSilent(); // Ethylene - Temporally
+        entity.getHandle().setSilent(silent);
+        entity.getHandle().setItemSlot(slot, CraftItemStack.asNMSCopy(stack)/*, silent*/); // Deleted
+        entity.getHandle().setSilent(isSilent);
     }
 
     @Override

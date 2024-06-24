@@ -6,8 +6,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BannerPattern;
 import org.bukkit.Registry;
 import org.bukkit.block.banner.PatternType;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 import org.bukkit.craftbukkit.v1_21_R1.CraftRegistry;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 
 public class CraftPatternType {
 

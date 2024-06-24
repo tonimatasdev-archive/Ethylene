@@ -5,8 +5,8 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import org.bukkit.Registry;
 import org.bukkit.block.Biome;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 import org.bukkit.craftbukkit.v1_21_R1.CraftRegistry;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 
 public class CraftBiome {
 

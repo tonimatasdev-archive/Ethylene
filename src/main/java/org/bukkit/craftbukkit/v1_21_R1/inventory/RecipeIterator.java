@@ -1,18 +1,19 @@
 package org.bukkit.craftbukkit.v1_21_R1.inventory;
 
+import dev.tonimatas.ethylene.StaticMethods;
 import dev.tonimatas.ethylene.link.world.item.crafting.RecipeHolderLink;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeType;
 import org.bukkit.inventory.Recipe;
 
 import java.util.Iterator;
 import java.util.Map;
 
 public class RecipeIterator implements Iterator<Recipe> {
-    private final Iterator<Map.Entry<net.minecraft.world.item.crafting.Recipe<?>, RecipeHolder<?>>> recipes;
+    private final Iterator<Map.Entry<RecipeType<?>, RecipeHolder<?>>> recipes;
 
     public RecipeIterator() {
-        this.recipes = MinecraftServer.getServer().getRecipeManager().byType.entries().iterator();
+        this.recipes = StaticMethods.getServer().getRecipeManager().byType.entries().iterator();
     }
 
     @Override

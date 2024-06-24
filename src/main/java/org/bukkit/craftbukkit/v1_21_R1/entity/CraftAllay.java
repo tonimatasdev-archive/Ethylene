@@ -5,9 +5,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.animal.allay.Allay;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftLocation;
 import org.bukkit.craftbukkit.v1_21_R1.CraftServer;
 import org.bukkit.craftbukkit.v1_21_R1.inventory.CraftInventory;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftLocation;
 import org.bukkit.inventory.Inventory;
 
 public class CraftAllay extends CraftCreature implements org.bukkit.entity.Allay {

@@ -4,8 +4,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.entity.SignText;
 import org.bukkit.DyeColor;
 import org.bukkit.block.sign.SignSide;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftChatMessage;
 import org.bukkit.craftbukkit.v1_21_R1.block.CraftSign;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftChatMessage;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

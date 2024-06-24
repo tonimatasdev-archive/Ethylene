@@ -2,6 +2,7 @@ package org.bukkit.craftbukkit.v1_21_R1.inventory;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap.Builder;
+import dev.tonimatas.ethylene.StaticMethods;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.core.component.DataComponentPatch;
@@ -9,7 +10,6 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.component.LodestoneTracker;
 import org.bukkit.Location;
@@ -122,7 +122,7 @@ public class CraftMetaCompass extends CraftMetaItem implements CompassMeta {
         if (lodestoneWorld == null) {
             return null;
         }
-        ServerLevel worldServer = MinecraftServer.getServer().getLevel(lodestoneWorld);
+        ServerLevel worldServer = StaticMethods.getServer().getLevel(lodestoneWorld); // Ethylene
         World world = worldServer != null ? worldServer.getWorld() : null;
         return new Location(world, lodestoneX, lodestoneY, lodestoneZ); // world may be null here, if the referenced world is not loaded
     }

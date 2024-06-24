@@ -4,6 +4,7 @@
 package com.mojang.brigadier.tree;
 
 // CHECKSTYLE:OFF
+
 import com.mojang.brigadier.AmbiguityConsumer;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.RedirectModifier;
@@ -14,18 +15,12 @@ import com.mojang.brigadier.context.CommandContextBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import dev.tonimatas.ethylene.link.commands.CommandSourceStackLink;
+import net.minecraft.commands.CommandSourceStack;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
-
-import dev.tonimatas.ethylene.link.commands.CommandSourceStackLink;
-import net.minecraft.commands.CommandSourceStack; // CraftBukkit
 
 public abstract class CommandNode<S> implements Comparable<CommandNode<S>> {
     private final Map<String, CommandNode<S>> children = new LinkedHashMap<>();
