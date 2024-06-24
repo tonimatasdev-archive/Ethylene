@@ -1,8 +1,8 @@
 package dev.tonimatas.ethylene.mixins.world.item.trading;
 
-import dev.tonimatas.ethylene.link.world.item.trading.MerchantOfferLink;
 import dev.tonimatas.ethylene.annotations.NewConstructor;
 import dev.tonimatas.ethylene.annotations.SelfConstructorStub;
+import dev.tonimatas.ethylene.link.world.item.trading.MerchantOfferLink;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;

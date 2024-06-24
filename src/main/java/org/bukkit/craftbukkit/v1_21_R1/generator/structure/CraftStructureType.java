@@ -3,8 +3,8 @@ package org.bukkit.craftbukkit.v1_21_R1.generator.structure;
 import net.minecraft.core.registries.Registries;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.v1_21_R1.util.Handleable;
 import org.bukkit.craftbukkit.v1_21_R1.CraftRegistry;
+import org.bukkit.craftbukkit.v1_21_R1.util.Handleable;
 import org.bukkit.generator.structure.StructureType;
 
 public class CraftStructureType extends StructureType implements Handleable<net.minecraft.world.level.levelgen.structure.StructureType<?>> {

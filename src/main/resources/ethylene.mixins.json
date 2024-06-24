@@ -49,8 +49,6 @@
     "world.item.crafting.SmithingTrimRecipeMixin",
     "world.item.crafting.SmokingRecipeMixin",
     "world.item.crafting.StonecutterRecipeMixin",
-    "world.item.enchantment.DamageEnchantmentMixin",
-    "world.item.enchantment.FrostWalkerEnchantmentMixin",
     "world.item.trading.MerchantMixin",
     "world.item.trading.MerchantRecipeMixin"
   ],

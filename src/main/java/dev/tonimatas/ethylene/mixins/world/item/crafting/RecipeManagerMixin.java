@@ -6,8 +6,6 @@ import com.google.common.collect.Multimap;
 import dev.tonimatas.ethylene.link.world.ContainerLink;
 import dev.tonimatas.ethylene.link.world.item.crafting.RecipeManagerLink;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.stats.Stat;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;

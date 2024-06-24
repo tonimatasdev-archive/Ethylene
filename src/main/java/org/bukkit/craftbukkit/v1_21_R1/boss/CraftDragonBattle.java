@@ -9,9 +9,9 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.boss.BossBar;
 import org.bukkit.boss.DragonBattle;
+import org.bukkit.craftbukkit.v1_21_R1.CraftWorld;
 import org.bukkit.craftbukkit.v1_21_R1.entity.CraftEnderCrystal;
 import org.bukkit.craftbukkit.v1_21_R1.util.CraftLocation;
-import org.bukkit.craftbukkit.v1_21_R1.CraftWorld;
 import org.bukkit.entity.EnderCrystal;
 import org.bukkit.entity.EnderDragon;
 

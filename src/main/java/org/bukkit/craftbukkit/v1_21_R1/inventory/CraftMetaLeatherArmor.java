@@ -1,7 +1,6 @@
 package org.bukkit.craftbukkit.v1_21_R1.inventory;
 
 import com.google.common.collect.ImmutableMap.Builder;
-import com.google.common.collect.Sets;
 import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.component.DyedItemColor;
@@ -13,7 +12,6 @@ import org.bukkit.inventory.meta.ColorableArmorMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import java.util.Map;
-import java.util.Set;
 
 import static org.bukkit.craftbukkit.v1_21_R1.inventory.CraftItemFactory.DEFAULT_LEATHER_COLOR;
 

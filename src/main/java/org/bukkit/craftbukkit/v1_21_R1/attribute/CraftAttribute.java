@@ -6,10 +6,10 @@ import net.minecraft.core.registries.Registries;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.craftbukkit.v1_21_R1.util.ApiVersion;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 import org.bukkit.craftbukkit.v1_21_R1.CraftRegistry;
 import org.bukkit.craftbukkit.v1_21_R1.legacy.FieldRename;
+import org.bukkit.craftbukkit.v1_21_R1.util.ApiVersion;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 
 import java.util.Locale;
 

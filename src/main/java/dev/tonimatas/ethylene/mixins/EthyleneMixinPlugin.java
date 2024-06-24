@@ -1,6 +1,9 @@
 package dev.tonimatas.ethylene.mixins;
 
-import dev.tonimatas.ethylene.annotations.*;
+import dev.tonimatas.ethylene.annotations.ChangeSuperClass;
+import dev.tonimatas.ethylene.annotations.NewConstructor;
+import dev.tonimatas.ethylene.annotations.SelfConstructorStub;
+import dev.tonimatas.ethylene.annotations.SuperConstructorStub;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.*;

@@ -6,8 +6,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.v1_21_R1.util.Handleable;
 import org.bukkit.craftbukkit.v1_21_R1.CraftRegistry;
+import org.bukkit.craftbukkit.v1_21_R1.util.Handleable;
 import org.bukkit.inventory.meta.trim.TrimPattern;
 import org.jetbrains.annotations.NotNull;
 

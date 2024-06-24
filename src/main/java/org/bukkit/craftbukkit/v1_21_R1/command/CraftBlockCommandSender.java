@@ -5,8 +5,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import org.bukkit.block.Block;
 import org.bukkit.command.BlockCommandSender;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftChatMessage;
 import org.bukkit.craftbukkit.v1_21_R1.block.CraftBlock;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftChatMessage;
 import org.bukkit.permissions.PermissibleBase;
 import org.bukkit.permissions.ServerOperator;
 

@@ -1,8 +1,8 @@
 package org.bukkit.craftbukkit.v1_21_R1.inventory;
 
 import com.google.common.collect.Maps;
-import net.minecraft.core.NonNullList;
-import net.minecraft.server.MinecraftServer;
+import dev.tonimatas.ethylene.StaticMethods;
+import dev.tonimatas.ethylene.link.world.item.crafting.RecipeManagerLink;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.ShapedRecipePattern;
@@ -14,7 +14,6 @@ import org.bukkit.inventory.ShapedRecipe;
 
 import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
 
 public class CraftShapedRecipe extends ShapedRecipe implements CraftRecipe {
     // TODO: Could eventually use this to add a matches() method or some such
@@ -56,7 +55,7 @@ public class CraftShapedRecipe extends ShapedRecipe implements CraftRecipe {
         Map<Character, Ingredient> data = Maps.transformValues(ingred, (bukkit) -> toNMS(bukkit, false));
 
         ShapedRecipePattern pattern = ShapedRecipePattern.of(data, shape);
-        MinecraftServer.getServer().getRecipeManager().addRecipe(new RecipeHolder<>(CraftNamespacedKey.toMinecraft(this.getKey()), new net.minecraft.world.item.crafting.ShapedRecipe(this.getGroup(), CraftRecipe.getCategory(this.getCategory()), pattern, CraftItemStack.asNMSCopy(this.getResult()))));
+        ((RecipeManagerLink) StaticMethods.getServer().getRecipeManager()).addRecipe(new RecipeHolder<>(CraftNamespacedKey.toMinecraft(this.getKey()), new net.minecraft.world.item.crafting.ShapedRecipe(this.getGroup(), CraftRecipe.getCategory(this.getCategory()), pattern, CraftItemStack.asNMSCopy(this.getResult())))); // Ethylene
     }
 
     private static String[] replaceUndefinedIngredientsWithEmpty(String[] shape, Map<Character, org.bukkit.inventory.RecipeChoice> ingredients) {

@@ -1,7 +1,7 @@
 package org.bukkit.craftbukkit.v1_21_R1.map;
 
+import dev.tonimatas.ethylene.StaticMethods;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.saveddata.maps.MapItemSavedData;
 import org.bukkit.Bukkit;
@@ -49,7 +49,7 @@ public final class CraftMapView implements MapView {
     @Override
     public World getWorld() {
         ResourceKey<net.minecraft.world.level.Level> dimension = worldMap.dimension;
-        ServerLevel world = MinecraftServer.getServer().getLevel(dimension);
+        ServerLevel world = StaticMethods.getServer().getLevel(dimension); // Ethylene
 
         if (world != null) {
             return world.getWorld();

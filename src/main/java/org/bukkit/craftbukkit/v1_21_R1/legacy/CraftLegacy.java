@@ -2,6 +2,7 @@ package org.bukkit.craftbukkit.v1_21_R1.legacy;
 
 import com.google.common.base.Preconditions;
 import com.mojang.serialization.Dynamic;
+import dev.tonimatas.ethylene.StaticMethods;
 import net.minecraft.SharedConstants;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
@@ -9,7 +10,6 @@ import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.Bootstrap;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.datafix.DataFixers;
 import net.minecraft.util.datafix.fixes.BlockStateData;
 import net.minecraft.util.datafix.fixes.ItemIdFix;
@@ -261,7 +261,7 @@ public final class CraftLegacy {
 
     static {
         System.err.println("Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!");
-        if (MinecraftServer.getServer() != null && MinecraftServer.getServer().isDebugging()) {
+        if (StaticMethods.getServer() != null && StaticMethods.getServer().isDebugging()) {
             new Exception().printStackTrace();
         }
 

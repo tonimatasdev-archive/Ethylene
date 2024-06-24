@@ -47,6 +47,13 @@ dependencies {
     
     // Ethylene
     implementation("dev.tonimatas:ethylene-bukkit:dev-env")
+
+    // Bukkit Libs
+    implementation("org.jetbrains:annotations:21.0.0")
+    implementation("org.yaml:snakeyaml:2.2")
+    implementation("org.apache.maven:maven-resolver-provider:3.9.6")
+    implementation("org.apache.maven.resolver:maven-resolver-connector-basic:1.9.18")
+    implementation("org.apache.maven.resolver:maven-resolver-transport-http:1.9.18")
     
     // CraftBukkit
     implementation("jline:jline:2.12.1")

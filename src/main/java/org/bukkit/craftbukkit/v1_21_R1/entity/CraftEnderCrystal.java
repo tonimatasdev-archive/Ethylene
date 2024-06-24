@@ -3,8 +3,8 @@ package org.bukkit.craftbukkit.v1_21_R1.entity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftLocation;
 import org.bukkit.craftbukkit.v1_21_R1.CraftServer;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftLocation;
 import org.bukkit.entity.EnderCrystal;
 
 public class CraftEnderCrystal extends CraftEntity implements EnderCrystal {

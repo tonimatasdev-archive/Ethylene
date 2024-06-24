@@ -6,9 +6,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.animal.FrogVariant;
 import net.minecraft.world.entity.animal.frog.Frog;
 import org.bukkit.Registry;
-import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 import org.bukkit.craftbukkit.v1_21_R1.CraftRegistry;
 import org.bukkit.craftbukkit.v1_21_R1.CraftServer;
+import org.bukkit.craftbukkit.v1_21_R1.util.CraftNamespacedKey;
 import org.bukkit.entity.Entity;
 
 public class CraftFrog extends CraftAnimals implements org.bukkit.entity.Frog {
